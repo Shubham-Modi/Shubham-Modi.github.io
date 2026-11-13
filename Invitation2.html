@@ -61,6 +61,24 @@
             background: var(--royal-bg);
             color: #fef3c7;
             overflow-x: hidden;
+            transition: background 0.7s ease;
+        }
+
+        /* Distinct Dynamic Full-Screen Event Themes */
+        body.theme-overview {
+            background: radial-gradient(circle at center, #5c0617 0%, #2b0209 75%, #180004 100%);
+        }
+        body.theme-haldi {
+            background: radial-gradient(circle at top, #b45309 0%, #78350f 55%, #451a03 100%);
+        }
+        body.theme-sangeet {
+            background: radial-gradient(circle at top, #3b0764 0%, #1e1b4b 55%, #090514 100%);
+        }
+        body.theme-lagan {
+            background: radial-gradient(circle at top, #9a3412 0%, #5c1906 60%, #2e0902 100%);
+        }
+        body.theme-vivaah {
+            background: radial-gradient(circle at center, #6b051e 0%, #36020e 65%, #170005 100%);
         }
 
         /* Metallic Gold Text Effect */
@@ -246,55 +264,72 @@
     </div>
 
     <!-- FLOATING TOP NAVIGATION BAR -->
-    <header class="sticky top-0 z-40 backdrop-blur-md bg-maroon-950/85 border-b border-gold-500/30 px-3 sm:px-6 py-3 no-print">
-        <div class="max-w-6xl mx-auto flex flex-wrap items-center justify-between gap-2">
-            <!-- Brand Monogram -->
-            <a href="#hero" class="flex items-center gap-2.5 group">
-                <div class="w-10 h-10 rounded-full gold-bg p-0.5 flex items-center justify-center shadow-md">
-                    <div class="w-full h-full bg-maroon-900 rounded-full flex items-center justify-center font-royal text-gold-300 font-bold text-sm">
-                        A<span class="text-sindoor text-xs mx-0.5">♥</span>M
+    <header class="sticky top-0 z-40 backdrop-blur-md bg-maroon-950/90 border-b border-gold-500/30 px-3 sm:px-6 py-2.5 no-print">
+        <div class="max-w-6xl mx-auto flex flex-col gap-2">
+            <div class="flex flex-wrap items-center justify-between gap-2">
+                <!-- Brand Monogram -->
+                <button onclick="switchPageView('overview')" class="flex items-center gap-2.5 group text-left focus:outline-none">
+                    <div class="w-10 h-10 rounded-full gold-bg p-0.5 flex items-center justify-center shadow-md">
+                        <div class="w-full h-full bg-maroon-900 rounded-full flex items-center justify-center font-royal text-gold-300 font-bold text-sm">
+                            A<span class="text-sindoor text-xs mx-0.5">♥</span>M
+                        </div>
                     </div>
-                </div>
-                <div>
-                    <span class="font-royal text-base sm:text-lg gold-gradient-text font-bold block leading-none" data-i18n="navTitle">Akhilesh &amp; Manvi</span>
-                    <span class="text-[11px] text-gold-300/80 block" data-i18n="navDate">20 Feb, 2027</span>
-                </div>
-            </a>
+                    <div>
+                        <span class="font-royal text-base sm:text-lg gold-gradient-text font-bold block leading-none" data-i18n="navTitle">Akhilesh &amp; Manvi</span>
+                        <span class="text-[11px] text-gold-300/80 block" data-i18n="navDate">20 Feb, 2027 • Ganesham Resort</span>
+                    </div>
+                </button>
 
-            <!-- Quick Links (Desktop) -->
-            <nav class="hidden md:flex items-center gap-6 text-sm font-medium text-gold-200">
-                <a href="#invitationCard" class="hover:text-gold-400 transition" data-i18n="navCard">Invitation Card</a>
-                <a href="#events" class="hover:text-gold-400 transition" data-i18n="navEvents">Events</a>
-                <a href="#rsvp" class="hover:text-gold-400 transition" data-i18n="navRsvp">RSVP &amp; Wishes</a>
-            </nav>
+                <!-- Action Controls: Language Toggle, Flower Shower, Audio, Print -->
+                <div class="flex items-center gap-1.5 sm:gap-2.5">
+                    <!-- Bilingual Switcher -->
+                    <div class="bg-maroon-900 border-2 border-gold-400 rounded-full p-0.5 flex items-center shadow-lg" role="group" aria-label="Language Switcher">
+                        <button onclick="setLanguage('en')" id="navLangEn" class="px-3 py-1 rounded-full text-xs font-bold transition-all gold-bg text-maroon-950">
+                            EN
+                        </button>
+                        <button onclick="setLanguage('hi')" id="navLangHi" class="px-3 py-1 rounded-full text-xs font-bold transition-all text-gold-200 hover:text-white">
+                            हिंदी
+                        </button>
+                    </div>
 
-            <!-- Action Controls: Language Toggle, Flower Shower, Audio, Print -->
-            <div class="flex items-center gap-2 sm:gap-3">
-                <!-- Bilingual Switcher -->
-                <div class="bg-maroon-900 border-2 border-gold-400 rounded-full p-0.5 flex items-center shadow-lg" role="group" aria-label="Language Switcher">
-                    <button onclick="setLanguage('en')" id="navLangEn" class="px-3 py-1 rounded-full text-xs sm:text-sm font-bold transition-all gold-bg text-maroon-950">
-                        EN
+                    <!-- Shower Petals Button -->
+                    <button onclick="triggerBlessingShower()" class="px-3 py-1.5 rounded-full bg-gradient-to-r from-amber-500 to-orange-600 hover:from-amber-400 hover:to-orange-500 text-maroon-950 font-bold text-xs flex items-center gap-1.5 shadow-lg transition transform active:scale-95" title="Shower Marigold & Rose Petals">
+                        <span>🌸</span>
+                        <span class="hidden sm:inline" data-i18n="showerBtn">Shower Blessings</span>
                     </button>
-                    <button onclick="setLanguage('hi')" id="navLangHi" class="px-3 py-1 rounded-full text-xs sm:text-sm font-bold transition-all text-gold-200 hover:text-white">
-                        हिंदी
+
+                    <!-- Festive Chime Sound Toggle -->
+                    <button onclick="toggleFestiveMusic()" id="musicBtn" class="w-9 h-9 rounded-full bg-maroon-800 border border-gold-400/60 text-gold-300 flex items-center justify-center hover:bg-gold-500 hover:text-maroon-950 transition" title="Play Festive Chimes">
+                        <i id="musicIcon" class="fa-solid fa-music"></i>
+                    </button>
+
+                    <!-- Print / Compact Card View Button -->
+                    <button onclick="openPrintableModal()" class="w-9 h-9 rounded-full bg-maroon-800 border border-gold-400/60 text-gold-300 flex items-center justify-center hover:bg-gold-500 hover:text-maroon-950 transition" title="View Printable Traditional Card">
+                        <i class="fa-solid fa-print"></i>
                     </button>
                 </div>
+            </div>
 
-                <!-- Shower Petals Button -->
-                <button onclick="triggerBlessingShower()" class="px-3 py-1.5 rounded-full bg-gradient-to-r from-amber-500 to-orange-600 hover:from-amber-400 hover:to-orange-500 text-maroon-950 font-bold text-xs sm:text-sm flex items-center gap-1.5 shadow-lg transition transform active:scale-95" title="Shower Marigold & Rose Petals">
-                    <span>🌸</span>
-                    <span class="hidden sm:inline" data-i18n="showerBtn">Shower Blessings</span>
+            <!-- Dedicated One-Pager Switcher Tabs -->
+            <div class="flex items-center gap-1.5 overflow-x-auto py-1 border-t border-gold-500/20 no-scrollbar">
+                <button onclick="switchPageView('overview')" id="tab-overview" class="page-tab shrink-0 px-3.5 py-1.5 rounded-full text-xs font-bold transition-all gold-bg text-maroon-950 shadow">
+                    👑 <span data-i18n="tabOverview">Main Royal Card</span>
                 </button>
-
-                <!-- Festive Chime Sound Toggle -->
-                <button onclick="toggleFestiveMusic()" id="musicBtn" class="w-9 h-9 rounded-full bg-maroon-800 border border-gold-400/60 text-gold-300 flex items-center justify-center hover:bg-gold-500 hover:text-maroon-950 transition" title="Play Festive Chimes">
-                    <i id="musicIcon" class="fa-solid fa-music"></i>
+                <button onclick="switchPageView('haldi')" id="tab-haldi" class="page-tab shrink-0 px-3.5 py-1.5 rounded-full text-xs font-bold transition-all bg-yellow-500/15 border border-yellow-400/40 text-yellow-200 hover:bg-yellow-400 hover:text-amber-950">
+                    🌼 <span data-i18n="tabHaldi">Haldi in Bloom (One-Pager)</span>
                 </button>
-
-                <!-- Print / Compact Card View Button -->
-                <button onclick="openPrintableModal()" class="w-9 h-9 rounded-full bg-maroon-800 border border-gold-400/60 text-gold-300 flex items-center justify-center hover:bg-gold-500 hover:text-maroon-950 transition" title="View Printable Traditional Card">
-                    <i class="fa-solid fa-print"></i>
+                <button onclick="switchPageView('sangeet')" id="tab-sangeet" class="page-tab shrink-0 px-3.5 py-1.5 rounded-full text-xs font-bold transition-all bg-fuchsia-500/15 border border-fuchsia-400/40 text-fuchsia-200 hover:bg-fuchsia-400 hover:text-indigo-950">
+                    🎶 <span data-i18n="tabSangeet">Sangeet Symphony (One-Pager)</span>
                 </button>
+                <button onclick="switchPageView('lagan')" id="tab-lagan" class="page-tab shrink-0 px-3.5 py-1.5 rounded-full text-xs font-bold transition-all bg-orange-500/15 border border-orange-400/40 text-orange-200 hover:bg-orange-400 hover:text-red-950">
+                    🕉️ <span data-i18n="tabLagan">Shubh Lagan (One-Pager)</span>
+                </button>
+                <button onclick="switchPageView('vivaah')" id="tab-vivaah" class="page-tab shrink-0 px-3.5 py-1.5 rounded-full text-xs font-bold transition-all bg-rose-500/15 border border-rose-400/40 text-rose-200 hover:bg-rose-400 hover:text-maroon-950">
+                    🔥 <span data-i18n="tabVivaah">Vivaah (One-Pager)</span>
+                </button>
+                <a href="#venueSection" onclick="switchPageView('overview', true)" class="shrink-0 px-3.5 py-1.5 rounded-full text-xs font-bold transition-all bg-emerald-500/15 border border-emerald-400/40 text-emerald-200 hover:bg-emerald-400 hover:text-emerald-950 ml-auto">
+                    📍 <span data-i18n="tabVenue">Venue Map</span>
+                </a>
             </div>
         </div>
     </header>
@@ -322,6 +357,11 @@
                 <rect width="1200" height="60" fill="url(#toranPattern)"/>
             </svg>
         </div>
+
+        <!-- ===================================================================
+             VIEW 0: MAIN OVERVIEW INVITATION PAGE
+        =================================================================== -->
+        <div id="view-overview">
 
         <!-- SECTION 1: HERO & SHLOKA -->
         <section id="hero" class="max-w-5xl mx-auto px-4 pt-4 sm:pt-8 text-center relative">
@@ -530,6 +570,24 @@
                         </div>
                     </div>
 
+                    <!-- Royal Venue Banner Inside Card -->
+                    <div class="mt-4 max-w-xl mx-auto bg-maroon-950/80 border border-gold-400/50 rounded-2xl p-4 flex flex-col sm:flex-row items-center justify-between gap-3">
+                        <div class="flex items-center gap-3 text-left">
+                            <div class="w-10 h-10 rounded-full bg-gold-500/20 border border-gold-400 flex items-center justify-center text-gold-300 shrink-0">
+                                <i class="fa-solid fa-location-dot"></i>
+                            </div>
+                            <div>
+                                <div class="text-[11px] uppercase tracking-widest text-gold-300" data-i18n="venueCardLabel">Wedding Venue (विवाह स्थल)</div>
+                                <div class="font-bold text-sm sm:text-base text-amber-100" data-i18n="venueFullName">Ganesham Resort, Hindaun City</div>
+                                <div class="text-xs text-amber-200/75" data-i18n="venueAddressSub">Karauli Road, Hindaun City, Rajasthan 322230</div>
+                            </div>
+                        </div>
+                        <a href="https://maps.app.goo.gl/ecyoLsVJoaZrHpdTA" target="_blank" rel="noopener noreferrer" class="px-4 py-2 rounded-xl gold-bg text-maroon-950 font-bold text-xs flex items-center gap-1.5 shrink-0 hover:brightness-110 transition shadow">
+                            <i class="fa-solid fa-diamond-turn-right"></i>
+                            <span data-i18n="openMapBtn">Google Maps</span>
+                        </a>
+                    </div>
+
                     <!-- Compliments Footer -->
                     <div class="mt-8 pt-6 border-t border-gold-400/30 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs sm:text-sm text-gold-200">
                         <div>
@@ -610,17 +668,21 @@
                                 </div>
                                 <div class="flex items-center gap-3 text-yellow-100">
                                     <i class="fa-solid fa-location-dot text-yellow-400 w-5 text-center"></i>
-                                    <span class="text-xs sm:text-sm" data-i18n="ev1Venue">Royal Courtyard Lawn, Wedding Venue</span>
+                                    <span class="text-xs sm:text-sm" data-i18n="ev1Venue">Ganesham Resort, Hindaun City</span>
                                 </div>
                             </div>
                         </div>
 
-                        <div class="mt-6 flex flex-wrap items-center gap-3">
-                            <button onclick="addToCalendar('Haldi in Bloom - Akhilesh & Manvi Wedding', '20270219T130000', '20270219T163000', 'Haldi Ceremony for Akhilesh Weds Manvi')" class="flex-1 py-2.5 px-4 rounded-xl bg-yellow-400 hover:bg-yellow-300 text-amber-950 font-bold text-xs sm:text-sm flex items-center justify-center gap-2 transition shadow-md">
+                        <div class="mt-6 flex flex-wrap items-center gap-2.5">
+                            <button onclick="switchPageView('haldi')" class="w-full py-2.5 px-4 rounded-xl bg-gradient-to-r from-yellow-300 via-amber-400 to-orange-400 hover:brightness-110 text-amber-950 font-extrabold text-xs sm:text-sm flex items-center justify-center gap-2 transition shadow-lg">
+                                <i class="fa-solid fa-wand-magic-sparkles"></i>
+                                <span data-i18n="openOnePagerHaldi">Open Haldi One-Pager Card</span>
+                            </button>
+                            <button onclick="addToCalendar('Haldi in Bloom - Akhilesh & Manvi Wedding', '20270219T130000', '20270219T163000', 'Haldi Ceremony at Ganesham Resort, Hindaun City')" class="flex-1 py-2 px-3 rounded-xl bg-yellow-500/20 hover:bg-yellow-500/30 border border-yellow-300/60 text-yellow-100 font-semibold text-xs flex items-center justify-center gap-1.5 transition">
                                 <i class="fa-regular fa-calendar-plus"></i>
                                 <span data-i18n="addCalBtn">Add to Calendar</span>
                             </button>
-                            <button onclick="triggerThemeBurst('#facc15', '#fb923c')" class="py-2.5 px-4 rounded-xl bg-yellow-500/20 hover:bg-yellow-500/30 border border-yellow-300 text-yellow-200 font-semibold text-xs sm:text-sm transition" title="Haldi Petal Burst">
+                            <button onclick="triggerThemeBurst('#facc15', '#fb923c')" class="py-2 px-3 rounded-xl bg-yellow-500/20 hover:bg-yellow-500/30 border border-yellow-300/60 text-yellow-200 font-semibold text-xs transition" title="Haldi Petal Burst">
                                 🌼 <span data-i18n="celebrateBtn">Celebrate</span>
                             </button>
                         </div>
@@ -666,17 +728,21 @@
                                 </div>
                                 <div class="flex items-center gap-3 text-purple-100">
                                     <i class="fa-solid fa-location-dot text-fuchsia-400 w-5 text-center"></i>
-                                    <span class="text-xs sm:text-sm" data-i18n="ev2Venue">Grand Crystal Ballroom, Wedding Venue</span>
+                                    <span class="text-xs sm:text-sm" data-i18n="ev2Venue">Ganesham Resort, Hindaun City</span>
                                 </div>
                             </div>
                         </div>
 
-                        <div class="mt-6 flex flex-wrap items-center gap-3">
-                            <button onclick="addToCalendar('Sangeet Symphony - Akhilesh & Manvi Wedding', '20270219T190000', '20270219T233000', 'Sangeet Ceremony for Akhilesh Weds Manvi')" class="flex-1 py-2.5 px-4 rounded-xl bg-gradient-to-r from-fuchsia-400 to-purple-400 hover:from-fuchsia-300 hover:to-purple-300 text-indigo-950 font-bold text-xs sm:text-sm flex items-center justify-center gap-2 transition shadow-md">
+                        <div class="mt-6 flex flex-wrap items-center gap-2.5">
+                            <button onclick="switchPageView('sangeet')" class="w-full py-2.5 px-4 rounded-xl bg-gradient-to-r from-fuchsia-400 via-purple-400 to-indigo-400 hover:brightness-110 text-indigo-950 font-extrabold text-xs sm:text-sm flex items-center justify-center gap-2 transition shadow-lg">
+                                <i class="fa-solid fa-wand-magic-sparkles"></i>
+                                <span data-i18n="openOnePagerSangeet">Open Sangeet One-Pager Card</span>
+                            </button>
+                            <button onclick="addToCalendar('Sangeet Symphony - Akhilesh & Manvi Wedding', '20270219T190000', '20270219T233000', 'Sangeet Ceremony at Ganesham Resort, Hindaun City')" class="flex-1 py-2 px-3 rounded-xl bg-fuchsia-500/20 hover:bg-fuchsia-500/30 border border-fuchsia-300/60 text-fuchsia-100 font-semibold text-xs flex items-center justify-center gap-1.5 transition">
                                 <i class="fa-regular fa-calendar-plus"></i>
                                 <span data-i18n="addCalBtn">Add to Calendar</span>
                             </button>
-                            <button onclick="triggerThemeBurst('#e879f9', '#818cf8')" class="py-2.5 px-4 rounded-xl bg-fuchsia-500/20 hover:bg-fuchsia-500/30 border border-fuchsia-300 text-fuchsia-200 font-semibold text-xs sm:text-sm transition">
+                            <button onclick="triggerThemeBurst('#e879f9', '#818cf8')" class="py-2 px-3 rounded-xl bg-fuchsia-500/20 hover:bg-fuchsia-500/30 border border-fuchsia-300/60 text-fuchsia-200 font-semibold text-xs transition">
                                 ✨ <span data-i18n="celebrateBtn">Celebrate</span>
                             </button>
                         </div>
@@ -720,17 +786,21 @@
                                 </div>
                                 <div class="flex items-center gap-3 text-orange-100">
                                     <i class="fa-solid fa-location-dot text-orange-400 w-5 text-center"></i>
-                                    <span class="text-xs sm:text-sm" data-i18n="ev3Venue">Sacred Mandapam Hall, Wedding Venue</span>
+                                    <span class="text-xs sm:text-sm" data-i18n="ev3Venue">Ganesham Resort, Hindaun City</span>
                                 </div>
                             </div>
                         </div>
 
-                        <div class="mt-6 flex flex-wrap items-center gap-3">
-                            <button onclick="addToCalendar('Shubh Lagan - Akhilesh & Manvi Wedding', '20270220T090000', '20270220T120000', 'Shubh Lagan Ceremony for Akhilesh Weds Manvi')" class="flex-1 py-2.5 px-4 rounded-xl bg-gradient-to-r from-orange-400 to-amber-400 hover:from-orange-300 hover:to-amber-300 text-red-950 font-bold text-xs sm:text-sm flex items-center justify-center gap-2 transition shadow-md">
+                        <div class="mt-6 flex flex-wrap items-center gap-2.5">
+                            <button onclick="switchPageView('lagan')" class="w-full py-2.5 px-4 rounded-xl bg-gradient-to-r from-orange-400 via-amber-400 to-yellow-400 hover:brightness-110 text-red-950 font-extrabold text-xs sm:text-sm flex items-center justify-center gap-2 transition shadow-lg">
+                                <i class="fa-solid fa-wand-magic-sparkles"></i>
+                                <span data-i18n="openOnePagerLagan">Open Shubh Lagan One-Pager</span>
+                            </button>
+                            <button onclick="addToCalendar('Shubh Lagan - Akhilesh & Manvi Wedding', '20270220T090000', '20270220T120000', 'Shubh Lagan Ceremony at Ganesham Resort, Hindaun City')" class="flex-1 py-2 px-3 rounded-xl bg-orange-500/20 hover:bg-orange-500/30 border border-orange-300/60 text-orange-100 font-semibold text-xs flex items-center justify-center gap-1.5 transition">
                                 <i class="fa-regular fa-calendar-plus"></i>
                                 <span data-i18n="addCalBtn">Add to Calendar</span>
                             </button>
-                            <button onclick="triggerThemeBurst('#fb923c', '#facc15')" class="py-2.5 px-4 rounded-xl bg-orange-500/20 hover:bg-orange-500/30 border border-orange-300 text-orange-200 font-semibold text-xs sm:text-sm transition">
+                            <button onclick="triggerThemeBurst('#fb923c', '#facc15')" class="py-2 px-3 rounded-xl bg-orange-500/20 hover:bg-orange-500/30 border border-orange-300/60 text-orange-200 font-semibold text-xs transition">
                                 🌺 <span data-i18n="celebrateBtn">Celebrate</span>
                             </button>
                         </div>
@@ -774,17 +844,21 @@
                                 </div>
                                 <div class="flex items-center gap-3 text-rose-100">
                                     <i class="fa-solid fa-location-dot text-gold-300 w-5 text-center"></i>
-                                    <span class="text-xs sm:text-sm" data-i18n="ev4Venue">The Royal Palace Grounds, Wedding Venue</span>
+                                    <span class="text-xs sm:text-sm" data-i18n="ev4Venue">Ganesham Resort, Hindaun City</span>
                                 </div>
                             </div>
                         </div>
 
-                        <div class="mt-6 flex flex-wrap items-center gap-3">
-                            <button onclick="addToCalendar('Shubh Vivaah - Akhilesh Weds Manvi', '20270220T190000', '20270220T235900', 'Grand Wedding Ceremony of Akhilesh & Manvi')" class="flex-1 py-2.5 px-4 rounded-xl gold-bg hover:brightness-110 text-maroon-950 font-bold text-xs sm:text-sm flex items-center justify-center gap-2 transition shadow-md">
+                        <div class="mt-6 flex flex-wrap items-center gap-2.5">
+                            <button onclick="switchPageView('vivaah')" class="w-full py-2.5 px-4 rounded-xl gold-bg hover:brightness-110 text-maroon-950 font-extrabold text-xs sm:text-sm flex items-center justify-center gap-2 transition shadow-lg">
+                                <i class="fa-solid fa-wand-magic-sparkles"></i>
+                                <span data-i18n="openOnePagerVivaah">Open Vivaah One-Pager Card</span>
+                            </button>
+                            <button onclick="addToCalendar('Shubh Vivaah - Akhilesh Weds Manvi', '20270220T190000', '20270220T235900', 'Grand Wedding Ceremony at Ganesham Resort, Hindaun City')" class="flex-1 py-2 px-3 rounded-xl bg-rose-500/20 hover:bg-rose-500/30 border border-gold-300/60 text-gold-100 font-semibold text-xs flex items-center justify-center gap-1.5 transition">
                                 <i class="fa-regular fa-calendar-plus"></i>
                                 <span data-i18n="addCalBtn">Add to Calendar</span>
                             </button>
-                            <button onclick="triggerBlessingShower()" class="py-2.5 px-4 rounded-xl bg-rose-500/20 hover:bg-rose-500/30 border border-gold-300 text-gold-200 font-semibold text-xs sm:text-sm transition">
+                            <button onclick="triggerBlessingShower()" class="py-2 px-3 rounded-xl bg-rose-500/20 hover:bg-rose-500/30 border border-gold-300/60 text-gold-200 font-semibold text-xs transition">
                                 🌹 <span data-i18n="celebrateBtn">Celebrate</span>
                             </button>
                         </div>
@@ -794,7 +868,399 @@
             </div>
         </section>
 
-        <!-- SECTION 4: INTERACTIVE RSVP & BLESSINGS WALL -->
+        </div><!-- END OF VIEW 0: MAIN OVERVIEW -->
+
+        <!-- ===================================================================
+             VIEW 1: DEDICATED ONE-PAGER FOR "HALDI IN BLOOM"
+        =================================================================== -->
+        <section id="view-haldi" class="hidden max-w-4xl mx-auto px-4 pt-6 sm:pt-10">
+            <div class="mb-6 flex flex-wrap items-center justify-between gap-3 no-print">
+                <button onclick="switchPageView('overview')" class="px-4 py-2 rounded-full bg-amber-950/80 border border-yellow-400 text-yellow-200 text-xs sm:text-sm font-bold flex items-center gap-2 hover:bg-yellow-400 hover:text-amber-950 transition">
+                    <i class="fa-solid fa-arrow-left"></i>
+                    <span data-i18n="backToMainBtn">Back to Main Wedding Card</span>
+                </button>
+                <div class="flex items-center gap-2">
+                    <button onclick="triggerThemeBurst('#facc15', '#f97316')" class="px-4 py-2 rounded-full bg-yellow-400 text-amber-950 font-bold text-xs sm:text-sm shadow-lg hover:brightness-110 transition">
+                        🌼 <span data-i18n="haldiShowerBtn">Shower Haldi &amp; Marigold</span>
+                    </button>
+                    <button onclick="shareSingleEvent('haldi')" class="px-4 py-2 rounded-full bg-amber-900/90 border border-yellow-300/60 text-yellow-100 text-xs sm:text-sm font-semibold hover:bg-amber-800 transition">
+                        <i class="fa-solid fa-share-nodes mr-1"></i> <span data-i18n="shareEventBtn">Share Event Card</span>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Sunshine Marigold & Phoolon Ki Holi One-Pager Card -->
+            <div class="rounded-[40px] p-2 sm:p-3 bg-gradient-to-br from-yellow-300 via-amber-400 to-orange-500 shadow-[0_0_70px_rgba(250,204,21,0.35)]">
+                <div class="rounded-[32px] bg-gradient-to-b from-[#713f12] via-[#854d0e] to-[#422006] px-5 py-10 sm:px-14 sm:py-14 text-center relative overflow-hidden border-2 border-yellow-200/60">
+                    <!-- Sunburst & Marigold Garland Decor -->
+                    <div class="w-20 h-20 mx-auto rounded-full bg-yellow-400/20 border-2 border-yellow-300 flex items-center justify-center text-4xl shadow-inner animate-float">
+                        🌼
+                    </div>
+                    <p class="mt-3 text-yellow-200 text-xs sm:text-sm font-bold tracking-[0.25em] uppercase" data-i18n="ganeshaMantra">॥ श्री गणेशाय नमः ॥</p>
+                    <span class="mt-2 inline-block px-4 py-1 rounded-full bg-yellow-400 text-amber-950 font-extrabold text-xs uppercase tracking-widest" data-i18n="haldiOnePagerBadge">
+                        Sunshine • Turmeric • Phoolon Ki Holi
+                    </span>
+
+                    <h2 class="font-royal text-4xl sm:text-6xl text-yellow-300 font-black mt-4 drop-shadow-md" data-i18n="ev1Title">
+                        Haldi in Bloom
+                    </h2>
+                    <p class="mt-2 text-yellow-100/90 text-sm sm:text-lg max-w-xl mx-auto font-serifElegant italic" data-i18n="haldiQuote">
+                        "Let us dip in hues of golden turmeric, marigold petals, dhol beats, and endless laughter as we bless Akhilesh &amp; Manvi!"
+                    </p>
+
+                    <!-- Couple Banner -->
+                    <div class="my-8 py-6 px-4 rounded-3xl bg-amber-950/60 border-2 border-dashed border-yellow-400/60 max-w-xl mx-auto">
+                        <div class="font-royal text-2xl sm:text-4xl text-yellow-200 font-bold">
+                            <span data-i18n="groomName">Akhilesh</span>
+                            <span class="text-orange-400 mx-2">🌼</span>
+                            <span data-i18n="brideName">Manvi</span>
+                        </div>
+                        <p class="text-xs sm:text-sm text-yellow-100/80 mt-2" data-i18n="haldiHostLine">
+                            Hosted with joy by Gupta &amp; Bachhan Families
+                        </p>
+                    </div>
+
+                    <!-- Event Highlights Grid -->
+                    <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 max-w-2xl mx-auto text-left">
+                        <div class="bg-black/25 p-4 rounded-2xl border border-yellow-300/30">
+                            <div class="text-yellow-300 text-xs uppercase font-bold" data-i18n="dateTimeLabel">Date &amp; Time</div>
+                            <div class="text-white font-bold text-base mt-1" data-i18n="ev1Date">19 Feb, 2027 (Friday)</div>
+                            <div class="text-yellow-200 text-xs mt-0.5" data-i18n="ev1Time">1:00 PM Onwards</div>
+                        </div>
+                        <div class="bg-black/25 p-4 rounded-2xl border border-yellow-300/30">
+                            <div class="text-yellow-300 text-xs uppercase font-bold" data-i18n="dressVibeLabel">Dress Code Vibe</div>
+                            <div class="text-white font-bold text-base mt-1" data-i18n="haldiDressTitle">Mustard &amp; Marigold</div>
+                            <div class="text-yellow-200 text-xs mt-0.5" data-i18n="haldiDressSub">Shades of Yellow, Lime &amp; Floral</div>
+                        </div>
+                        <div class="bg-black/25 p-4 rounded-2xl border border-yellow-300/30">
+                            <div class="text-yellow-300 text-xs uppercase font-bold" data-i18n="venueCardLabel">Venue</div>
+                            <div class="text-white font-bold text-base mt-1" data-i18n="venueFullName">Ganesham Resort, Hindaun City</div>
+                            <a href="https://maps.app.goo.gl/ecyoLsVJoaZrHpdTA" target="_blank" rel="noopener noreferrer" class="text-yellow-300 underline text-xs mt-0.5 inline-block" data-i18n="openMapBtn">Google Maps ↗</a>
+                        </div>
+                    </div>
+
+                    <!-- Bottom Actions -->
+                    <div class="mt-8 flex flex-wrap items-center justify-center gap-3 no-print">
+                        <button onclick="addToCalendar('Haldi in Bloom - Akhilesh & Manvi', '20270219T130000', '20270219T163000', 'Haldi Ceremony at Ganesham Resort, Hindaun City')" class="px-6 py-3 rounded-2xl bg-yellow-400 hover:bg-yellow-300 text-amber-950 font-extrabold text-xs sm:text-sm flex items-center gap-2 shadow-lg transition">
+                            <i class="fa-regular fa-calendar-plus"></i> <span data-i18n="addCalBtn">Add to Calendar</span>
+                        </button>
+                        <a href="https://maps.app.goo.gl/ecyoLsVJoaZrHpdTA" target="_blank" rel="noopener noreferrer" class="px-6 py-3 rounded-2xl bg-amber-950/90 hover:bg-amber-900 border border-yellow-400 text-yellow-200 font-bold text-xs sm:text-sm flex items-center gap-2 transition">
+                            <i class="fa-solid fa-location-dot"></i> <span data-i18n="getDirectionsBtn">Get Directions to Ganesham Resort</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===================================================================
+             VIEW 2: DEDICATED ONE-PAGER FOR "SANGEET SYMPHONY"
+        =================================================================== -->
+        <section id="view-sangeet" class="hidden max-w-4xl mx-auto px-4 pt-6 sm:pt-10">
+            <div class="mb-6 flex flex-wrap items-center justify-between gap-3 no-print">
+                <button onclick="switchPageView('overview')" class="px-4 py-2 rounded-full bg-indigo-950/80 border border-fuchsia-400 text-fuchsia-200 text-xs sm:text-sm font-bold flex items-center gap-2 hover:bg-fuchsia-400 hover:text-indigo-950 transition">
+                    <i class="fa-solid fa-arrow-left"></i>
+                    <span data-i18n="backToMainBtn">Back to Main Wedding Card</span>
+                </button>
+                <div class="flex items-center gap-2">
+                    <button onclick="triggerThemeBurst('#e879f9', '#38bdf8')" class="px-4 py-2 rounded-full bg-gradient-to-r from-fuchsia-400 to-indigo-400 text-indigo-950 font-bold text-xs sm:text-sm shadow-lg hover:brightness-110 transition">
+                        ✨ <span data-i18n="sangeetSparkleBtn">Sparkle Confetti Burst</span>
+                    </button>
+                    <button onclick="shareSingleEvent('sangeet')" class="px-4 py-2 rounded-full bg-indigo-900/90 border border-fuchsia-300/60 text-fuchsia-100 text-xs sm:text-sm font-semibold hover:bg-indigo-800 transition">
+                        <i class="fa-solid fa-share-nodes mr-1"></i> <span data-i18n="shareEventBtn">Share Event Card</span>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Starry Midnight Royal Indigo & Magenta Sangeet Card -->
+            <div class="rounded-[40px] p-2 sm:p-3 bg-gradient-to-br from-fuchsia-400 via-purple-500 to-cyan-400 shadow-[0_0_70px_rgba(217,70,239,0.35)]">
+                <div class="rounded-[32px] bg-gradient-to-b from-[#1e1b4b] via-[#3b0764] to-[#0f172a] px-5 py-10 sm:px-14 sm:py-14 text-center relative overflow-hidden border-2 border-fuchsia-300/50">
+                    <div class="w-20 h-20 mx-auto rounded-full bg-fuchsia-500/20 border-2 border-fuchsia-300 flex items-center justify-center text-4xl shadow-inner animate-float">
+                        🎶
+                    </div>
+                    <p class="mt-3 text-fuchsia-200 text-xs sm:text-sm font-bold tracking-[0.25em] uppercase" data-i18n="ganeshaMantra">॥ श्री गणेशाय नमः ॥</p>
+                    <span class="mt-2 inline-block px-4 py-1 rounded-full bg-gradient-to-r from-fuchsia-400 to-purple-400 text-indigo-950 font-extrabold text-xs uppercase tracking-widest" data-i18n="sangeetOnePagerBadge">
+                        Glitz • Glamour • Bollywood Beats
+                    </span>
+
+                    <h2 class="font-royal text-4xl sm:text-6xl text-fuchsia-200 font-black mt-4 drop-shadow-md" data-i18n="ev2Title">
+                        Sangeet Symphony
+                    </h2>
+                    <p class="mt-2 text-purple-100/90 text-sm sm:text-lg max-w-xl mx-auto font-serifElegant italic" data-i18n="sangeetQuote">
+                        "Put on your dancing shoes for an unforgettable night of rhythm, family dance face-offs, and sparkling celebration!"
+                    </p>
+
+                    <!-- Couple Banner -->
+                    <div class="my-8 py-6 px-4 rounded-3xl bg-indigo-950/70 border-2 border-fuchsia-400/50 max-w-xl mx-auto">
+                        <div class="font-royal text-2xl sm:text-4xl text-fuchsia-200 font-bold">
+                            <span data-i18n="groomName">Akhilesh</span>
+                            <span class="text-fuchsia-400 mx-2">✨</span>
+                            <span data-i18n="brideName">Manvi</span>
+                        </div>
+                        <p class="text-xs sm:text-sm text-purple-200/80 mt-2" data-i18n="sangeetHostLine">
+                            An Evening of Musical Celebration &amp; Joy
+                        </p>
+                    </div>
+
+                    <!-- Event Highlights Grid -->
+                    <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 max-w-2xl mx-auto text-left">
+                        <div class="bg-black/30 p-4 rounded-2xl border border-fuchsia-300/30">
+                            <div class="text-fuchsia-300 text-xs uppercase font-bold" data-i18n="dateTimeLabel">Date &amp; Time</div>
+                            <div class="text-white font-bold text-base mt-1" data-i18n="ev2Date">19 Feb, 2027 (Friday)</div>
+                            <div class="text-fuchsia-200 text-xs mt-0.5" data-i18n="ev2Time">7:00 PM Onwards</div>
+                        </div>
+                        <div class="bg-black/30 p-4 rounded-2xl border border-fuchsia-300/30">
+                            <div class="text-fuchsia-300 text-xs uppercase font-bold" data-i18n="dressVibeLabel">Dress Code Vibe</div>
+                            <div class="text-white font-bold text-base mt-1" data-i18n="sangeetDressTitle">Royal Shimmer &amp; Glam</div>
+                            <div class="text-fuchsia-200 text-xs mt-0.5" data-i18n="sangeetDressSub">Indo-Western, Sequins &amp; Tuxedos</div>
+                        </div>
+                        <div class="bg-black/30 p-4 rounded-2xl border border-fuchsia-300/30">
+                            <div class="text-fuchsia-300 text-xs uppercase font-bold" data-i18n="venueCardLabel">Venue</div>
+                            <div class="text-white font-bold text-base mt-1" data-i18n="venueFullName">Ganesham Resort, Hindaun City</div>
+                            <a href="https://maps.app.goo.gl/ecyoLsVJoaZrHpdTA" target="_blank" rel="noopener noreferrer" class="text-fuchsia-300 underline text-xs mt-0.5 inline-block" data-i18n="openMapBtn">Google Maps ↗</a>
+                        </div>
+                    </div>
+
+                    <!-- Bottom Actions -->
+                    <div class="mt-8 flex flex-wrap items-center justify-center gap-3 no-print">
+                        <button onclick="addToCalendar('Sangeet Symphony - Akhilesh & Manvi', '20270219T190000', '20270219T233000', 'Sangeet Night at Ganesham Resort, Hindaun City')" class="px-6 py-3 rounded-2xl bg-gradient-to-r from-fuchsia-400 to-purple-400 hover:brightness-110 text-indigo-950 font-extrabold text-xs sm:text-sm flex items-center gap-2 shadow-lg transition">
+                            <i class="fa-regular fa-calendar-plus"></i> <span data-i18n="addCalBtn">Add to Calendar</span>
+                        </button>
+                        <a href="https://maps.app.goo.gl/ecyoLsVJoaZrHpdTA" target="_blank" rel="noopener noreferrer" class="px-6 py-3 rounded-2xl bg-indigo-950/90 hover:bg-indigo-900 border border-fuchsia-400 text-fuchsia-200 font-bold text-xs sm:text-sm flex items-center gap-2 transition">
+                            <i class="fa-solid fa-location-dot"></i> <span data-i18n="getDirectionsBtn">Get Directions to Ganesham Resort</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===================================================================
+             VIEW 3: DEDICATED ONE-PAGER FOR "SHUBH LAGAN"
+        =================================================================== -->
+        <section id="view-lagan" class="hidden max-w-4xl mx-auto px-4 pt-6 sm:pt-10">
+            <div class="mb-6 flex flex-wrap items-center justify-between gap-3 no-print">
+                <button onclick="switchPageView('overview')" class="px-4 py-2 rounded-full bg-orange-950/80 border border-orange-400 text-orange-200 text-xs sm:text-sm font-bold flex items-center gap-2 hover:bg-orange-400 hover:text-orange-950 transition">
+                    <i class="fa-solid fa-arrow-left"></i>
+                    <span data-i18n="backToMainBtn">Back to Main Wedding Card</span>
+                </button>
+                <div class="flex flex-wrap items-center gap-2">
+                    <button onclick="setLaganYear(currentLaganYear === '2027' ? '2026' : '2027')" class="px-3 py-1.5 rounded-full bg-orange-950 border border-orange-400/60 text-orange-200 text-xs font-semibold">
+                        📅 <span data-i18n="toggleYearBtnText">Toggle Card Year (2027 / 2026)</span>
+                    </button>
+                    <button onclick="shareSingleEvent('lagan')" class="px-4 py-2 rounded-full bg-orange-900/90 border border-orange-300/60 text-orange-100 text-xs sm:text-sm font-semibold hover:bg-orange-800 transition">
+                        <i class="fa-solid fa-share-nodes mr-1"></i> <span data-i18n="shareEventBtn">Share Event Card</span>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Sacred Sunrise Saffron & Temple Gold Shubh Lagan Card -->
+            <div class="rounded-[40px] p-2 sm:p-3 bg-gradient-to-br from-orange-300 via-amber-500 to-red-500 shadow-[0_0_70px_rgba(251,146,60,0.35)]">
+                <div class="rounded-[32px] bg-gradient-to-b from-[#7c2d12] via-[#431407] to-[#2e0902] px-5 py-10 sm:px-14 sm:py-14 text-center relative overflow-hidden border-2 border-orange-300/60">
+                    <div class="w-20 h-20 mx-auto rounded-full bg-orange-400/20 border-2 border-orange-300 flex items-center justify-center text-4xl shadow-inner animate-float">
+                        🕉️
+                    </div>
+                    <p class="mt-3 text-orange-200 text-xs sm:text-sm font-bold tracking-[0.25em] uppercase" data-i18n="ganeshaMantra">॥ श्री गणेशाय नमः ॥</p>
+                    <span class="mt-2 inline-block px-4 py-1 rounded-full bg-gradient-to-r from-orange-400 to-amber-300 text-red-950 font-extrabold text-xs uppercase tracking-widest" data-i18n="laganOnePagerBadge">
+                        Sacred Vedic Chants • Manglik Lagan
+                    </span>
+
+                    <h2 class="font-royal text-4xl sm:text-6xl text-orange-200 font-black mt-4 drop-shadow-md" data-i18n="ev3Title">
+                        Shubh Lagan
+                    </h2>
+                    <p class="mt-2 text-orange-100/90 text-sm sm:text-lg max-w-xl mx-auto font-serifElegant italic" data-i18n="laganQuote">
+                        "In the sacred presence of Agni, Vedic mantras, and the blessings of our elders, we invite you to witness the auspicious Shubh Lagan ceremony."
+                    </p>
+
+                    <!-- Couple & Parents Lineage Banner -->
+                    <div class="my-8 py-6 px-4 rounded-3xl bg-black/30 border-2 border-orange-400/50 max-w-xl mx-auto">
+                        <div class="font-royal text-2xl sm:text-4xl text-orange-200 font-bold" data-i18n="cardGroomTitle">Chiranjeevi Akhilesh</div>
+                        <div class="text-xs text-orange-200/80 mt-0.5" data-i18n="groomParents">S/o Shri Radheyshyam Gupta &amp; Smt. Neeta Gupta</div>
+                        <div class="my-2 text-amber-400 font-bold text-sm">❈ <span data-i18n="wedsWord">Weds</span> ❈</div>
+                        <div class="font-royal text-2xl sm:text-4xl text-orange-200 font-bold" data-i18n="cardBrideTitle">Ayushmati Manvi</div>
+                        <div class="text-xs text-orange-200/80 mt-0.5" data-i18n="brideParents">D/o Shri Abhishek Bachhan &amp; Smt. Aishwarya Rai</div>
+                    </div>
+
+                    <!-- Event Highlights Grid -->
+                    <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 max-w-2xl mx-auto text-left">
+                        <div class="bg-black/30 p-4 rounded-2xl border border-orange-300/30">
+                            <div class="text-orange-300 text-xs uppercase font-bold" data-i18n="dateTimeLabel">Date &amp; Time</div>
+                            <div class="text-white font-bold text-base mt-1" data-i18n="ev3Date">20 Feb, 2027</div>
+                            <div class="text-orange-200 text-xs mt-0.5" data-i18n="ev3Time">9:00 AM</div>
+                        </div>
+                        <div class="bg-black/30 p-4 rounded-2xl border border-orange-300/30">
+                            <div class="text-orange-300 text-xs uppercase font-bold" data-i18n="dressVibeLabel">Dress Code Vibe</div>
+                            <div class="text-white font-bold text-base mt-1" data-i18n="laganDressTitle">Sacred Traditional</div>
+                            <div class="text-orange-200 text-xs mt-0.5" data-i18n="laganDressSub">Saffron, Peach, Silk Sarees &amp; Kurta</div>
+                        </div>
+                        <div class="bg-black/30 p-4 rounded-2xl border border-orange-300/30">
+                            <div class="text-orange-300 text-xs uppercase font-bold" data-i18n="venueCardLabel">Venue</div>
+                            <div class="text-white font-bold text-base mt-1" data-i18n="venueFullName">Ganesham Resort, Hindaun City</div>
+                            <a href="https://maps.app.goo.gl/ecyoLsVJoaZrHpdTA" target="_blank" rel="noopener noreferrer" class="text-orange-300 underline text-xs mt-0.5 inline-block" data-i18n="openMapBtn">Google Maps ↗</a>
+                        </div>
+                    </div>
+
+                    <!-- Bottom Actions -->
+                    <div class="mt-8 flex flex-wrap items-center justify-center gap-3 no-print">
+                        <button onclick="addToCalendar('Shubh Lagan - Akhilesh & Manvi', '20270220T090000', '20270220T120000', 'Shubh Lagan Ceremony at Ganesham Resort, Hindaun City')" class="px-6 py-3 rounded-2xl bg-gradient-to-r from-orange-400 to-amber-300 hover:brightness-110 text-red-950 font-extrabold text-xs sm:text-sm flex items-center gap-2 shadow-lg transition">
+                            <i class="fa-regular fa-calendar-plus"></i> <span data-i18n="addCalBtn">Add to Calendar</span>
+                        </button>
+                        <a href="https://maps.app.goo.gl/ecyoLsVJoaZrHpdTA" target="_blank" rel="noopener noreferrer" class="px-6 py-3 rounded-2xl bg-orange-950/90 hover:bg-orange-900 border border-orange-400 text-orange-200 font-bold text-xs sm:text-sm flex items-center gap-2 transition">
+                            <i class="fa-solid fa-location-dot"></i> <span data-i18n="getDirectionsBtn">Get Directions to Ganesham Resort</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===================================================================
+             VIEW 4: DEDICATED ONE-PAGER FOR "VIVAAH"
+        =================================================================== -->
+        <section id="view-vivaah" class="hidden max-w-4xl mx-auto px-4 pt-6 sm:pt-10">
+            <div class="mb-6 flex flex-wrap items-center justify-between gap-3 no-print">
+                <button onclick="switchPageView('overview')" class="px-4 py-2 rounded-full bg-maroon-950/80 border border-gold-400 text-gold-200 text-xs sm:text-sm font-bold flex items-center gap-2 hover:bg-gold-400 hover:text-maroon-950 transition">
+                    <i class="fa-solid fa-arrow-left"></i>
+                    <span data-i18n="backToMainBtn">Back to Main Wedding Card</span>
+                </button>
+                <div class="flex flex-wrap items-center gap-2">
+                    <button onclick="setLaganYear(currentLaganYear === '2027' ? '2026' : '2027')" class="px-3 py-1.5 rounded-full bg-maroon-950 border border-gold-400/60 text-gold-200 text-xs font-semibold">
+                        📅 <span data-i18n="toggleYearBtnText">Toggle Card Year (2027 / 2026)</span>
+                    </button>
+                    <button onclick="shareSingleEvent('vivaah')" class="px-4 py-2 rounded-full bg-maroon-900/90 border border-gold-300/60 text-gold-100 text-xs sm:text-sm font-semibold hover:bg-maroon-800 transition">
+                        <i class="fa-solid fa-share-nodes mr-1"></i> <span data-i18n="shareEventBtn">Share Event Card</span>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Royal Rajputana Crimson & Metallic Gold Grand Vivaah One-Pager -->
+            <div class="rounded-[40px] p-2 sm:p-3 gold-bg shadow-[0_0_80px_rgba(212,175,55,0.4)]">
+                <div class="rounded-[32px] bg-gradient-to-b from-[#5c0617] via-[#3d020e] to-[#240007] px-5 py-10 sm:px-14 sm:py-14 text-center relative overflow-hidden border-2 border-gold-300/60">
+                    <div class="w-20 h-20 mx-auto rounded-full gold-bg p-0.5 shadow-xl animate-float">
+                        <div class="w-full h-full rounded-full bg-maroon-950 flex items-center justify-center text-3xl">
+                            👑
+                        </div>
+                    </div>
+                    <p class="mt-3 text-gold-300 text-xs sm:text-sm font-bold tracking-[0.25em] uppercase" data-i18n="ganeshaMantra">॥ श्री गणेशाय नमः ॥</p>
+                    <span class="mt-2 inline-block px-4 py-1 rounded-full gold-bg text-maroon-950 font-extrabold text-xs uppercase tracking-widest" data-i18n="vivaahOnePagerBadge">
+                        Baraat Swagat • Jaimala • Sacred Pheras • Reception
+                    </span>
+
+                    <h2 class="font-royal text-4xl sm:text-6xl gold-gradient-text font-black mt-4 drop-shadow-md" data-i18n="ev4Title">
+                        Vivaah (Shubh Vivaah)
+                    </h2>
+                    <p class="mt-2 text-amber-100/90 text-sm sm:text-lg max-w-xl mx-auto font-serifElegant italic" data-i18n="vivaahQuote">
+                        "Two souls, two families, and one royal celebration under the stars at Ganesham Resort. Grace the union with your blessings!"
+                    </p>
+
+                    <!-- Royal Couple Lineage Box -->
+                    <div class="my-8 py-6 px-4 rounded-3xl bg-maroon-950/80 border-2 border-gold-400/60 max-w-xl mx-auto shadow-inner">
+                        <div class="font-royal text-2xl sm:text-4xl gold-gradient-text font-bold" data-i18n="cardGroomTitle">Chiranjeevi Akhilesh</div>
+                        <div class="text-xs text-amber-200/80 mt-0.5" data-i18n="groomParents">S/o Shri Radheyshyam Gupta &amp; Smt. Neeta Gupta</div>
+                        <div class="my-3 inline-block px-4 py-0.5 rounded-full gold-bg text-maroon-950 font-bold text-xs uppercase" data-i18n="cardWedsBadge">Shubh Sangam With</div>
+                        <div class="font-royal text-2xl sm:text-4xl gold-gradient-text font-bold" data-i18n="cardBrideTitle">Ayushmati Manvi</div>
+                        <div class="text-xs text-amber-200/80 mt-0.5" data-i18n="brideParents">D/o Shri Abhishek Bachhan &amp; Smt. Aishwarya Rai</div>
+                    </div>
+
+                    <!-- Event Highlights Grid -->
+                    <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 max-w-2xl mx-auto text-left">
+                        <div class="bg-black/35 p-4 rounded-2xl border border-gold-400/40">
+                            <div class="text-gold-300 text-xs uppercase font-bold" data-i18n="dateTimeLabel">Date &amp; Time</div>
+                            <div class="text-white font-bold text-base mt-1" data-i18n="ev4Date">20 Feb, 2027</div>
+                            <div class="text-gold-200 text-xs mt-0.5" data-i18n="ev4Time">7:00 PM Onwards</div>
+                        </div>
+                        <div class="bg-black/35 p-4 rounded-2xl border border-gold-400/40">
+                            <div class="text-gold-300 text-xs uppercase font-bold" data-i18n="dressVibeLabel">Dress Code Vibe</div>
+                            <div class="text-white font-bold text-base mt-1" data-i18n="vivaahDressTitle">Royal Heritage</div>
+                            <div class="text-gold-200 text-xs mt-0.5" data-i18n="vivaahDressSub">Sherwani, Lehengas &amp; Royal Ethnic</div>
+                        </div>
+                        <div class="bg-black/35 p-4 rounded-2xl border border-gold-400/40">
+                            <div class="text-gold-300 text-xs uppercase font-bold" data-i18n="venueCardLabel">Venue</div>
+                            <div class="text-white font-bold text-base mt-1" data-i18n="venueFullName">Ganesham Resort, Hindaun City</div>
+                            <a href="https://maps.app.goo.gl/ecyoLsVJoaZrHpdTA" target="_blank" rel="noopener noreferrer" class="text-gold-300 underline text-xs mt-0.5 inline-block" data-i18n="openMapBtn">Google Maps ↗</a>
+                        </div>
+                    </div>
+
+                    <!-- Bottom Actions -->
+                    <div class="mt-8 flex flex-wrap items-center justify-center gap-3 no-print">
+                        <button onclick="addToCalendar('Shubh Vivaah - Akhilesh Weds Manvi', '20270220T190000', '20270220T235900', 'Grand Wedding Ceremony at Ganesham Resort, Hindaun City')" class="px-6 py-3 rounded-2xl gold-bg hover:brightness-110 text-maroon-950 font-extrabold text-xs sm:text-sm flex items-center gap-2 shadow-lg transition">
+                            <i class="fa-regular fa-calendar-plus"></i> <span data-i18n="addCalBtn">Add to Calendar</span>
+                        </button>
+                        <a href="https://maps.app.goo.gl/ecyoLsVJoaZrHpdTA" target="_blank" rel="noopener noreferrer" class="px-6 py-3 rounded-2xl bg-maroon-950/90 hover:bg-maroon-900 border border-gold-400 text-gold-200 font-bold text-xs sm:text-sm flex items-center gap-2 transition">
+                            <i class="fa-solid fa-location-dot"></i> <span data-i18n="getDirectionsBtn">Get Directions to Ganesham Resort</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===================================================================
+             SHARED SECTION: VENUE & INTERACTIVE GOOGLE MAPS (GANESHAM RESORT)
+        =================================================================== -->
+        <section id="venueSection" class="max-w-5xl mx-auto px-4 mt-20 sm:mt-28 no-print">
+            <div class="text-center max-w-2xl mx-auto mb-10">
+                <span class="text-gold-400 text-xs uppercase tracking-[0.3em]" data-i18n="venueSuperTitle">Shubh Vivaah Sthal</span>
+                <h3 class="font-royal text-3xl sm:text-5xl gold-gradient-text font-bold mt-1" data-i18n="venueMainTitle">
+                    Ganesham Resort, Hindaun City
+                </h3>
+                <p class="text-amber-200/80 text-sm sm:text-base mt-2" data-i18n="venueSubtitle">
+                    All wedding ceremonies (Haldi, Sangeet, Shubh Lagan &amp; Vivaah) will be celebrated at Ganesham Resort, Karauli Road, Hindaun City, Rajasthan.
+                </p>
+            </div>
+
+            <div class="rounded-3xl p-1 gold-bg shadow-2xl">
+                <div class="rounded-[22px] bg-maroon-950/95 p-5 sm:p-8 grid grid-cols-1 lg:grid-cols-12 gap-6 items-center">
+                    <!-- Venue Details Column -->
+                    <div class="lg:col-span-5 space-y-5 text-left">
+                        <div class="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-gold-500/15 border border-gold-400/40 text-gold-300 text-xs font-bold">
+                            <i class="fa-solid fa-hotel"></i>
+                            <span data-i18n="venueBadge">Royal Destination Venue</span>
+                        </div>
+
+                        <h4 class="font-royal text-2xl sm:text-3xl text-gold-200 font-bold" data-i18n="venueFullName">
+                            Ganesham Resort, Hindaun City
+                        </h4>
+
+                        <p class="text-amber-100/90 text-sm leading-relaxed" data-i18n="venueAddressFull">
+                            Karauli Road, Near Government College, Hindaun City, District Karauli, Rajasthan 322230
+                        </p>
+
+                        <div class="space-y-2.5 text-xs sm:text-sm text-amber-200/90 bg-maroon-900/60 p-4 rounded-2xl border border-gold-400/30">
+                            <div class="flex items-center gap-2.5">
+                                <i class="fa-solid fa-train-subway text-gold-400 w-5 text-center"></i>
+                                <span data-i18n="venueRailInfo">Nearest Railway Station: Hindaun City (HAN) - ~10 mins drive</span>
+                            </div>
+                            <div class="flex items-center gap-2.5">
+                                <i class="fa-solid fa-car text-gold-400 w-5 text-center"></i>
+                                <span data-i18n="venueRoadInfo">Ample Parking &amp; Royal Lawn Courtyards Available</span>
+                            </div>
+                        </div>
+
+                        <div class="flex flex-col sm:flex-row gap-3 pt-2">
+                            <a href="https://maps.app.goo.gl/ecyoLsVJoaZrHpdTA" target="_blank" rel="noopener noreferrer" class="flex-1 py-3 px-5 rounded-xl gold-bg text-maroon-950 font-extrabold text-xs sm:text-sm flex items-center justify-center gap-2 shadow-lg hover:brightness-110 transition">
+                                <i class="fa-solid fa-location-arrow"></i>
+                                <span data-i18n="getDirectionsBtn">Get Directions on Google Maps</span>
+                            </a>
+                            <button onclick="copyVenueLink()" class="py-3 px-4 rounded-xl bg-maroon-800 hover:bg-maroon-700 border border-gold-400/50 text-gold-200 font-semibold text-xs sm:text-sm flex items-center justify-center gap-2 transition">
+                                <i class="fa-regular fa-copy"></i>
+                                <span data-i18n="copyMapLinkBtn">Copy Map Link</span>
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Interactive Google Maps Embed Column -->
+                    <div class="lg:col-span-7 w-full h-72 sm:h-80 rounded-2xl overflow-hidden border-2 border-gold-400/50 shadow-inner relative bg-maroon-900">
+                        <iframe
+                            title="Ganesham Resort Hindaun City Google Map"
+                            src="https://maps.google.com/maps?q=Ganesham+Resort,+Karauli+Road,+Hindaun+City,+Rajasthan+322230&t=&z=15&ie=UTF8&iwloc=&output=embed"
+                            class="w-full h-full border-0"
+                            allowfullscreen=""
+                            loading="lazy"
+                            referrerpolicy="no-referrer-when-downgrade">
+                        </iframe>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 4: INTERACTIVE RSVP & BLESSINGS WALL (WITH FREE SUPABASE CLOUD DB SUPPORT) -->
         <section id="rsvp" class="max-w-5xl mx-auto px-4 mt-20 sm:mt-28 no-print">
             <div class="text-center max-w-2xl mx-auto mb-10">
                 <span class="text-gold-400 text-xs uppercase tracking-[0.3em]" data-i18n="rsvpSuperTitle">Aashirwad &amp; Nimantran</span>
@@ -804,6 +1270,19 @@
                 <p class="text-amber-200/80 text-sm sm:text-base mt-2" data-i18n="rsvpSubtitle">
                     Confirm your presence and leave a heartfelt blessing for Akhilesh &amp; Manvi!
                 </p>
+
+                <!-- Database Status & Free Cloud DB Guide Trigger -->
+                <div class="mt-4 inline-flex flex-wrap items-center justify-center gap-2 bg-maroon-900/90 border border-gold-400/40 rounded-full px-4 py-1.5 text-xs">
+                    <span id="dbStatusBadge" class="flex items-center gap-1.5 text-emerald-300 font-semibold">
+                        <span class="w-2 h-2 rounded-full bg-emerald-400 animate-ping"></span>
+                        <span id="dbStatusText">Storage: Browser LocalStorage (Instant Preview Mode)</span>
+                    </span>
+                    <span class="text-gold-400/50">|</span>
+                    <button onclick="openDbGuideModal()" class="text-gold-300 hover:text-white underline font-bold flex items-center gap-1">
+                        <i class="fa-solid fa-database"></i>
+                        <span data-i18n="howToConnectDbBtn">How to Store in a Free Cloud DB (Supabase Guide)</span>
+                    </button>
+                </div>
             </div>
 
             <div class="grid grid-cols-1 lg:grid-cols-12 gap-8">
@@ -966,6 +1445,80 @@
         </div>
     </div>
 
+    <!-- FREE CLOUD DATABASE (SUPABASE) ARCHITECTURE & SETUP MODAL -->
+    <div id="dbGuideModal" class="fixed inset-0 z-50 hidden items-center justify-center bg-black/85 backdrop-blur-sm p-4 overflow-y-auto no-print">
+        <div class="relative w-full max-w-3xl bg-[#2b0209] border-2 border-gold-400 rounded-3xl p-6 sm:p-8 text-left shadow-2xl my-8 max-h-[90vh] overflow-y-auto">
+            <button onclick="closeDbGuideModal()" class="absolute top-4 right-4 w-9 h-9 rounded-full bg-maroon-800 border border-gold-400 text-gold-200 hover:bg-gold-400 hover:text-maroon-950 flex items-center justify-center transition">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+
+            <div class="flex items-center gap-2.5 text-gold-300 text-xs font-bold uppercase tracking-widest">
+                <i class="fa-solid fa-cloud-arrow-up text-lg"></i>
+                <span>Free Cloud Database Guide for Your Wish Wall</span>
+            </div>
+            <h3 class="font-royal text-2xl sm:text-3xl gold-gradient-text font-bold mt-1">
+                How to Store Wishes Globally for Free
+            </h3>
+            <p class="text-amber-100/90 text-xs sm:text-sm mt-2 leading-relaxed">
+                Since this website is a free static HTML file (hostable on <strong>GitHub Pages, Netlify, or Vercel</strong> for ₹0), the best 100% free database is <strong>Supabase (PostgreSQL)</strong> or <strong>Firebase Firestore</strong>. This code already includes a built-in <strong>Supabase REST API connector</strong>!
+            </p>
+
+            <!-- Comparison of Top Free Options -->
+            <div class="grid grid-cols-1 sm:grid-cols-3 gap-3 my-5 text-xs">
+                <div class="bg-maroon-950/90 border border-gold-400/50 p-3.5 rounded-2xl">
+                    <div class="text-gold-300 font-bold text-sm">1. Supabase (Recommended ⭐)</div>
+                    <p class="text-amber-100/80 mt-1">500MB free Postgres DB, instant REST API, works directly from this HTML file. Built-in below!</p>
+                </div>
+                <div class="bg-maroon-950/60 border border-gold-400/25 p-3.5 rounded-2xl">
+                    <div class="text-gold-300 font-bold text-sm">2. Firebase Firestore</div>
+                    <p class="text-amber-100/80 mt-1">Google's free NoSQL DB (1GB free, 50k reads/day). Great real-time listeners.</p>
+                </div>
+                <div class="bg-maroon-950/60 border border-gold-400/25 p-3.5 rounded-2xl">
+                    <div class="text-gold-300 font-bold text-sm">3. Google Sheets (SheetDB)</div>
+                    <p class="text-amber-100/80 mt-1">Saves RSVPs &amp; wishes directly into a Google Sheet so elders can view in Excel.</p>
+                </div>
+            </div>
+
+            <!-- 3-Step Setup Instructions -->
+            <div class="space-y-4 text-xs sm:text-sm text-amber-100">
+                <div class="bg-black/35 p-4 rounded-2xl border border-gold-400/30">
+                    <strong class="text-gold-300 block mb-1">Step 1: Create a Free Project at Supabase.com &amp; Run this SQL</strong>
+                    <p class="text-xs text-amber-200/80 mb-2">Open the <strong>SQL Editor</strong> in your free Supabase dashboard and paste this snippet to create your table with public read/insert access:</p>
+                    <pre class="bg-black/80 text-emerald-300 p-3 rounded-xl overflow-x-auto text-[11px] font-mono leading-relaxed select-all">create table wedding_wishes (
+  id bigint generated by default as identity primary key,
+  guest_name text not null,
+  attending_status text not null,
+  message text not null,
+  created_at timestamp with time zone default timezone('utc'::text, now())
+);
+alter table wedding_wishes enable row level security;
+create policy "Allow public read" on wedding_wishes for select using (true);
+create policy "Allow public insert" on wedding_wishes for insert with check (true);</pre>
+                </div>
+
+                <div class="bg-black/35 p-4 rounded-2xl border border-gold-400/30">
+                    <strong class="text-gold-300 block mb-2">Step 2: Connect Your Supabase URL &amp; Anon Key Right Here (Or in the Code)</strong>
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                        <div>
+                            <label class="block text-[11px] text-gold-200 mb-1">Project URL (e.g. https://xyz.supabase.co)</label>
+                            <input type="url" id="sbUrlInput" placeholder="https://your-project.supabase.co" class="w-full px-3 py-2 rounded-lg bg-maroon-950 border border-gold-400/50 text-white text-xs">
+                        </div>
+                        <div>
+                            <label class="block text-[11px] text-gold-200 mb-1">Anon Public Key</label>
+                            <input type="text" id="sbKeyInput" placeholder="eyJhbGciOiJIUzI1NiIsInR5cCI..." class="w-full px-3 py-2 rounded-lg bg-maroon-950 border border-gold-400/50 text-white text-xs">
+                        </div>
+                    </div>
+                    <div class="mt-3 flex flex-wrap items-center gap-2">
+                        <button onclick="saveSupabaseCredentials()" class="px-4 py-2 rounded-xl gold-bg text-maroon-950 font-bold text-xs shadow">
+                            Save &amp; Connect Live Cloud DB
+                        </button>
+                        <span class="text-[11px] text-amber-200/70">Or hardcode `SUPABASE_URL` &amp; `SUPABASE_ANON_KEY` in `index.html` before hosting!</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <!-- CUSTOM TOAST NOTIFICATION -->
     <div id="toastBanner" class="fixed bottom-5 right-5 z-50 transform translate-y-24 opacity-0 transition-all duration-300 bg-gradient-to-r from-maroon-900 to-maroon-950 border-2 border-gold-400 text-gold-200 px-5 py-3 rounded-2xl shadow-2xl flex items-center gap-3 no-print">
         <span class="text-xl">🌺</span>
@@ -983,10 +1536,20 @@
     <!-- COMPLETE BILINGUAL DICTIONARY, ANIMATION & INTERACTIVITY SCRIPT -->
     <script>
         /* ==============================================================
+           0. PLUG-AND-PLAY FREE CLOUD DATABASE CONFIG (SUPABASE REST API)
+              Paste your free Supabase Project URL & Anon Key below so all
+              guests globally see wishes in real-time! Falls back to
+              LocalStorage automatically when left blank.
+        ============================================================== */
+        let SUPABASE_URL = localStorage.getItem('wedding_sb_url') || ""; // e.g. "https://xyzcompany.supabase.co"
+        let SUPABASE_ANON_KEY = localStorage.getItem('wedding_sb_key') || ""; // e.g. "eyJhbGciOi..."
+
+        /* ==============================================================
            1. BILINGUAL DICTIONARY (ENGLISH & HINDI DEVANAGARI)
         ============================================================== */
         let currentLang = 'en';
         let currentLaganYear = '2027';
+        let currentPageView = 'overview';
 
         const translations = {
             en: {
@@ -996,10 +1559,16 @@
                 tapToOpen: "Tap to Open Card",
                 sealSubtext: "Click the royal seal to open with festive music & flower shower",
                 navTitle: "Akhilesh & Manvi",
-                navDate: "20 Feb, 2027",
+                navDate: "20 Feb, 2027 • Ganesham Resort",
                 navCard: "Invitation Card",
                 navEvents: "Events",
                 navRsvp: "RSVP & Wishes",
+                tabOverview: "Main Royal Card",
+                tabHaldi: "Haldi in Bloom (One-Pager)",
+                tabSangeet: "Sangeet Symphony (One-Pager)",
+                tabLagan: "Shubh Lagan (One-Pager)",
+                tabVivaah: "Vivaah (One-Pager)",
+                tabVenue: "Venue Map",
                 showerBtn: "Shower Blessings",
                 ganeshaMantra: "॥ Shri Ganeshaya Namah ॥",
                 shlokaText: "\"Vakratunda Mahakaya Suryakoti Samaprabha, Nirvighnam Kurume Deva Sarva Karyeshu Sarvada\"",
@@ -1033,13 +1602,17 @@
                 mainWedLabel: "Shubh Lagan & Vivaah",
                 mainWedDate: "20 February, 2027",
                 mainWedSub: "Lagan at 9:00 AM • Vivaah 7:00 PM",
+                venueCardLabel: "Wedding Venue",
+                venueFullName: "Ganesham Resort, Hindaun City",
+                venueAddressSub: "Karauli Road, Hindaun City, Rajasthan 322230",
+                openMapBtn: "Google Maps",
                 rsvpTitleShort: "R.S.V.P. (With Warm Regards)",
                 rsvpFamilyNames: "Gupta & Bachhan Families",
                 complimentsTitle: "With Best Compliments From:",
                 complimentsNames: "All Near & Dear Relatives & Friends",
                 eventsSuperTitle: "Manglik Karyakram",
                 eventsMainTitle: "Wedding Celebrations",
-                eventsSubtitle: "Click on any event card to add to your calendar or celebrate with themed flower bursts!",
+                eventsSubtitle: "Open any event's dedicated One-Pager card for its unique vibe, dress code, and direct sharing!",
                 yearNoteLabel: "Lagan & Vivaah Card Year Display:",
                 ev1Tag: "🌼 Haldi Ceremony",
                 ev1Dress: "Vibe: Marigold & Yellow",
@@ -1047,28 +1620,67 @@
                 ev1Desc: "An afternoon of golden turmeric blessings, folk dhol beats, marigold showers, and joyful laughter.",
                 ev1Date: "19 Feb, 2027 (Friday)",
                 ev1Time: "1:00 PM Onwards",
-                ev1Venue: "Royal Courtyard Lawn, Wedding Venue",
+                ev1Venue: "Ganesham Resort, Hindaun City",
                 ev2Tag: "🎶 Musical Sangeet",
                 ev2Dress: "Vibe: Royal Glamour",
                 ev2Title: "Sangeet Symphony",
                 ev2Desc: "A dazzling evening of choreographed family performances, sparkling lights, music, and dancing under the stars.",
                 ev2Date: "19 Feb, 2027 (Friday)",
                 ev2Time: "7:00 PM Onwards",
-                ev2Venue: "Grand Crystal Ballroom, Wedding Venue",
+                ev2Venue: "Ganesham Resort, Hindaun City",
                 ev3Tag: "🕉️ Auspicious Lagan",
                 ev3Dress: "Vibe: Sacred Traditional",
                 ev3Title: "Shubh Lagan",
                 ev3Desc: "Sacred Vedic chants, auspicious Lagan rituals, and blessings from elders as the two families unite in devotion.",
                 ev3Date: `20 Feb, ${currentLaganYear}`,
                 ev3Time: "9:00 AM",
-                ev3Venue: "Sacred Mandapam Hall, Wedding Venue",
+                ev3Venue: "Ganesham Resort, Hindaun City",
                 ev4Tag: "👑 Grand Wedding",
                 ev4Dress: "Vibe: Royal Festive",
                 ev4Title: "Vivaah",
                 ev4Desc: "Grand Baraat Swagat, Jaimala, sacred Pheras, and royal reception celebrating the union of Akhilesh & Manvi.",
                 ev4Date: `20 Feb, ${currentLaganYear}`,
                 ev4Time: "7:00 PM Onwards",
-                ev4Venue: "The Royal Palace Grounds, Wedding Venue",
+                ev4Venue: "Ganesham Resort, Hindaun City",
+                openOnePagerHaldi: "Open Haldi One-Pager Card",
+                openOnePagerSangeet: "Open Sangeet One-Pager Card",
+                openOnePagerLagan: "Open Shubh Lagan One-Pager",
+                openOnePagerVivaah: "Open Vivaah One-Pager Card",
+                backToMainBtn: "Back to Main Wedding Card",
+                haldiShowerBtn: "Shower Haldi & Marigold",
+                sangeetSparkleBtn: "Sparkle Confetti Burst",
+                shareEventBtn: "Share Event Card",
+                haldiOnePagerBadge: "Sunshine • Turmeric • Phoolon Ki Holi",
+                haldiQuote: "\"Let us dip in hues of golden turmeric, marigold petals, dhol beats, and endless laughter as we bless Akhilesh & Manvi!\"",
+                haldiHostLine: "Hosted with joy by Gupta & Bachhan Families",
+                dateTimeLabel: "Date & Time",
+                dressVibeLabel: "Dress Code Vibe",
+                haldiDressTitle: "Mustard & Marigold",
+                haldiDressSub: "Shades of Yellow, Lime & Floral",
+                sangeetOnePagerBadge: "Glitz • Glamour • Bollywood Beats",
+                sangeetQuote: "\"Put on your dancing shoes for an unforgettable night of rhythm, family dance face-offs, and sparkling celebration!\"",
+                sangeetHostLine: "An Evening of Musical Celebration & Joy",
+                sangeetDressTitle: "Royal Shimmer & Glam",
+                sangeetDressSub: "Indo-Western, Sequins & Tuxedos",
+                laganOnePagerBadge: "Sacred Vedic Chants • Manglik Lagan",
+                laganQuote: "\"In the sacred presence of Agni, Vedic mantras, and the blessings of our elders, we invite you to witness the auspicious Shubh Lagan ceremony.\"",
+                laganDressTitle: "Sacred Traditional",
+                laganDressSub: "Saffron, Peach, Silk Sarees & Kurta",
+                vivaahOnePagerBadge: "Baraat Swagat • Jaimala • Sacred Pheras • Reception",
+                vivaahQuote: "\"Two souls, two families, and one royal celebration under the stars at Ganesham Resort. Grace the union with your blessings!\"",
+                vivaahDressTitle: "Royal Heritage",
+                vivaahDressSub: "Sherwani, Lehengas & Royal Ethnic",
+                toggleYearBtnText: "Toggle Card Year (2027 / 2026)",
+                venueSuperTitle: "Shubh Vivaah Sthal",
+                venueMainTitle: "Ganesham Resort, Hindaun City",
+                venueSubtitle: "All wedding ceremonies (Haldi, Sangeet, Shubh Lagan & Vivaah) will be celebrated at Ganesham Resort, Karauli Road, Hindaun City, Rajasthan.",
+                venueBadge: "Royal Destination Venue",
+                venueAddressFull: "Karauli Road, Near Government College, Hindaun City, District Karauli, Rajasthan 322230",
+                venueRailInfo: "Nearest Railway Station: Hindaun City (HAN) - ~10 mins drive",
+                venueRoadInfo: "Ample Parking & Royal Lawn Courtyards Available",
+                getDirectionsBtn: "Get Directions on Google Maps",
+                copyMapLinkBtn: "Copy Map Link",
+                howToConnectDbBtn: "How to Store in a Free Cloud DB (Supabase Guide)",
                 addCalBtn: "Add to Calendar",
                 celebrateBtn: "Celebrate",
                 rsvpSuperTitle: "Aashirwad & Confirmation",
@@ -1099,7 +1711,7 @@
                 modalEv4Time: `20 Feb, ${currentLaganYear} • 7:00 PM onwards`,
                 printNowBtn: "Print / Save as PDF",
                 closeBtn: "Close",
-                footerCouple: "Akhilesh & Manvi • 20.02.2027",
+                footerCouple: "Akhilesh & Manvi • 20.02.2027 • Ganesham Resort, Hindaun City",
                 footerBlessing: "॥ Mangalam Bhagwan Vishnuh, Mangalam Garudadhwajah, Mangalam Pundarikakshah, Mangalaya Tano Harih ॥"
             },
             hi: {
@@ -1109,10 +1721,16 @@
                 tapToOpen: "निमंत्रण पत्र खोलें",
                 sealSubtext: "शहनाई की मधुर धुन और पुष्प वर्षा के साथ कार्ड खोलने के लिए मुहर पर क्लिक करें",
                 navTitle: "अखिलेश संग मानवी",
-                navDate: "२० फरवरी, २०२७",
+                navDate: "२० फरवरी, २०२७ • गणेशम रिसॉर्ट",
                 navCard: "निमंत्रण पत्रिका",
                 navEvents: "मांगलिक कार्यक्रम",
                 navRsvp: "आशीर्वाद एवं RSVP",
+                tabOverview: "मुख्य निमंत्रण कार्ड",
+                tabHaldi: "हल्दी इन ब्लूम (स्पेशल कार्ड)",
+                tabSangeet: "संगीत सिम्फनी (स्पेशल कार्ड)",
+                tabLagan: "शुभ लग्न (स्पेशल कार्ड)",
+                tabVivaah: "शुभ विवाह (स्पेशल कार्ड)",
+                tabVenue: "विवाह स्थल मैप",
                 showerBtn: "पुष्प वर्षा करें",
                 ganeshaMantra: "॥ श्री गणेशाय नमः ॥",
                 shlokaText: "“वक्रतुण्ड महाकाय सूर्यकोटि समप्रभ। निर्विघ्नं कुरु मे देव सर्वकार्येषु सर्वदा॥”",
@@ -1146,13 +1764,17 @@
                 mainWedLabel: "शुभ लग्न एवं शुभ विवाह",
                 mainWedDate: "२० फरवरी, २०२७",
                 mainWedSub: "लग्न: प्रातः ९:०० बजे • विवाह: सायं ७:०० बजे से",
+                venueCardLabel: "विवाह स्थल",
+                venueFullName: "गणेशम रिसॉर्ट, हिंडौन सिटी",
+                venueAddressSub: "करौली रोड, हिंडौन सिटी, राजस्थान ३२२२३०",
+                openMapBtn: "गूगल मैप्स",
                 rsvpTitleShort: "विनीत (दर्शनाभिलाषी)",
                 rsvpFamilyNames: "समस्त गुप्ता एवं बच्चन परिवार",
                 complimentsTitle: "स्नेहाकांक्षी:",
                 complimentsNames: "समस्त इष्टमित्र एवं संबंधीगण",
                 eventsSuperTitle: "मांगलिक कार्यक्रम विवरण",
                 eventsMainTitle: "विवाह के शुभ कार्यक्रम",
-                eventsSubtitle: "किसी भी कार्यक्रम को अपने कैलेंडर में जोड़ें या उत्सव बटन दबाकर फूलों की वर्षा करें!",
+                eventsSubtitle: "प्रत्येक कार्यक्रम का अलग रंगारंग वन-पेजर कार्ड देखने के लिए नीचे दिए गए बटन पर क्लिक करें!",
                 yearNoteLabel: "लग्न एवं विवाह वर्ष विकल्प:",
                 ev1Tag: "🌼 हल्दी समारोह",
                 ev1Dress: "परिधान: पीला / केसरिया रंग",
@@ -1160,28 +1782,67 @@
                 ev1Desc: "हल्दी की शुभ रस्म, ढोल की थाप, गेंदे के फूलों की खुशबू और अपनों की मुस्कान से सजी दोपहर।",
                 ev1Date: "१९ फरवरी, २०२७ (शुक्रवार)",
                 ev1Time: "दोपहर १:०० बजे से",
-                ev1Venue: "रॉयल कोर्टयार्ड लॉन, विवाह स्थल",
+                ev1Venue: "गणेशम रिसॉर्ट, हिंडौन सिटी",
                 ev2Tag: "🎶 संगीत संध्या",
                 ev2Dress: "परिधान: इंडो-वेस्टर्न / फेस्टिव",
                 ev2Title: "संगीत सिम्फनी (Sangeet Symphony)",
                 ev2Desc: "मधुर संगीत, पारिवारिक नृत्य प्रस्तुतियों और जगमगाती रोशनी से भरी यादगार शाम।",
                 ev2Date: "१९ फरवरी, २०२७ (शुक्रवार)",
                 ev2Time: "सायं ७:०० बजे से",
-                ev2Venue: "ग्रैंड क्रिस्टल बॉलरूम, विवाह स्थल",
+                ev2Venue: "गणेशम रिसॉर्ट, हिंडौन सिटी",
                 ev3Tag: "🕉️ पावन लग्न विधि",
                 ev3Dress: "परिधान: पारंपरिक भारतीय",
                 ev3Title: "शुभ लग्न (Shubh Lagan)",
                 ev3Desc: "वैदिक मंत्रोच्चार एवं पारंपरिक रीति-रिवाजों के साथ पावन शुभ लग्न संस्कार।",
                 ev3Date: `२० फरवरी, ${currentLaganYear === '2027' ? '२०२७' : '२०२६'}`,
                 ev3Time: "प्रातः ९:०० बजे",
-                ev3Venue: "पावन मंडपम हॉल, विवाह स्थल",
+                ev3Venue: "गणेशम रिसॉर्ट, हिंडौन सिटी",
                 ev4Tag: "👑 शुभ विवाह समारोह",
                 ev4Dress: "परिधान: शाही पारंपरिक परिधान",
                 ev4Title: "शुभ विवाह (Vivaah)",
                 ev4Desc: "भव्य बारात स्वागत, वरमाला, सप्तपदी के सात फेरे एवं प्रीतिभोज समारोह।",
                 ev4Date: `२० फरवरी, ${currentLaganYear === '2027' ? '२०२७' : '२०२६'}`,
                 ev4Time: "सायं ७:०० बजे से",
-                ev4Venue: "द रॉयल पैलेस ग्राउंड्स, विवाह स्थल",
+                ev4Venue: "गणेशम रिसॉर्ट, हिंडौन सिटी",
+                openOnePagerHaldi: "हल्दी का स्पेशल कार्ड खोलें",
+                openOnePagerSangeet: "संगीत का स्पेशल कार्ड खोलें",
+                openOnePagerLagan: "शुभ लग्न का स्पेशल कार्ड खोलें",
+                openOnePagerVivaah: "शुभ विवाह का स्पेशल कार्ड खोलें",
+                backToMainBtn: "मुख्य विवाह कार्ड पर वापस जाएं",
+                haldiShowerBtn: "हल्दी एवं गेंदे के फूल बरसाएं",
+                sangeetSparkleBtn: "सितारों की चमक बिखेरें",
+                shareEventBtn: "यह कार्ड शेयर करें",
+                haldiOnePagerBadge: "हल्दी का रंग • फूलों की होली • ढोल की थाप",
+                haldiQuote: "“हल्दी के पीले रंग, गेंदे के फूलों की सुगंध और ढोल की थाप के साथ आइए अखिलेश और मानवी को आशीर्वाद दें!”",
+                haldiHostLine: "स्वागताकांक्षी: समस्त गुप्ता एवं बच्चन परिवार",
+                dateTimeLabel: "दिनांक एवं समय",
+                dressVibeLabel: "परिधान थीम (Dress Code)",
+                haldiDressTitle: "पीला एवं केसरिया",
+                haldiDressSub: "पीले, सुनहरे एवं फ्लोरल परिधान",
+                sangeetOnePagerBadge: "संगीत की शाम • नृत्य एवं उल्लास",
+                sangeetQuote: "“मधुर गीतों, धमाकेदार पारिवारिक नृत्य और जगमगाती रोशनी से सजी इस सुहानी शाम में आपका स्वागत है!”",
+                sangeetHostLine: "सुरों और खुशियों भरी यादगार संगीत संध्या",
+                sangeetDressTitle: "शाही ग्लैमर एवं शिमर",
+                sangeetDressSub: "इंडो-वेस्टर्न, गाउन एवं पार्टी वियर",
+                laganOnePagerBadge: "वैदिक मंत्रोच्चार • पावन लग्न संस्कार",
+                laganQuote: "“अग्नि देव की साक्षी, वैदिक मंत्रों की गूंज और बड़ों के आशीर्वाद के साथ पावन शुभ लग्न संस्कार में पधारें।”",
+                laganDressTitle: "पावन पारंपरिक परिधान",
+                laganDressSub: "केसरिया, सिल्क साड़ी एवं कुर्ता-पजामा",
+                vivaahOnePagerBadge: "बारात स्वागत • वरमाला • पावन फेरे • प्रीतिभोज",
+                vivaahQuote: "“दो दिलों और दो परिवारों के इस शाही महामिलन पर गणेशम रिसॉर्ट में पधारकर वर-वधू को अपना स्नेहिल आशीर्वाद प्रदान करें!”",
+                vivaahDressTitle: "शाही राजपूताना अंदाज",
+                vivaahDressSub: "शेरवानी, लहंगा एवं पारंपरिक शाही परिधान",
+                toggleYearBtnText: "वर्ष बदलें (२०२७ / २०२६)",
+                venueSuperTitle: "शुभ विवाह स्थल",
+                venueMainTitle: "गणेशम रिसॉर्ट, हिंडौन सिटी",
+                venueSubtitle: "हल्दी, संगीत, शुभ लग्न एवं शुभ विवाह के समस्त मांगलिक कार्यक्रम गणेशम रिसॉर्ट, करौली रोड, हिंडौन सिटी (राजस्थान) में संपन्न होंगे।",
+                venueBadge: "भव्य विवाह स्थल",
+                venueAddressFull: "करौली रोड, राजकीय महाविद्यालय के पास, हिंडौन सिटी, जिला करौली, राजस्थान ३२२२३०",
+                venueRailInfo: "निकटतम रेलवे स्टेशन: हिंडौन सिटी (HAN) - लगभग १० मिनट की दूरी",
+                venueRoadInfo: "विशाल पार्किंग एवं भव्य लॉन की सुविधा उपलब्ध",
+                getDirectionsBtn: "गूगल मैप्स पर रास्ता देखें",
+                copyMapLinkBtn: "मैप लिंक कॉपी करें",
+                howToConnectDbBtn: "फ्री क्लाउड डेटाबेस (Supabase) कैसे जोड़ें?",
                 addCalBtn: "कैलेंडर में जोड़ें",
                 celebrateBtn: "उत्सव मनाएं",
                 rsvpSuperTitle: "आशीर्वाद एवं उपस्थिति",
@@ -1212,10 +1873,109 @@
                 modalEv4Time: `२० फरवरी, ${currentLaganYear === '2027' ? '२०२७' : '२०२६'} • सायं ७:०० बजे से`,
                 printNowBtn: "प्रिंट / PDF सेव करें",
                 closeBtn: "बंद करें",
-                footerCouple: "अखिलेश संग मानवी • २०.०२.२०२७",
+                footerCouple: "अखिलेश संग मानवी • २०.०२.२०२७ • गणेशम रिसॉर्ट, हिंडौन सिटी",
                 footerBlessing: "॥ मंगलम भगवान विष्णुः, मंगलम गरुड़ध्वजः। मंगलम पुण्डरीकाक्षः, मंगलाय तनो हरिः ॥"
             }
         };
+
+        /* ==============================================================
+           1B. DEDICATED EVENT ONE-PAGER VIEW SWITCHER & VIBE ENGINE
+        ============================================================== */
+        let activePetalPalette = ['#ff9900', '#fbbf24', '#e11d48', '#be123c', '#f59e0b', '#fde047'];
+
+        function switchPageView(viewName, skipScrollTop = false) {
+            currentPageView = viewName;
+            const views = ['overview', 'haldi', 'sangeet', 'lagan', 'vivaah'];
+            views.forEach(v => {
+                const el = document.getElementById(`view-${v}`);
+                if (el) {
+                    if (v === viewName) el.classList.remove('hidden');
+                    else el.classList.add('hidden');
+                }
+            });
+
+            // Change Body Background Vibe & Ambient Particle Palette
+            document.body.className = `font-body selection:bg-gold-500 selection:text-maroon-950 theme-${viewName}`;
+
+            if (viewName === 'haldi') {
+                activePetalPalette = ['#facc15', '#fbbf24', '#f97316', '#fde047', '#fef08a'];
+                triggerThemeBurst('#facc15', '#f97316');
+            } else if (viewName === 'sangeet') {
+                activePetalPalette = ['#e879f9', '#c084fc', '#38bdf8', '#f472b6', '#fde047'];
+                triggerThemeBurst('#e879f9', '#818cf8');
+            } else if (viewName === 'lagan') {
+                activePetalPalette = ['#fb923c', '#fdba74', '#facc15', '#ef4444', '#fde68a'];
+                triggerThemeBurst('#fb923c', '#facc15');
+            } else if (viewName === 'vivaah') {
+                activePetalPalette = ['#e11d48', '#fbbf24', '#be123c', '#fde047', '#f43f5e'];
+                triggerThemeBurst('#e11d48', '#fbbf24');
+            } else {
+                activePetalPalette = ['#ff9900', '#fbbf24', '#e11d48', '#be123c', '#f59e0b', '#fde047'];
+            }
+
+            // Re-tint ambient particles to match the selected event's vibe
+            particles.forEach(p => {
+                if (!p.isBurst) {
+                    p.color = activePetalPalette[Math.floor(Math.random() * activePetalPalette.length)];
+                }
+            });
+
+            // Highlight Active Top Tab
+            views.forEach(v => {
+                const tab = document.getElementById(`tab-${v}`);
+                if (!tab) return;
+                if (v === viewName) {
+                    tab.classList.add('ring-2', 'ring-white', 'scale-105');
+                } else {
+                    tab.classList.remove('ring-2', 'ring-white', 'scale-105');
+                }
+            });
+
+            if (!skipScrollTop) {
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            }
+        }
+
+        function shareSingleEvent(eventKey) {
+            const eventDetailsMap = {
+                haldi: currentLang === 'hi'
+                    ? "🌼 हल्दी इन ब्लूम (Haldi in Bloom) - अखिलेश संग मानवी\nदिनांक: १९ फरवरी, २०२७ (दोपहर १:०० बजे से)\nस्थान: गणेशम रिसॉर्ट, हिंडौन सिटी\nगूगल मैप्स: https://maps.app.goo.gl/ecyoLsVJoaZrHpdTA"
+                    : "🌼 Haldi in Bloom - Akhilesh & Manvi Wedding\nDate: 19 Feb, 2027 at 1:00 PM\nVenue: Ganesham Resort, Hindaun City\nGoogle Maps: https://maps.app.goo.gl/ecyoLsVJoaZrHpdTA",
+                sangeet: currentLang === 'hi'
+                    ? "🎶 संगीत सिम्फनी (Sangeet Symphony) - अखिलेश संग मानवी\nदिनांक: १९ फरवरी, २०२७ (सायं ७:०० बजे से)\nस्थान: गणेशम रिसॉर्ट, हिंडौन सिटी\nगूगल मैप्स: https://maps.app.goo.gl/ecyoLsVJoaZrHpdTA"
+                    : "🎶 Sangeet Symphony - Akhilesh & Manvi Wedding\nDate: 19 Feb, 2027 from 7:00 PM onwards\nVenue: Ganesham Resort, Hindaun City\nGoogle Maps: https://maps.app.goo.gl/ecyoLsVJoaZrHpdTA",
+                lagan: currentLang === 'hi'
+                    ? `🕉️ शुभ लग्न (Shubh Lagan) - अखिलेश संग मानवी\nदिनांक: २० फरवरी, ${currentLaganYear === '2027' ? '२०२७' : '२०२६'} (प्रातः ९:०० बजे)\nस्थान: गणेशम रिसॉर्ट, हिंडौन सिटी\nगूगल मैप्स: https://maps.app.goo.gl/ecyoLsVJoaZrHpdTA`
+                    : `🕉️ Shubh Lagan - Akhilesh & Manvi Wedding\nDate: 20 Feb, ${currentLaganYear} at 9:00 AM\nVenue: Ganesham Resort, Hindaun City\nGoogle Maps: https://maps.app.goo.gl/ecyoLsVJoaZrHpdTA`,
+                vivaah: currentLang === 'hi'
+                    ? `👑 शुभ विवाह (Vivaah) - अखिलेश संग मानवी\nदिनांक: २० फरवरी, ${currentLaganYear === '2027' ? '२०२७' : '२०२६'} (सायं ७:०० बजे से)\nस्थान: गणेशम रिसॉर्ट, हिंडौन सिटी\nगूगल मैप्स: https://maps.app.goo.gl/ecyoLsVJoaZrHpdTA`
+                    : `👑 Shubh Vivaah - Akhilesh Weds Manvi\nDate: 20 Feb, ${currentLaganYear} from 7:00 PM onwards\nVenue: Ganesham Resort, Hindaun City\nGoogle Maps: https://maps.app.goo.gl/ecyoLsVJoaZrHpdTA`
+            };
+
+            const textToCopy = eventDetailsMap[eventKey] || eventDetailsMap.vivaah;
+            const tempArea = document.createElement('textarea');
+            tempArea.value = textToCopy;
+            document.body.appendChild(tempArea);
+            tempArea.select();
+            document.execCommand('copy');
+            document.body.removeChild(tempArea);
+
+            showToast(currentLang === 'hi'
+                ? "✅ इस कार्यक्रम का निमंत्रण कॉपी हो गया! WhatsApp पर शेयर करें।"
+                : "✅ Single-Event Invitation & Map Link copied to clipboard!");
+        }
+
+        function copyVenueLink() {
+            const tempArea = document.createElement('textarea');
+            tempArea.value = "Ganesham Resort, Hindaun City, Rajasthan - https://maps.app.goo.gl/ecyoLsVJoaZrHpdTA";
+            document.body.appendChild(tempArea);
+            tempArea.select();
+            document.execCommand('copy');
+            document.body.removeChild(tempArea);
+            showToast(currentLang === 'hi'
+                ? "📍 गणेशम रिसॉर्ट का गूगल मैप लिंक कॉपी हो गया!"
+                : "📍 Ganesham Resort Google Maps link copied!");
+        }
 
         /* ==============================================================
            2. LANGUAGE SWITCHER & YEAR TOGGLE LOGIC
@@ -1393,7 +2153,7 @@
                 this.reset(isBurst, customColors);
             }
             reset(isBurst = false, customColors = null) {
-                const palette = customColors || petalColors;
+                const palette = customColors || activePetalPalette || petalColors;
                 this.color = palette[Math.floor(Math.random() * palette.length)];
                 this.size = Math.random() * 8 + 5;
                 this.angle = Math.random() * Math.PI * 2;
@@ -1521,8 +2281,8 @@
                 `SUMMARY:${title}`,
                 `DTSTART:${startStr}`,
                 `DTEND:${endStr}`,
-                `DESCRIPTION:${description}`,
-                "LOCATION:The Royal Wedding Venue",
+                `DESCRIPTION:${description} - Google Maps: https://maps.app.goo.gl/ecyoLsVJoaZrHpdTA`,
+                "LOCATION:Ganesham Resort, Karauli Road, Hindaun City, Rajasthan 322230",
                 "END:VEVENT",
                 "END:VCALENDAR"
             ].join("\r\n");
@@ -1544,22 +2304,23 @@
 
         /* ==============================================================
            7. INTERACTIVE BLESSINGS WALL & RSVP HANDLER
+              Supports LocalStorage + Live Supabase PostgreSQL Cloud DB
         ============================================================== */
-        const blessingsList = [
+        const defaultBlessingsList = [
             {
                 nameEn: "Gupta & Bachhan Elders",
                 nameHi: "गुप्ता एवं बच्चन परिवार के बुजुर्ग",
                 statusEn: "Host Families ✨",
                 statusHi: "स्वागताकांक्षी परिवार ✨",
-                messageEn: "May Lord Ganesha bless Akhilesh and Manvi with eternal love, prosperity, and a joyous married life together!",
-                messageHi: "भगवान श्री गणेश अखिलेश और मानवी को सुख, समृद्धि एवं अखंड सौभाग्य प्रदान करें! शुभ आशीर्वाद।"
+                messageEn: "May Lord Ganesha bless Akhilesh and Manvi with eternal love, prosperity, and a joyous married life together at Ganesham Resort!",
+                messageHi: "भगवान श्री गणेश अखिलेश और मानवी को सुख, समृद्धि एवं अखंड सौभाग्य प्रदान करें! गणेशम रिसॉर्ट में आप सभी का स्वागत है।"
             },
             {
                 nameEn: "Aarav & Priya Verma",
                 nameHi: "आरव एवं प्रिया वर्मा",
                 statusEn: "Attending (4 Guests) • All Events",
                 statusHi: "सपरिवार उपस्थित (४ सदस्य) • सभी कार्यक्रम",
-                messageEn: "Counting down the days to Haldi in Bloom and Sangeet Symphony! Heartiest congratulations to both families.",
+                messageEn: "Counting down the days to Haldi in Bloom and Sangeet Symphony at Hindaun City! Heartiest congratulations to both families.",
                 messageHi: "हल्दी और संगीत संध्या का बेसब्री से इंतजार है! दोनों परिवारों को ढेर सारी बधाई एवं शुभकामनाएं।"
             },
             {
@@ -1571,6 +2332,45 @@
                 messageHi: "चिरंजीवी अखिलेश एवं आयुष्मती मानवी को दाम्पत्य जीवन की अनंत शुभकामनाएं।"
             }
         ];
+
+        let blessingsList = JSON.parse(localStorage.getItem('akhilesh_manvi_wishes_v2') || 'null') || defaultBlessingsList;
+
+        async function loadWishesFromDatabase() {
+            const statusText = document.getElementById('dbStatusText');
+            if (SUPABASE_URL && SUPABASE_ANON_KEY) {
+                try {
+                    const res = await fetch(`${SUPABASE_URL.replace(/\/$/, '')}/rest/v1/wedding_wishes?select=*&order=created_at.desc`, {
+                        headers: {
+                            'apikey': SUPABASE_ANON_KEY,
+                            'Authorization': `Bearer ${SUPABASE_ANON_KEY}`
+                        }
+                    });
+                    if (res.ok) {
+                        const rows = await res.json();
+                        const cloudItems = rows.map(r => ({
+                            nameEn: r.guest_name,
+                            nameHi: r.guest_name,
+                            statusEn: r.attending_status,
+                            statusHi: r.attending_status,
+                            messageEn: r.message,
+                            messageHi: r.message
+                        }));
+                        blessingsList = [...cloudItems, ...defaultBlessingsList];
+                        if (statusText) statusText.textContent = "Storage: Connected to Live Supabase Cloud DB ☁️";
+                        renderBlessingsWall();
+                        return;
+                    }
+                } catch (err) {
+                    console.warn("Supabase fetch fallback to LocalStorage:", err);
+                }
+            }
+            if (statusText) {
+                statusText.textContent = currentLang === 'hi'
+                    ? "स्टोरेज: लोकल प्रीव्यू मोड (क्लाउड DB जोड़ने हेतु गाइड देखें)"
+                    : "Storage: Browser LocalStorage (Instant Preview Mode)";
+            }
+            renderBlessingsWall();
+        }
 
         function renderBlessingsWall() {
             const container = document.getElementById('blessingsWall');
@@ -1597,7 +2397,7 @@
             }).join('');
         }
 
-        function submitBlessing(e) {
+        async function submitBlessing(e) {
             e.preventDefault();
             const nameInput = document.getElementById('guestName');
             const attendInput = document.getElementById('guestAttending');
@@ -1610,15 +2410,42 @@
 
             const isAttending = attendInput.value === 'yes';
             const guests = countInput.value;
+            const statusEn = isAttending ? `Attending (${guests} Guests) ✨` : `Warm Blessings 🙏`;
+            const statusHi = isAttending ? `उपस्थित (${guests} सदस्य) ✨` : `शुभ आशीर्वाद 🙏`;
 
-            blessingsList.unshift({
+            const newEntry = {
                 nameEn: name,
                 nameHi: name,
-                statusEn: isAttending ? `Attending (${guests} Guests) ✨` : `Warm Blessings 🙏`,
-                statusHi: isAttending ? `उपस्थित (${guests} सदस्य) ✨` : `शुभ आशीर्वाद 🙏`,
+                statusEn: statusEn,
+                statusHi: statusHi,
                 messageEn: wish,
                 messageHi: wish
-            });
+            };
+
+            blessingsList.unshift(newEntry);
+            localStorage.setItem('akhilesh_manvi_wishes_v2', JSON.stringify(blessingsList));
+
+            // If Supabase Cloud DB is configured, persist globally
+            if (SUPABASE_URL && SUPABASE_ANON_KEY) {
+                try {
+                    await fetch(`${SUPABASE_URL.replace(/\/$/, '')}/rest/v1/wedding_wishes`, {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json',
+                            'apikey': SUPABASE_ANON_KEY,
+                            'Authorization': `Bearer ${SUPABASE_ANON_KEY}`,
+                            'Prefer': 'return=minimal'
+                        },
+                        body: JSON.stringify({
+                            guest_name: name,
+                            attending_status: statusEn,
+                            message: wish
+                        })
+                    });
+                } catch (err) {
+                    console.warn("Cloud DB insert error:", err);
+                }
+            }
 
             renderBlessingsWall();
             triggerBlessingShower();
@@ -1627,7 +2454,35 @@
 
             showToast(currentLang === 'hi'
                 ? "🙏 धन्यवाद! आपका आशीर्वाद एवं RSVP दर्ज कर लिया गया है।"
-                : "🙏 Thank you! Your RSVP & Blessing have been added to the wall.");
+                : "🙏 Thank you! Your RSVP & Blessing have been saved.");
+        }
+
+        function openDbGuideModal() {
+            document.getElementById('sbUrlInput').value = SUPABASE_URL;
+            document.getElementById('sbKeyInput').value = SUPABASE_ANON_KEY;
+            const modal = document.getElementById('dbGuideModal');
+            modal.classList.remove('hidden');
+            modal.classList.add('flex');
+        }
+
+        function closeDbGuideModal() {
+            const modal = document.getElementById('dbGuideModal');
+            modal.classList.add('hidden');
+            modal.classList.remove('flex');
+        }
+
+        function saveSupabaseCredentials() {
+            const url = document.getElementById('sbUrlInput').value.trim();
+            const key = document.getElementById('sbKeyInput').value.trim();
+            SUPABASE_URL = url;
+            SUPABASE_ANON_KEY = key;
+            localStorage.setItem('wedding_sb_url', url);
+            localStorage.setItem('wedding_sb_key', key);
+            closeDbGuideModal();
+            loadWishesFromDatabase();
+            showToast(url && key
+                ? "☁️ Supabase Cloud Database Connected!"
+                : "Switched back to Browser LocalStorage mode.");
         }
 
         /* ==============================================================
@@ -1635,8 +2490,8 @@
         ============================================================== */
         function copyInviteSummary() {
             const summary = currentLang === 'hi'
-                ? "॥ श्री गणेशाय नमः ॥\nशाही विवाह आमंत्रण: अखिलेश (सुपुत्र श्री राधेश्याम गुप्ता एवं श्रीमती नीता गुप्ता) संग मानवी (सुपुत्री श्री अभिषेक बच्चन एवं श्रीमती ऐश्वर्या राय)\nशुभ विवाह तिथि: २० फरवरी, २०२७\n• हल्दी इन ब्लूम: १९ फरवरी २०२७ (दोपहर १ बजे)\n• संगीत सिम्फनी: १९ फरवरी २०२७ (सायं ७ बजे से)\n• शुभ लग्न: २० फरवरी (प्रातः ९ बजे)\n• शुभ विवाह: २० फरवरी (सायं ७ बजे से)"
-                : "॥ Shri Ganeshaya Namah ॥\nRoyal Wedding Invitation: Akhilesh (S/o Shri Radheyshyam Gupta & Smt. Neeta Gupta) Weds Manvi (D/o Shri Abhishek Bachhan & Smt. Aishwarya Rai)\nDate of Marriage: 20 Feb, 2027\n• Haldi in Bloom: 19 Feb, 2027 at 1:00 PM\n• Sangeet Symphony: 19 Feb, 2027 from 7:00 PM onwards\n• Shubh Lagan: 20 Feb at 9:00 AM\n• Vivaah: 20 Feb, 7:00 PM onwards";
+                ? "॥ श्री गणेशाय नमः ॥\nशाही विवाह आमंत्रण: अखिलेश (सुपुत्र श्री राधेश्याम गुप्ता एवं श्रीमती नीता गुप्ता) संग मानवी (सुपुत्री श्री अभिषेक बच्चन एवं श्रीमती ऐश्वर्या राय)\nशुभ विवाह तिथि: २० फरवरी, २०२७\nविवाह स्थल: गणेशम रिसॉर्ट, हिंडौन सिटी (https://maps.app.goo.gl/ecyoLsVJoaZrHpdTA)\n• हल्दी इन ब्लूम: १९ फरवरी २०२७ (दोपहर १ बजे)\n• संगीत सिम्फनी: १९ फरवरी २०२७ (सायं ७ बजे से)\n• शुभ लग्न: २० फरवरी (प्रातः ९ बजे)\n• शुभ विवाह: २० फरवरी (सायं ७ बजे से)"
+                : "॥ Shri Ganeshaya Namah ॥\nRoyal Wedding Invitation: Akhilesh (S/o Shri Radheyshyam Gupta & Smt. Neeta Gupta) Weds Manvi (D/o Shri Abhishek Bachhan & Smt. Aishwarya Rai)\nDate of Marriage: 20 Feb, 2027\nVenue: Ganesham Resort, Hindaun City (https://maps.app.goo.gl/ecyoLsVJoaZrHpdTA)\n• Haldi in Bloom: 19 Feb, 2027 at 1:00 PM\n• Sangeet Symphony: 19 Feb, 2027 from 7:00 PM onwards\n• Shubh Lagan: 20 Feb at 9:00 AM\n• Vivaah: 20 Feb, 7:00 PM onwards";
 
             const tempArea = document.createElement('textarea');
             tempArea.value = summary;
@@ -1682,7 +2537,7 @@
             initAmbientPetals();
             animatePetals();
             updateCountdown();
-            renderBlessingsWall();
+            loadWishesFromDatabase();
         };
     </script>
 </body>
