@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Akhilesh &amp; Manvi – Wedding Invitation</title>
+<link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Cormorant+Garamond:wght@500;700&family=Tiro+Devanagari+Hindi&family=Yatra+One&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#fff3dc;--card:#fffaf0;--ink:#4a1020;--mut:#8a4b3a;--gold:#b97d0c;--red:#b0123a;--sh:rgba(120,30,40,.2);--door:#7d0c2c;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media(prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#2b0714;--card:#3d0d1d;--ink:#ffe9c7;--mut:#ebb98f;--gold:#f2c45a;--red:#ff7d9c;--sh:rgba(0,0,0,.5);--door:#5a061e;color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#2b0714;--card:#3d0d1d;--ink:#ffe9c7;--mut:#ebb98f;--gold:#f2c45a;--red:#ff7d9c;--sh:rgba(0,0,0,.5);--door:#5a061e;color-scheme:dark}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:500 clamp(17px,2.4vw,20px)/1.6 'Cormorant Garamond',Georgia,serif;text-align:center;overflow-x:hidden}
+html[lang=hi] body{font-family:'Tiro Devanagari Hindi',Georgia,serif;line-height:1.7}
+body.lock{overflow:hidden;height:100%}
+html[lang=hi] .en,html[lang=en] .hi{display:none}
+.gt{font-family:'Yatra One','Tiro Devanagari Hindi',serif;color:var(--gold)}
+/* language switch */
+.lg{position:fixed;top:calc(10px + env(safe-area-inset-top,0px));right:12px;z-index:60;display:flex;background:var(--card);border:2px solid var(--gold);border-radius:30px;overflow:hidden;box-shadow:0 4px 14px var(--sh)}
+.lg button{font:inherit;font-size:15px;border:0;background:none;color:var(--ink);padding:6px 14px;cursor:pointer}
+.lg button.on{background:var(--red);color:#fff}
+.lg button:focus-visible,#open:focus-visible,.btn:focus-visible{outline:3px solid var(--gold);outline-offset:2px}
+/* gate */
+#gate{position:fixed;inset:0;z-index:50;display:grid;place-items:center}
+.door{position:absolute;top:0;bottom:0;width:50.5%;background:radial-gradient(circle at 50% 50%,#f2c45a33 0 8%,transparent 9%) 0 0/60px 60px,linear-gradient(var(--door),#b0123a);border:0 solid #f2c45a;transition:transform 1.5s cubic-bezier(.7,0,.2,1)}
+.door.l{left:0;border-right-width:4px}.door.r{right:0;border-left-width:4px}
+#gate.go .l{transform:translateX(-101%)}#gate.go .r{transform:translateX(101%)}
+#gate.go #open{opacity:0;transform:scale(2);pointer-events:none}
+#open{position:relative;width:200px;height:200px;border-radius:50%;border:5px double #fff3c4;background:radial-gradient(circle,#ffd86b,#c8901a);color:#4a1020;font:inherit;cursor:pointer;display:grid;place-content:center;gap:2px;animation:pulse 1.8s infinite;transition:.6s;box-shadow:0 0 40px #f2c45a99}
+#open .om{font-size:64px;line-height:1;font-family:'Tiro Devanagari Hindi',serif}
+#open b{font-size:15px}
+@keyframes pulse{50%{transform:scale(1.07);box-shadow:0 0 70px #f2c45acc}}
+/* toran + hero */
+.toran{height:46px;background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='46'%3E%3Crect width='160' height='5' fill='%23c8901a'/%3E%3Cpath fill='%23f08a1c' d='M0 5h40L20 44z'/%3E%3Cpath fill='%23e8447a' d='M40 5h40L60 44z'/%3E%3Cpath fill='%232a9d6a' d='M80 5h40l-20 39z'/%3E%3Cpath fill='%23f2c45a' d='M120 5h40l-20 39z'/%3E%3C/svg%3E") repeat-x;transform-origin:top;animation:sway 4s ease-in-out infinite alternate}
+@keyframes sway{to{transform:skewX(2deg)}}
+.hero{position:relative;padding:34px 18px 60px;overflow:hidden;background:radial-gradient(ellipse at 50% 0,#f08a1c44,transparent 60%),radial-gradient(ellipse at 50% 100%,#e8447a33,transparent 60%)}
+.hero::before{content:"";position:absolute;left:50%;top:50%;width:150vmin;height:150vmin;margin:-75vmin;border-radius:50%;background:repeating-conic-gradient(from 0deg,#f2c45a30 0 6deg,transparent 6deg 15deg);-webkit-mask:radial-gradient(circle,transparent 18%,#000 19%,#000 60%,transparent 61%);mask:radial-gradient(circle,transparent 18%,#000 19%,#000 60%,transparent 61%);animation:spin 80s linear infinite}
+@keyframes spin{to{transform:rotate(360deg)}}
+.hero>*{position:relative}
+.sub{color:var(--mut);max-width:30em;margin:.6em auto}
+.names{margin:.2em 0;display:grid;gap:0;font-family:'Great Vibes',cursive;font-weight:400;font-size:clamp(58px,17vw,120px);line-height:1.05;color:var(--red);text-shadow:0 3px 0 var(--sh)}
+html[lang=hi] .names{font-family:'Yatra One',serif;font-size:clamp(46px,13vw,92px)}
+.amp{font-size:.5em;color:var(--gold);animation:beat 1.3s infinite}
+@keyframes beat{30%{transform:scale(1.35)}60%{transform:scale(1)}}
+.date{display:inline-block;margin-top:14px;padding:10px 26px;border:2px solid var(--gold);border-radius:60px;background:var(--card);font-size:1.35em;font-weight:700;box-shadow:0 6px 18px var(--sh)}
+.hint{font-size:.85em;color:var(--mut);margin-top:16px}
+/* sections */
+section{padding:44px 16px;max-width:980px;margin:auto}
+h2{font:400 clamp(28px,6vw,40px)/1.2 'Yatra One','Tiro Devanagari Hindi',serif;color:var(--red);margin:0 0 6px}
+.div{color:var(--gold);letter-spacing:.5em;margin-bottom:22px}
+.fam{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:18px}
+.card{background:var(--card);border:2px solid var(--gold);border-radius:22px;padding:22px 18px;box-shadow:0 8px 22px var(--sh)}
+.card h3{margin:0;font:400 2em/1.2 'Great Vibes',cursive;color:var(--red)}
+html[lang=hi] .card h3{font-family:'Yatra One',serif;font-size:1.6em}
+.evs{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:18px}
+.ev{border-top:8px solid var(--c);transition:transform .35s,box-shadow .35s;cursor:pointer}
+.ev:hover,.ev.pop{transform:translateY(-8px) rotate(-1.2deg);box-shadow:0 16px 30px var(--sh)}
+.ev .ic{font-size:46px;display:block;transition:transform .5s}
+.ev.pop .ic{transform:rotate(360deg) scale(1.3)}
+.ev h3{font:400 1.45em/1.2 'Yatra One','Tiro Devanagari Hindi',serif;color:var(--red);margin:.2em 0}
+.ev p{margin:.15em 0}.ev .tm{font-weight:700;color:var(--gold);font-size:1.15em}
+.cal{display:inline-block;margin-top:10px;font-size:.9em;color:var(--ink);border-bottom:2px dotted var(--gold);text-decoration:none}
+.cd{display:flex;justify-content:center;gap:12px;flex-wrap:wrap}
+.cd div{width:78px;padding:12px 0;border-radius:16px;background:linear-gradient(160deg,var(--red),#e8447a);color:#fff;box-shadow:0 6px 16px var(--sh)}
+.cd b{display:block;font:400 32px/1 'Yatra One',serif}.cd small{font-size:13px}
+.btns{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin-top:6px}
+.btn{font:inherit;font-weight:700;cursor:pointer;border:0;border-radius:40px;padding:12px 26px;color:#fff;background:linear-gradient(135deg,#f08a1c,#e8447a);box-shadow:0 6px 16px var(--sh);transition:transform .2s}
+.btn:active{transform:scale(.94)}
+footer{padding:30px 16px 60px;color:var(--mut)}
+footer .gt{font-size:1.5em;display:block}
+/* particles */
+.pt{position:fixed;top:-40px;z-index:40;pointer-events:none;animation:fall linear forwards}
+@keyframes fall{to{transform:translate(40px,110vh) rotate(540deg)}}
+.cf{position:fixed;z-index:70;width:9px;height:14px;pointer-events:none;border-radius:2px}
+.rv{opacity:0;transform:translateY(24px) scale(.96);transition:1s}.rv.in{opacity:1;transform:none}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition-duration:.01s!important}}
+</style></head>
+<body class="lock">
+<div class="lg" role="group" aria-label="Language"><button data-l="en" class="on">English</button><button data-l="hi">हिन्दी</button></div>
+
+<div id="gate"><div class="door l"></div><div class="door r"></div>
+<button id="open"><span class="om">ॐ</span><b class="en">Tap to open the invitation</b><b class="hi">निमंत्रण खोलें</b></button></div>
+
+<div class="toran"></div>
+<header class="hero">
+<div class="gt" style="font-size:1.5em">॥ श्री गणेशाय नमः ॥</div>
+<p class="sub"><span class="en">With the blessings of the Almighty and our elders, we joyfully invite you and your family to celebrate the wedding of</span><span class="hi">ईश्वर एवं बड़ों के आशीर्वाद से, हम सपरिवार आपको अपने विवाह उत्सव में सादर आमंत्रित करते हैं</span></p>
+<h1 class="names"><span><span class="en">Akhilesh</span><span class="hi">अखिलेश</span></span><span class="amp">♥</span><span><span class="en">Manvi</span><span class="hi">मानवी</span></span></h1>
+<div class="date"><span class="en">Saturday, 20 February 2027</span><span class="hi">शनिवार, 20 फरवरी 2027</span></div>
+<p class="hint"><span class="en">Tap anywhere for a little celebration ✨</span><span class="hi">उत्सव के लिए कहीं भी छुएँ ✨</span></p>
+</header>
+
+<section class="rv">
+<h2><span class="en">Our Families</span><span class="hi">हमारे परिवार</span></h2><div class="div">❀ ❀ ❀</div>
+<div class="fam">
+<div class="card"><h3><span class="en">Akhilesh</span><span class="hi">अखिलेश</span></h3>
+<p class="en">Son of Shri Radheyshyam Gupta &amp; Smt. Neeta Gupta</p><p class="hi">श्री राधेश्याम गुप्ता एवं श्रीमती नीता गुप्ता के सुपुत्र</p></div>
+<div class="card"><h3><span class="en">Manvi</span><span class="hi">मानवी</span></h3>
+<p class="en">Daughter of Shri Abhishek Bachhan &amp; Smt. Aishwarya Rai</p><p class="hi">श्री अभिषेक बच्चन एवं श्रीमती ऐश्वर्या राय की सुपुत्री</p></div>
+</div></section>
+
+<section class="rv">
+<h2><span class="en">Celebrations</span><span class="hi">उत्सव कार्यक्रम</span></h2><div class="div">❀ ❀ ❀</div>
+<div class="evs">
+<div class="card ev" style="--c:#f2b705" data-t="Haldi in Bloom" data-s="20270219T130000" data-e="20270219T160000"><span class="ic">🌼</span><h3><span class="en">Haldi in Bloom</span><span class="hi">हल्दी इन ब्लूम</span></h3>
+<p><span class="en">Friday, 19 February 2027</span><span class="hi">शुक्रवार, 19 फरवरी 2027</span></p><p class="tm"><span class="en">1:00 PM</span><span class="hi">दोपहर 1:00 बजे</span></p>
+<a class="cal"><span class="en">Add to calendar</span><span class="hi">कैलेंडर में जोड़ें</span></a></div>
+<div class="card ev" style="--c:#e8447a" data-t="Sangeet Symphony" data-s="20270219T190000" data-e="20270219T230000"><span class="ic">🎶</span><h3><span class="en">Sangeet Symphony</span><span class="hi">संगीत सिम्फनी</span></h3>
+<p><span class="en">Friday, 19 February 2027</span><span class="hi">शुक्रवार, 19 फरवरी 2027</span></p><p class="tm"><span class="en">7:00 PM onwards</span><span class="hi">शाम 7:00 बजे से</span></p>
+<a class="cal"><span class="en">Add to calendar</span><span class="hi">कैलेंडर में जोड़ें</span></a></div>
+<div class="card ev" style="--c:#f08a1c" data-t="Shubh Lagan" data-s="20270220T090000" data-e="20270220T110000"><span class="ic">🪔</span><h3><span class="en">Shubh Lagan</span><span class="hi">शुभ लग्न</span></h3>
+<p><span class="en">Saturday, 20 February 2027</span><span class="hi">शनिवार, 20 फरवरी 2027</span></p><p class="tm"><span class="en">9:00 AM</span><span class="hi">प्रातः 9:00 बजे</span></p>
+<a class="cal"><span class="en">Add to calendar</span><span class="hi">कैलेंडर में जोड़ें</span></a></div>
+<div class="card ev" style="--c:#b0123a" data-t="Vivaah" data-s="20270220T190000" data-e="20270220T230000"><span class="ic">💍</span><h3><span class="en">Vivaah</span><span class="hi">विवाह</span></h3>
+<p><span class="en">Saturday, 20 February 2027</span><span class="hi">शनिवार, 20 फरवरी 2027</span></p><p class="tm"><span class="en">7:00 PM onwards</span><span class="hi">शाम 7:00 बजे से</span></p>
+<a class="cal"><span class="en">Add to calendar</span><span class="hi">कैलेंडर में जोड़ें</span></a></div>
+</div></section>
+
+<section class="rv">
+<h2><span class="en">Counting down to the Vivaah</span><span class="hi">विवाह में शेष समय</span></h2><div class="div">❀ ❀ ❀</div>
+<div class="cd"><div><b id="cd">00</b><small><span class="en">Days</span><span class="hi">दिन</span></small></div><div><b id="ch">00</b><small><span class="en">Hours</span><span class="hi">घंटे</span></small></div><div><b id="cm">00</b><small><span class="en">Minutes</span><span class="hi">मिनट</span></small></div><div><b id="cs">00</b><small><span class="en">Seconds</span><span class="hi">सेकंड</span></small></div></div>
+<p style="margin-top:28px" class="sub"><span class="en">Your presence is the greatest gift for us.</span><span class="hi">आपकी उपस्थिति ही हमारे लिए सबसे बड़ा उपहार है।</span></p>
+<div class="btns"><button class="btn" id="bless"><span class="en">🌸 Shower blessings</span><span class="hi">🌸 आशीर्वाद बरसाएँ</span></button><button class="btn" id="share"><span class="en">Share invitation</span><span class="hi">निमंत्रण साझा करें</span></button></div>
+</section>
+
+<footer><span class="gt">॥ शुभ विवाह ॥</span><span class="en">With love, the Gupta &amp; Bachhan families</span><span class="hi">सप्रेम, गुप्ता एवं बच्चन परिवार</span></footer>
+
+<script>
+const $=s=>document.querySelector(s),$$=s=>[...document.querySelectorAll(s)],R=document.documentElement;
+const rm=matchMedia('(prefers-reduced-motion:reduce)').matches;
+function setL(l){R.lang=l;try{localStorage.setItem('lang',l)}catch(e){}$$('.lg button').forEach(b=>b.classList.toggle('on',b.dataset.l==l))}
+let sl='en';try{sl=localStorage.getItem('lang')||'en'}catch(e){}
+setL(sl);$$('.lg button').forEach(b=>b.onclick=()=>setL(b.dataset.l));
+const em=['🌸','🌼','🏵️','🌺','✨'];
+function petal(){const p=document.createElement('i');p.className='pt';p.textContent=em[Math.random()*5|0];p.style.cssText=`left:${Math.random()*100}vw;font-size:${14+Math.random()*16}px;animation-duration:${6+Math.random()*7}s`;document.body.appendChild(p);setTimeout(()=>p.remove(),13500)}
+function burst(x,y,n){const c=['#e8447a','#f08a1c','#f2c45a','#2a9d6a','#b0123a','#7a3fc4'];for(let i=0;i<n;i++){const d=document.createElement('b');d.className='cf';d.style.cssText=`left:${x}px;top:${y}px;background:${c[i%6]}`;document.body.appendChild(d);const a=Math.random()*6.28,r=60+Math.random()*150;d.animate([{transform:'none',opacity:1},{transform:`translate(${Math.cos(a)*r}px,${Math.sin(a)*r+90}px) rotate(${Math.random()*720}deg)`,opacity:0}],{duration:1100+Math.random()*600,easing:'cubic-bezier(.2,.7,.3,1)'}).onfinish=()=>d.remove()}}
+$('#open').onclick=()=>{$('#gate').classList.add('go');document.body.classList.remove('lock');burst(innerWidth/2,innerHeight/2,70);if(!rm){for(let i=0;i<28;i++)setTimeout(petal,i*110);setInterval(petal,800)}setTimeout(()=>$('#gate').remove(),1700)};
+addEventListener('click',e=>{if(!e.target.closest('#gate'))burst(e.clientX,e.clientY,16)});
+$('#bless').onclick=()=>{for(let i=0;i<40;i++)setTimeout(petal,i*60)};
+$$('.ev').forEach(c=>{c.onclick=()=>{c.classList.add('pop');setTimeout(()=>c.classList.remove('pop'),700)};const a=c.querySelector('.cal');a.href='https://calendar.google.com/calendar/render?action=TEMPLATE&text='+encodeURIComponent(c.dataset.t+' – Akhilesh & Manvi')+'&dates='+c.dataset.s+'/'+c.dataset.e+'&ctz=Asia/Kolkata';a.target='_blank';a.rel='noopener'});
+$('#share').onclick=()=>{const t=R.lang=='hi'?'अखिलेश ♥ मानवी – विवाह निमंत्रण, 20 फरवरी 2027':'Akhilesh ♥ Manvi – Wedding Invitation, 20 Feb 2027';try{if(navigator.share)return navigator.share({title:t,url:location.href})}catch(e){}open('https://wa.me/?text='+encodeURIComponent(t+' '+location.href),'_blank')};
+const T=new Date('2027-02-20T19:00:00+05:30');
+function tick(){const d=Math.max(0,T-Date.now())/1000|0,v=[d/86400|0,d%86400/3600|0,d%3600/60|0,d%60];['cd','ch','cm','cs'].forEach((k,i)=>$('#'+k).textContent=String(v[i]).padStart(2,'0'))}
+tick();setInterval(tick,1000);
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{threshold:.15});
+$$('.rv').forEach(s=>io.observe(s));
+</script>
+</body></html>
