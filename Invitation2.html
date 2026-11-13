@@ -1,0 +1,1689 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Akhilesh Weds Manvi | अखिलेश संग मानवी - Royal Wedding Invitation</title>
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts for Royal Indian English & Hindi Typography -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@700;900&family=Cormorant+Garamond:ital,wght@0,600;0,700;1,600&family=Plus+Jakarta+Sans:wght@400;500;600;700&family=Rozha+One&family=Yatra+One&family=Noto+Sans+Devanagari:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    
+    <!-- Tone.js for Synthesized Indian Shehnai / Santoor Chimes (No external audio needed) -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tone/14.8.49/Tone.js"></script>
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        maroon: {
+                            800: '#5c0617',
+                            900: '#3d020e',
+                            950: '#240007',
+                        },
+                        gold: {
+                            200: '#f9e8a2',
+                            300: '#f3d470',
+                            400: '#e6be45',
+                            500: '#d4af37',
+                            600: '#aa820a',
+                        },
+                        marigold: '#ff9900',
+                        sindoor: '#c9184a',
+                        peacock: '#005f73'
+                    },
+                    fontFamily: {
+                        royal: ['"Cinzel Decorative"', '"Yatra One"', 'serif'],
+                        hindiTitle: ['"Yatra One"', '"Rozha One"', 'serif'],
+                        serifElegant: ['"Cormorant Garamond"', '"Noto Sans Devanagari"', 'serif'],
+                        body: ['"Plus Jakarta Sans"', '"Noto Sans Devanagari"', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        :root {
+            --gold-gradient: linear-gradient(135deg, #bf953f, #fcf6ba, #b38728, #fbf5b7, #aa771c);
+            --royal-bg: radial-gradient(circle at center, #5c0617 0%, #2b0209 75%, #180004 100%);
+        }
+
+        body {
+            background: var(--royal-bg);
+            color: #fef3c7;
+            overflow-x: hidden;
+        }
+
+        /* Metallic Gold Text Effect */
+        .gold-gradient-text {
+            background: var(--gold-gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-size: 200% auto;
+            animation: shine 5s linear infinite;
+        }
+
+        .gold-border {
+            border-image: var(--gold-gradient) 1;
+        }
+
+        .gold-bg {
+            background: var(--gold-gradient);
+        }
+
+        @keyframes shine {
+            to {
+                background-position: 200% center;
+            }
+        }
+
+        /* Spinning Mandala Background */
+        @keyframes spinSlow {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+        .animate-spin-slow {
+            animation: spinSlow 50s linear infinite;
+        }
+        .animate-spin-reverse-slow {
+            animation: spinSlow 65s linear infinite reverse;
+        }
+
+        /* Floating Animation */
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+        }
+        .animate-float {
+            animation: float 4s ease-in-out infinite;
+        }
+
+        /* Seal Pulse */
+        @keyframes pulseGold {
+            0%, 100% { box-shadow: 0 0 0 0 rgba(243, 212, 112, 0.7), 0 0 30px rgba(212, 175, 55, 0.8); }
+            50% { box-shadow: 0 0 0 20px rgba(243, 212, 112, 0), 0 0 50px rgba(255, 215, 0, 1); }
+        }
+        .seal-pulse {
+            animation: pulseGold 2.2s infinite;
+        }
+
+        /* Jharokha Arch Card Frame */
+        .jharokha-arch {
+            border-radius: 160px 160px 24px 24px;
+        }
+
+        /* Envelope Door Transitions */
+        .door-left {
+            transition: transform 1.4s cubic-bezier(0.77, 0, 0.175, 1), opacity 1.2s ease;
+            transform-origin: left center;
+        }
+        .door-right {
+            transition: transform 1.4s cubic-bezier(0.77, 0, 0.175, 1), opacity 1.2s ease;
+            transform-origin: right center;
+        }
+        .envelope-open .door-left {
+            transform: perspective(1400px) rotateY(-110deg);
+            opacity: 0;
+        }
+        .envelope-open .door-right {
+            transform: perspective(1400px) rotateY(110deg);
+            opacity: 0;
+        }
+        .envelope-open .seal-container {
+            transform: scale(1.4);
+            opacity: 0;
+            transition: all 0.6s ease-out;
+        }
+
+        /* Custom Ornate Scrollbar */
+        ::-webkit-scrollbar {
+            width: 10px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #240007;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: linear-gradient(180deg, #b38728, #fcf6ba, #aa771c);
+            border-radius: 5px;
+        }
+
+        /* Print Media Styles */
+        @media print {
+            .no-print {
+                display: none !important;
+            }
+            body {
+                background: #fff !important;
+                color: #3d020e !important;
+            }
+        }
+    </style>
+</head>
+<body class="font-body selection:bg-gold-500 selection:text-maroon-950">
+
+    <!-- FLOWER PETALS & SPARKLES CANVAS -->
+    <canvas id="petalCanvas" class="fixed inset-0 pointer-events-none z-30 no-print"></canvas>
+
+    <!-- ROYAL GATE / ENVELOPE OVERLAY -->
+    <div id="envelopeOverlay" class="fixed inset-0 z-50 flex overflow-hidden no-print">
+        <!-- Left Royal Palace Door -->
+        <div class="door-left w-1/2 h-full bg-gradient-to-br from-maroon-900 via-maroon-800 to-maroon-950 border-r-4 border-gold-400 relative flex items-center justify-end overflow-hidden shadow-2xl">
+            <!-- Mandala Pattern SVG -->
+            <svg class="w-[500px] h-[500px] text-gold-500/15 absolute -left-32 animate-spin-slow" viewBox="0 0 200 200" fill="currentColor">
+                <path d="M100 0 L112 35 L145 15 L135 50 L175 45 L150 75 L190 85 L155 105 L185 130 L145 135 L165 170 L125 155 L130 195 L100 165 L70 195 L75 155 L35 170 L55 135 L15 130 L45 105 L10 85 L50 75 L25 45 L65 50 L55 15 L88 35 Z"/>
+                <circle cx="100" cy="100" r="45" fill="none" stroke="currentColor" stroke-width="4" stroke-dasharray="6 4"/>
+                <circle cx="100" cy="100" r="65" fill="none" stroke="currentColor" stroke-width="2"/>
+            </svg>
+            <div class="mr-8 md:mr-16 text-right hidden sm:block opacity-75">
+                <div class="text-gold-300 text-xs tracking-[0.3em] uppercase">॥ श्री गणेशाय नमः ॥</div>
+                <div class="text-gold-200 font-royal text-xl md:text-2xl mt-1">Shubh Vivaah</div>
+            </div>
+            <!-- Ornate Gold Corner Top Left -->
+            <div class="absolute top-4 left-4 w-24 h-24 border-t-4 border-l-4 border-gold-400 rounded-tl-3xl opacity-70"></div>
+            <div class="absolute bottom-4 left-4 w-24 h-24 border-b-4 border-l-4 border-gold-400 rounded-bl-3xl opacity-70"></div>
+        </div>
+
+        <!-- Right Royal Palace Door -->
+        <div class="door-right w-1/2 h-full bg-gradient-to-bl from-maroon-900 via-maroon-800 to-maroon-950 border-l-4 border-gold-400 relative flex items-center justify-start overflow-hidden shadow-2xl">
+            <svg class="w-[500px] h-[500px] text-gold-500/15 absolute -right-32 animate-spin-reverse-slow" viewBox="0 0 200 200" fill="currentColor">
+                <path d="M100 0 L112 35 L145 15 L135 50 L175 45 L150 75 L190 85 L155 105 L185 130 L145 135 L165 170 L125 155 L130 195 L100 165 L70 195 L75 155 L35 170 L55 135 L15 130 L45 105 L10 85 L50 75 L25 45 L65 50 L55 15 L88 35 Z"/>
+                <circle cx="100" cy="100" r="45" fill="none" stroke="currentColor" stroke-width="4" stroke-dasharray="6 4"/>
+                <circle cx="100" cy="100" r="65" fill="none" stroke="currentColor" stroke-width="2"/>
+            </svg>
+            <div class="ml-8 md:ml-16 text-left hidden sm:block opacity-75">
+                <div class="text-gold-300 text-xs tracking-[0.3em] uppercase">20 . 02 . 2027</div>
+                <div class="text-gold-200 font-hindiTitle text-xl md:text-2xl mt-1">शुभ आमंत्रण</div>
+            </div>
+            <!-- Ornate Gold Corner Top Right -->
+            <div class="absolute top-4 right-4 w-24 h-24 border-t-4 border-r-4 border-gold-400 rounded-tr-3xl opacity-70"></div>
+            <div class="absolute bottom-4 right-4 w-24 h-24 border-b-4 border-r-4 border-gold-400 rounded-br-3xl opacity-70"></div>
+        </div>
+
+        <!-- Center Royal Wax/Gold Seal Button -->
+        <div class="seal-container absolute inset-0 flex flex-col items-center justify-center z-20 p-4">
+            <!-- Quick Language Selector on Envelope -->
+            <div class="mb-6 bg-maroon-950/90 border border-gold-400/60 rounded-full p-1.5 flex items-center gap-2 shadow-xl backdrop-blur-md">
+                <button onclick="setLanguage('en')" id="envLangEn" class="px-4 py-1.5 rounded-full text-xs sm:text-sm font-bold transition-all gold-bg text-maroon-950 shadow">
+                    English
+                </button>
+                <button onclick="setLanguage('hi')" id="envLangHi" class="px-4 py-1.5 rounded-full text-xs sm:text-sm font-bold transition-all text-gold-200 hover:text-white">
+                    हिंदी (Hindi)
+                </button>
+            </div>
+
+            <!-- Interactive Royal Seal -->
+            <button onclick="openInvitation()" class="group relative w-64 h-64 sm:w-72 sm:h-72 rounded-full gold-bg p-2 seal-pulse cursor-pointer transition-transform duration-300 hover:scale-105 focus:outline-none">
+                <div class="w-full h-full rounded-full bg-gradient-to-b from-maroon-800 to-maroon-950 border-4 border-dashed border-gold-300 flex flex-col items-center justify-center p-5 text-center relative overflow-hidden">
+                    <!-- Ganesha Icon -->
+                    <svg class="w-10 h-10 text-gold-300 mb-1" viewBox="0 0 64 64" fill="currentColor">
+                        <path d="M32 6c-4 0-7 3-7 7 0 2 1 4 3 5-6 2-10 7-10 13 0 5 3 9 8 11-1 4 1 8 5 10 3 1 7 0 9-3 1-2 0-4-2-4-1 0-2 1-3 1-2 0-4-2-3-5 5-1 9-5 9-10 0-2-1-4-2-6 3-1 5-4 5-7 0-3-2-5-5-5-1-4-3-7-7-7zm0 4c2 0 4 2 4 4s-2 4-4 4-4-2-4-4 2-4 4-4z"/>
+                    </svg>
+                    <span class="text-[11px] uppercase tracking-widest text-gold-300 font-semibold" data-i18n="sealInvite">Royal Wedding Invitation</span>
+                    <h1 class="font-royal text-xl sm:text-2xl gold-gradient-text font-bold mt-1 leading-tight" data-i18n="sealCouple">
+                        Akhilesh <br><span class="text-sm font-serifElegant italic text-amber-200">&amp;</span><br> Manvi
+                    </h1>
+                    <p class="text-xs text-gold-200 mt-1 font-medium" data-i18n="sealDate">20 Feb, 2027</p>
+                    <div class="mt-3 inline-flex items-center gap-1.5 px-4 py-1 rounded-full bg-gold-400/20 border border-gold-300 text-gold-200 text-xs font-semibold group-hover:bg-gold-400 group-hover:text-maroon-950 transition-colors">
+                        <i class="fa-solid fa-envelope-open-text"></i>
+                        <span data-i18n="tapToOpen">Tap to Open Card</span>
+                    </div>
+                </div>
+            </button>
+
+            <p class="mt-5 text-gold-200/90 text-xs sm:text-sm tracking-wide text-center animate-pulse" data-i18n="sealSubtext">
+                Click the royal seal to open with festive music &amp; flower shower
+            </p>
+        </div>
+    </div>
+
+    <!-- FLOATING TOP NAVIGATION BAR -->
+    <header class="sticky top-0 z-40 backdrop-blur-md bg-maroon-950/85 border-b border-gold-500/30 px-3 sm:px-6 py-3 no-print">
+        <div class="max-w-6xl mx-auto flex flex-wrap items-center justify-between gap-2">
+            <!-- Brand Monogram -->
+            <a href="#hero" class="flex items-center gap-2.5 group">
+                <div class="w-10 h-10 rounded-full gold-bg p-0.5 flex items-center justify-center shadow-md">
+                    <div class="w-full h-full bg-maroon-900 rounded-full flex items-center justify-center font-royal text-gold-300 font-bold text-sm">
+                        A<span class="text-sindoor text-xs mx-0.5">♥</span>M
+                    </div>
+                </div>
+                <div>
+                    <span class="font-royal text-base sm:text-lg gold-gradient-text font-bold block leading-none" data-i18n="navTitle">Akhilesh &amp; Manvi</span>
+                    <span class="text-[11px] text-gold-300/80 block" data-i18n="navDate">20 Feb, 2027</span>
+                </div>
+            </a>
+
+            <!-- Quick Links (Desktop) -->
+            <nav class="hidden md:flex items-center gap-6 text-sm font-medium text-gold-200">
+                <a href="#invitationCard" class="hover:text-gold-400 transition" data-i18n="navCard">Invitation Card</a>
+                <a href="#events" class="hover:text-gold-400 transition" data-i18n="navEvents">Events</a>
+                <a href="#rsvp" class="hover:text-gold-400 transition" data-i18n="navRsvp">RSVP &amp; Wishes</a>
+            </nav>
+
+            <!-- Action Controls: Language Toggle, Flower Shower, Audio, Print -->
+            <div class="flex items-center gap-2 sm:gap-3">
+                <!-- Bilingual Switcher -->
+                <div class="bg-maroon-900 border-2 border-gold-400 rounded-full p-0.5 flex items-center shadow-lg" role="group" aria-label="Language Switcher">
+                    <button onclick="setLanguage('en')" id="navLangEn" class="px-3 py-1 rounded-full text-xs sm:text-sm font-bold transition-all gold-bg text-maroon-950">
+                        EN
+                    </button>
+                    <button onclick="setLanguage('hi')" id="navLangHi" class="px-3 py-1 rounded-full text-xs sm:text-sm font-bold transition-all text-gold-200 hover:text-white">
+                        हिंदी
+                    </button>
+                </div>
+
+                <!-- Shower Petals Button -->
+                <button onclick="triggerBlessingShower()" class="px-3 py-1.5 rounded-full bg-gradient-to-r from-amber-500 to-orange-600 hover:from-amber-400 hover:to-orange-500 text-maroon-950 font-bold text-xs sm:text-sm flex items-center gap-1.5 shadow-lg transition transform active:scale-95" title="Shower Marigold & Rose Petals">
+                    <span>🌸</span>
+                    <span class="hidden sm:inline" data-i18n="showerBtn">Shower Blessings</span>
+                </button>
+
+                <!-- Festive Chime Sound Toggle -->
+                <button onclick="toggleFestiveMusic()" id="musicBtn" class="w-9 h-9 rounded-full bg-maroon-800 border border-gold-400/60 text-gold-300 flex items-center justify-center hover:bg-gold-500 hover:text-maroon-950 transition" title="Play Festive Chimes">
+                    <i id="musicIcon" class="fa-solid fa-music"></i>
+                </button>
+
+                <!-- Print / Compact Card View Button -->
+                <button onclick="openPrintableModal()" class="w-9 h-9 rounded-full bg-maroon-800 border border-gold-400/60 text-gold-300 flex items-center justify-center hover:bg-gold-500 hover:text-maroon-950 transition" title="View Printable Traditional Card">
+                    <i class="fa-solid fa-print"></i>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- MAIN CONTENT CONTAINER -->
+    <main class="relative z-10 pb-20">
+
+        <!-- Decorative Hanging Marigold Toran Header -->
+        <div class="w-full overflow-hidden pointer-events-none select-none no-print">
+            <svg class="w-full h-10 sm:h-14" viewBox="0 0 1200 60" preserveAspectRatio="none">
+                <defs>
+                    <pattern id="toranPattern" x="0" y="0" width="120" height="60" patternUnits="userSpaceOnUse">
+                        <!-- Mango Leaves -->
+                        <path d="M15,0 L25,28 L5,28 Z" fill="#15803d"/>
+                        <path d="M55,0 L65,28 L45,28 Z" fill="#166534"/>
+                        <path d="M95,0 L105,28 L85,28 Z" fill="#15803d"/>
+                        <!-- Marigold Garland Swag -->
+                        <path d="M0,10 Q60,55 120,10" fill="none" stroke="#ff9900" stroke-width="10" stroke-linecap="round" stroke-dasharray="8 6"/>
+                        <path d="M0,6 Q60,45 120,6" fill="none" stroke="#fbbf24" stroke-width="6" stroke-linecap="round" stroke-dasharray="4 8"/>
+                        <!-- Hanging Bell/Tassel -->
+                        <circle cx="60" cy="42" r="7" fill="#e11d48"/>
+                        <circle cx="60" cy="52" r="4" fill="#facc15"/>
+                    </pattern>
+                </defs>
+                <rect width="1200" height="60" fill="url(#toranPattern)"/>
+            </svg>
+        </div>
+
+        <!-- SECTION 1: HERO & SHLOKA -->
+        <section id="hero" class="max-w-5xl mx-auto px-4 pt-4 sm:pt-8 text-center relative">
+            <!-- Rotating Subtle Background Mandala -->
+            <div class="absolute inset-x-0 top-10 flex justify-center pointer-events-none -z-10 overflow-hidden">
+                <svg class="w-[340px] h-[340px] sm:w-[520px] sm:h-[520px] text-gold-500/10 animate-spin-slow" viewBox="0 0 200 200" fill="currentColor">
+                    <path d="M100 0 L112 35 L145 15 L135 50 L175 45 L150 75 L190 85 L155 105 L185 130 L145 135 L165 170 L125 155 L130 195 L100 165 L70 195 L75 155 L35 170 L55 135 L15 130 L45 105 L10 85 L50 75 L25 45 L65 50 L55 15 L88 35 Z"/>
+                    <circle cx="100" cy="100" r="55" fill="none" stroke="currentColor" stroke-width="3" stroke-dasharray="5 5"/>
+                </svg>
+            </div>
+
+            <!-- Sacred Ganesha & Kalash Motif -->
+            <div class="inline-flex flex-col items-center">
+                <div class="w-20 h-20 rounded-full bg-gradient-to-b from-gold-400/20 to-maroon-900 border-2 border-gold-400 flex items-center justify-center shadow-xl animate-float">
+                    <!-- Detailed Ornate Ganesha SVG -->
+                    <svg class="w-12 h-12 text-gold-300" viewBox="0 0 100 100" fill="currentColor">
+                        <path d="M50 10 L58 24 L42 24 Z" />
+                        <path d="M35 28 C35 20, 65 20, 65 28 C65 34, 58 38, 58 45 C58 55, 48 62, 54 68 C58 72, 66 68, 68 65 C70 67, 65 78, 52 76 C40 74, 42 60, 42 48 C32 48, 25 40, 28 32 C30 27, 35 28, 35 28 Z"/>
+                        <path d="M65 32 C74 30, 78 38, 72 46 C68 50, 62 48, 62 48" fill="none" stroke="currentColor" stroke-width="5" stroke-linecap="round"/>
+                        <circle cx="50" cy="86" r="4"/>
+                        <circle cx="38" cy="86" r="3"/>
+                        <circle cx="62" cy="86" r="3"/>
+                    </svg>
+                </div>
+                <p class="mt-3 text-gold-300 font-semibold tracking-widest text-sm sm:text-base" data-i18n="ganeshaMantra">
+                    ॥ श्री गणेशाय नमः ॥
+                </p>
+                <p class="text-xs sm:text-sm text-amber-200/80 max-w-lg mx-auto mt-1 italic font-serifElegant" data-i18n="shlokaText">
+                    "Vakratunda Mahakaya Suryakoti Samaprabha, Nirvighnam Kurume Deva Sarva Karyeshu Sarvada"
+                </p>
+            </div>
+
+            <!-- Royal Invitation Header -->
+            <div class="mt-6">
+                <span class="px-4 py-1 rounded-full bg-gold-500/15 border border-gold-400/40 text-gold-300 text-xs sm:text-sm uppercase tracking-[0.25em]" data-i18n="cordialTag">
+                    A Royal Wedding Celebration
+                </span>
+            </div>
+
+            <!-- Couple Names Display -->
+            <div class="mt-6 sm:mt-8 flex flex-col md:flex-row items-center justify-center gap-4 md:gap-8">
+                <!-- Groom Block -->
+                <div class="flex-1 text-center md:text-right">
+                    <h2 class="font-royal text-4xl sm:text-6xl lg:text-7xl gold-gradient-text font-extrabold tracking-wide drop-shadow-lg" data-i18n="groomName">
+                        Akhilesh
+                    </h2>
+                    <p class="mt-2 text-amber-100 text-sm sm:text-base font-medium" data-i18n="groomParents">
+                        S/o Shri Radheyshyam Gupta &amp; Smt. Neeta Gupta
+                    </p>
+                </div>
+
+                <!-- Ornate Weds Badge -->
+                <div class="w-20 h-20 sm:w-24 sm:h-24 rounded-full gold-bg p-1 shadow-2xl flex items-center justify-center shrink-0 my-2">
+                    <div class="w-full h-full rounded-full bg-maroon-900 flex flex-col items-center justify-center border border-gold-300">
+                        <span class="text-sindoor text-lg leading-none">❤</span>
+                        <span class="font-serifElegant italic text-gold-200 text-base sm:text-lg font-bold" data-i18n="wedsWord">Weds</span>
+                    </div>
+                </div>
+
+                <!-- Bride Block -->
+                <div class="flex-1 text-center md:text-left">
+                    <h2 class="font-royal text-4xl sm:text-6xl lg:text-7xl gold-gradient-text font-extrabold tracking-wide drop-shadow-lg" data-i18n="brideName">
+                        Manvi
+                    </h2>
+                    <p class="mt-2 text-amber-100 text-sm sm:text-base font-medium" data-i18n="brideParents">
+                        D/o Shri Abhishek Bachhan &amp; Smt. Aishwarya Rai
+                    </p>
+                </div>
+            </div>
+
+            <!-- Save The Date Pill -->
+            <div class="mt-8 inline-flex flex-col sm:flex-row items-center gap-3 sm:gap-6 px-8 py-4 rounded-3xl bg-gradient-to-r from-maroon-900 via-maroon-800 to-maroon-900 border-2 border-gold-400 shadow-2xl">
+                <div class="flex items-center gap-3">
+                    <i class="fa-regular fa-calendar-check text-2xl text-gold-300"></i>
+                    <div class="text-left">
+                        <div class="text-xs uppercase tracking-widest text-gold-300" data-i18n="auspiciousDateLabel">Auspicious Date of Marriage</div>
+                        <div class="text-xl sm:text-2xl font-royal gold-gradient-text font-bold" data-i18n="weddingDateFull">Saturday, 20 February, 2027</div>
+                    </div>
+                </div>
+                <div class="h-8 w-px bg-gold-400/40 hidden sm:block"></div>
+                <button onclick="triggerBlessingShower()" class="px-5 py-2 rounded-full gold-bg text-maroon-950 font-bold text-xs sm:text-sm hover:brightness-110 transition shadow-md">
+                    ✨ <span data-i18n="blessCoupleBtn">Send Blessings</span>
+                </button>
+            </div>
+
+            <!-- LIVE COUNTDOWN TIMER -->
+            <div class="mt-10 max-w-2xl mx-auto">
+                <p class="text-xs uppercase tracking-[0.25em] text-gold-300 mb-4" data-i18n="countdownHeading">
+                    Counting Down To The Royal Union
+                </p>
+                <div class="grid grid-cols-4 gap-2.5 sm:gap-5">
+                    <div class="bg-maroon-900/90 border border-gold-400/60 rounded-2xl p-3 sm:p-4 shadow-xl backdrop-blur">
+                        <div id="cdDays" class="font-royal text-2xl sm:text-4xl gold-gradient-text font-bold">00</div>
+                        <div class="text-[11px] sm:text-xs uppercase tracking-wider text-amber-200/80 mt-1" data-i18n="cdDaysLabel">Days</div>
+                    </div>
+                    <div class="bg-maroon-900/90 border border-gold-400/60 rounded-2xl p-3 sm:p-4 shadow-xl backdrop-blur">
+                        <div id="cdHours" class="font-royal text-2xl sm:text-4xl gold-gradient-text font-bold">00</div>
+                        <div class="text-[11px] sm:text-xs uppercase tracking-wider text-amber-200/80 mt-1" data-i18n="cdHoursLabel">Hours</div>
+                    </div>
+                    <div class="bg-maroon-900/90 border border-gold-400/60 rounded-2xl p-3 sm:p-4 shadow-xl backdrop-blur">
+                        <div id="cdMinutes" class="font-royal text-2xl sm:text-4xl gold-gradient-text font-bold">00</div>
+                        <div class="text-[11px] sm:text-xs uppercase tracking-wider text-amber-200/80 mt-1" data-i18n="cdMinsLabel">Minutes</div>
+                    </div>
+                    <div class="bg-maroon-900/90 border border-gold-400/60 rounded-2xl p-3 sm:p-4 shadow-xl backdrop-blur">
+                        <div id="cdSeconds" class="font-royal text-2xl sm:text-4xl gold-gradient-text font-bold">00</div>
+                        <div class="text-[11px] sm:text-xs uppercase tracking-wider text-amber-200/80 mt-1" data-i18n="cdSecsLabel">Seconds</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 2: THE ROYAL JHAROKHA INVITATION CARD -->
+        <section id="invitationCard" class="max-w-4xl mx-auto px-4 mt-16 sm:mt-24">
+            <div class="text-center mb-8">
+                <span class="text-gold-400 text-xs uppercase tracking-[0.3em]" data-i18n="cardSectionSub">Nimantran Patrika</span>
+                <h3 class="font-royal text-2xl sm:text-4xl gold-gradient-text font-bold mt-1" data-i18n="cardSectionTitle">
+                    The Royal Wedding Card
+                </h3>
+            </div>
+
+            <!-- Ornate Jharokha Arch Container -->
+            <div class="relative p-2 sm:p-4 rounded-[40px] sm:jharokha-arch gold-bg shadow-[0_0_60px_rgba(212,175,55,0.25)]">
+                <div class="bg-gradient-to-b from-[#4a0412] via-[#32020b] to-[#4a0412] rounded-[34px] sm:jharokha-arch px-5 py-10 sm:px-14 sm:py-16 text-center relative overflow-hidden border-2 border-gold-300/50">
+                    
+                    <!-- Corner Floral Filigree SVGs -->
+                    <svg class="w-20 h-20 text-gold-400/40 absolute top-4 left-4" viewBox="0 0 100 100" fill="currentColor">
+                        <path d="M0 0 L60 0 C40 15 15 40 0 60 Z M15 15 C35 15 50 30 50 50 C30 50 15 35 15 15 Z"/>
+                    </svg>
+                    <svg class="w-20 h-20 text-gold-400/40 absolute top-4 right-4 scale-x-[-1]" viewBox="0 0 100 100" fill="currentColor">
+                        <path d="M0 0 L60 0 C40 15 15 40 0 60 Z M15 15 C35 15 50 30 50 50 C30 50 15 35 15 15 Z"/>
+                    </svg>
+                    <svg class="w-20 h-20 text-gold-400/40 absolute bottom-4 left-4 scale-y-[-1]" viewBox="0 0 100 100" fill="currentColor">
+                        <path d="M0 0 L60 0 C40 15 15 40 0 60 Z M15 15 C35 15 50 30 50 50 C30 50 15 35 15 15 Z"/>
+                    </svg>
+                    <svg class="w-20 h-20 text-gold-400/40 absolute bottom-4 right-4 scale-[-1]" viewBox="0 0 100 100" fill="currentColor">
+                        <path d="M0 0 L60 0 C40 15 15 40 0 60 Z M15 15 C35 15 50 30 50 50 C30 50 15 35 15 15 Z"/>
+                    </svg>
+
+                    <!-- Kalash Icon -->
+                    <div class="mx-auto w-14 h-14 text-gold-300 mb-3">
+                        <svg viewBox="0 0 64 64" fill="currentColor">
+                            <path d="M32 4 C28 10 24 14 24 18 C24 20 32 22 32 22 C32 22 40 20 40 18 C40 14 36 10 32 4 Z"/>
+                            <path d="M16 20 C20 26 24 26 32 26 C40 26 44 26 48 20 C42 18 22 18 16 20 Z"/>
+                            <path d="M22 28 L42 28 C48 36 48 48 40 56 L24 56 C16 48 16 36 22 28 Z"/>
+                            <rect x="20" y="57" width="24" height="4" rx="2"/>
+                        </svg>
+                    </div>
+
+                    <p class="text-gold-300 font-semibold tracking-widest text-xs sm:text-sm" data-i18n="cardBlessingTop">
+                        With the divine blessings of Lord Ganesha &amp; our revered elders
+                    </p>
+
+                    <h4 class="mt-4 font-serifElegant text-xl sm:text-2xl text-amber-100 font-semibold" data-i18n="cardHostParents">
+                        Shri Radheyshyam Gupta &amp; Smt. Neeta Gupta
+                    </h4>
+                    <p class="mt-2 text-sm sm:text-base text-amber-200/90 max-w-xl mx-auto leading-relaxed" data-i18n="cardInviteLine">
+                        cordially invite you and your family to grace the auspicious occasion of the wedding festivities of their beloved son
+                    </p>
+
+                    <!-- Groom & Bride Highlight inside Card -->
+                    <div class="my-8 py-6 px-4 rounded-2xl bg-maroon-950/60 border border-gold-400/40 max-w-2xl mx-auto">
+                        <div class="font-royal text-3xl sm:text-5xl gold-gradient-text font-bold" data-i18n="cardGroomTitle">
+                            Chiranjeevi Akhilesh
+                        </div>
+                        <p class="text-xs sm:text-sm text-amber-200/80 mt-1" data-i18n="cardGroomLineage">
+                            (S/o Shri Radheyshyam Gupta &amp; Smt. Neeta Gupta)
+                        </p>
+
+                        <div class="my-4 flex items-center justify-center gap-4">
+                            <span class="h-px w-16 bg-gold-400/50"></span>
+                            <span class="px-4 py-1 rounded-full gold-bg text-maroon-950 font-bold text-xs sm:text-sm tracking-widest uppercase" data-i18n="cardWedsBadge">
+                                Shubh Sangam With
+                            </span>
+                            <span class="h-px w-16 bg-gold-400/50"></span>
+                        </div>
+
+                        <div class="font-royal text-3xl sm:text-5xl gold-gradient-text font-bold" data-i18n="cardBrideTitle">
+                            Ayushmati Manvi
+                        </div>
+                        <p class="text-xs sm:text-sm text-amber-200/80 mt-1" data-i18n="cardBrideLineage">
+                            (D/o Shri Abhishek Bachhan &amp; Smt. Aishwarya Rai)
+                        </p>
+                    </div>
+
+                    <!-- Baraat & Swagat Mini Summary -->
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 max-w-xl mx-auto text-left bg-maroon-900/50 p-4 rounded-2xl border border-gold-500/30">
+                        <div class="flex items-start gap-3">
+                            <div class="w-10 h-10 rounded-xl gold-bg text-maroon-950 flex items-center justify-center shrink-0 font-bold">
+                                🪘
+                            </div>
+                            <div>
+                                <div class="text-xs text-gold-300 uppercase tracking-wider" data-i18n="preWedLabel">Pre-Wedding Festivities</div>
+                                <div class="font-bold text-sm sm:text-base text-white" data-i18n="preWedDate">19 February, 2027</div>
+                                <div class="text-xs text-amber-200/80" data-i18n="preWedSub">Haldi in Bloom &amp; Sangeet Symphony</div>
+                            </div>
+                        </div>
+                        <div class="flex items-start gap-3">
+                            <div class="w-10 h-10 rounded-xl gold-bg text-maroon-950 flex items-center justify-center shrink-0 font-bold">
+                                🔥
+                            </div>
+                            <div>
+                                <div class="text-xs text-gold-300 uppercase tracking-wider" data-i18n="mainWedLabel">Shubh Lagan &amp; Vivaah</div>
+                                <div class="font-bold text-sm sm:text-base text-white" data-i18n="mainWedDate">20 February, 2027</div>
+                                <div class="text-xs text-amber-200/80" data-i18n="mainWedSub">Lagan at 9:00 AM • Vivaah 7:00 PM</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Compliments Footer -->
+                    <div class="mt-8 pt-6 border-t border-gold-400/30 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs sm:text-sm text-gold-200">
+                        <div>
+                            <span class="text-gold-400 font-bold block" data-i18n="rsvpTitleShort">R.S.V.P. (Vinীত / विनीत)</span>
+                            <span data-i18n="rsvpFamilyNames">Gupta &amp; Bachhan Families</span>
+                        </div>
+                        <div class="text-center sm:text-right">
+                            <span class="text-gold-400 font-bold block" data-i18n="complimentsTitle">With Best Compliments From:</span>
+                            <span data-i18n="complimentsNames">All Near &amp; Dear Relatives &amp; Friends</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 3: INTERACTIVE WEDDING EVENTS SCHEDULE -->
+        <section id="events" class="max-w-6xl mx-auto px-4 mt-20 sm:mt-28">
+            <div class="text-center max-w-2xl mx-auto mb-10">
+                <span class="text-gold-400 text-xs uppercase tracking-[0.3em]" data-i18n="eventsSuperTitle">Manglik Karyakram</span>
+                <h3 class="font-royal text-3xl sm:text-5xl gold-gradient-text font-bold mt-1" data-i18n="eventsMainTitle">
+                    Wedding Celebrations
+                </h3>
+                <p class="text-amber-200/80 text-sm sm:text-base mt-2" data-i18n="eventsSubtitle">
+                    Click on any event card to add to your calendar or celebrate with themed flower bursts!
+                </p>
+
+                <!-- Date Year Note Toggle (As requested: 2027 default with quick toggle for 2026 card print variant) -->
+                <div class="mt-4 inline-flex items-center gap-2 bg-maroon-900/90 border border-gold-400/40 rounded-full px-4 py-1.5 text-xs text-gold-200 no-print">
+                    <i class="fa-solid fa-calendar-day text-gold-400"></i>
+                    <span data-i18n="yearNoteLabel">Lagan &amp; Vivaah Card Year Display:</span>
+                    <button onclick="setLaganYear('2027')" id="yr2027Btn" class="px-2.5 py-0.5 rounded-full font-bold gold-bg text-maroon-950 transition">
+                        2027
+                    </button>
+                    <button onclick="setLaganYear('2026')" id="yr2026Btn" class="px-2.5 py-0.5 rounded-full font-bold text-gold-300 hover:text-white transition">
+                        2026 (As Printed)
+                    </button>
+                </div>
+            </div>
+
+            <!-- 4 Vibrantly Themed Event Cards Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8">
+
+                <!-- EVENT 1: HALDI IN BLOOM (Turmeric Yellow & Marigold Theme) -->
+                <div class="group relative rounded-3xl p-1 bg-gradient-to-br from-yellow-300 via-amber-500 to-orange-500 shadow-2xl transition-all duration-300 hover:-translate-y-1.5">
+                    <div class="h-full rounded-[22px] bg-gradient-to-br from-[#422006] via-[#713f12] to-[#451a03] p-6 sm:p-8 flex flex-col justify-between relative overflow-hidden">
+                        <!-- Decorative Marigold SVG -->
+                        <div class="absolute -right-8 -top-8 w-36 h-36 text-yellow-400/15 group-hover:rotate-45 transition-transform duration-700">
+                            <svg viewBox="0 0 100 100" fill="currentColor">
+                                <circle cx="50" cy="50" r="18"/>
+                                <path d="M50 5 C60 20 40 20 50 5 M50 95 C60 80 40 80 50 95 M5 50 C20 60 20 40 5 50 M95 50 C80 60 80 40 95 50"/>
+                                <circle cx="50" cy="50" r="36" fill="none" stroke="currentColor" stroke-width="8" stroke-dasharray="10 6"/>
+                            </svg>
+                        </div>
+
+                        <div>
+                            <div class="flex items-center justify-between gap-2">
+                                <span class="px-3.5 py-1 rounded-full bg-yellow-400/20 border border-yellow-300 text-yellow-200 text-xs font-bold uppercase tracking-wider" data-i18n="ev1Tag">
+                                    🌼 Haldi Ceremony
+                                </span>
+                                <span class="text-xs text-yellow-300 font-semibold" data-i18n="ev1Dress">Dress Code: Shades of Yellow</span>
+                            </div>
+
+                            <h4 class="font-royal text-2xl sm:text-3xl text-yellow-300 font-bold mt-4" data-i18n="ev1Title">
+                                Haldi in Bloom
+                            </h4>
+                            <p class="text-amber-100/90 text-sm mt-2 leading-relaxed" data-i18n="ev1Desc">
+                                An afternoon of golden turmeric blessings, folk dhol beats, marigold showers, and joyful laughter.
+                            </p>
+
+                            <div class="mt-5 space-y-2.5 bg-black/25 p-4 rounded-2xl border border-yellow-400/30">
+                                <div class="flex items-center gap-3 text-yellow-100">
+                                    <i class="fa-regular fa-calendar text-yellow-400 w-5 text-center"></i>
+                                    <span class="font-semibold text-sm sm:text-base" data-i18n="ev1Date">19 Feb, 2027 (Friday)</span>
+                                </div>
+                                <div class="flex items-center gap-3 text-yellow-100">
+                                    <i class="fa-regular fa-clock text-yellow-400 w-5 text-center"></i>
+                                    <span class="font-semibold text-sm sm:text-base" data-i18n="ev1Time">1:00 PM Onwards</span>
+                                </div>
+                                <div class="flex items-center gap-3 text-yellow-100">
+                                    <i class="fa-solid fa-location-dot text-yellow-400 w-5 text-center"></i>
+                                    <span class="text-xs sm:text-sm" data-i18n="ev1Venue">Royal Courtyard Lawn, Wedding Venue</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="mt-6 flex flex-wrap items-center gap-3">
+                            <button onclick="addToCalendar('Haldi in Bloom - Akhilesh & Manvi Wedding', '20270219T130000', '20270219T163000', 'Haldi Ceremony for Akhilesh Weds Manvi')" class="flex-1 py-2.5 px-4 rounded-xl bg-yellow-400 hover:bg-yellow-300 text-amber-950 font-bold text-xs sm:text-sm flex items-center justify-center gap-2 transition shadow-md">
+                                <i class="fa-regular fa-calendar-plus"></i>
+                                <span data-i18n="addCalBtn">Add to Calendar</span>
+                            </button>
+                            <button onclick="triggerThemeBurst('#facc15', '#fb923c')" class="py-2.5 px-4 rounded-xl bg-yellow-500/20 hover:bg-yellow-500/30 border border-yellow-300 text-yellow-200 font-semibold text-xs sm:text-sm transition" title="Haldi Petal Burst">
+                                🌼 <span data-i18n="celebrateBtn">Celebrate</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- EVENT 2: SANGEET SYMPHONY (Royal Indigo, Magenta & Gold Theme) -->
+                <div class="group relative rounded-3xl p-1 bg-gradient-to-br from-fuchsia-400 via-purple-500 to-indigo-500 shadow-2xl transition-all duration-300 hover:-translate-y-1.5">
+                    <div class="h-full rounded-[22px] bg-gradient-to-br from-[#1e1b4b] via-[#3b0764] to-[#172554] p-6 sm:p-8 flex flex-col justify-between relative overflow-hidden">
+                        <!-- Musical Notes / Starlight SVG -->
+                        <div class="absolute -right-6 -top-6 w-36 h-36 text-fuchsia-300/15 group-hover:scale-110 transition-transform duration-700">
+                            <svg viewBox="0 0 100 100" fill="currentColor">
+                                <circle cx="50" cy="50" r="40" fill="none" stroke="currentColor" stroke-width="4" stroke-dasharray="4 8"/>
+                                <path d="M35 65 V25 L70 18 V58" fill="none" stroke="currentColor" stroke-width="6"/>
+                                <circle cx="28" cy="65" r="9"/>
+                                <circle cx="63" cy="58" r="9"/>
+                            </svg>
+                        </div>
+
+                        <div>
+                            <div class="flex items-center justify-between gap-2">
+                                <span class="px-3.5 py-1 rounded-full bg-fuchsia-400/20 border border-fuchsia-300 text-fuchsia-200 text-xs font-bold uppercase tracking-wider" data-i18n="ev2Tag">
+                                    🎶 Musical Night
+                                </span>
+                                <span class="text-xs text-fuchsia-300 font-semibold" data-i18n="ev2Dress">Dress Code: Indo-Western Glam</span>
+                            </div>
+
+                            <h4 class="font-royal text-2xl sm:text-3xl text-fuchsia-200 font-bold mt-4" data-i18n="ev2Title">
+                                Sangeet Symphony
+                            </h4>
+                            <p class="text-purple-100/90 text-sm mt-2 leading-relaxed" data-i18n="ev2Desc">
+                                A dazzling evening of choreographed family performances, sparkling lights, music, and dancing under the stars.
+                            </p>
+
+                            <div class="mt-5 space-y-2.5 bg-black/25 p-4 rounded-2xl border border-fuchsia-400/30">
+                                <div class="flex items-center gap-3 text-purple-100">
+                                    <i class="fa-regular fa-calendar text-fuchsia-400 w-5 text-center"></i>
+                                    <span class="font-semibold text-sm sm:text-base" data-i18n="ev2Date">19 Feb, 2027 (Friday)</span>
+                                </div>
+                                <div class="flex items-center gap-3 text-purple-100">
+                                    <i class="fa-regular fa-clock text-fuchsia-400 w-5 text-center"></i>
+                                    <span class="font-semibold text-sm sm:text-base" data-i18n="ev2Time">7:00 PM Onwards</span>
+                                </div>
+                                <div class="flex items-center gap-3 text-purple-100">
+                                    <i class="fa-solid fa-location-dot text-fuchsia-400 w-5 text-center"></i>
+                                    <span class="text-xs sm:text-sm" data-i18n="ev2Venue">Grand Crystal Ballroom, Wedding Venue</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="mt-6 flex flex-wrap items-center gap-3">
+                            <button onclick="addToCalendar('Sangeet Symphony - Akhilesh & Manvi Wedding', '20270219T190000', '20270219T233000', 'Sangeet Ceremony for Akhilesh Weds Manvi')" class="flex-1 py-2.5 px-4 rounded-xl bg-gradient-to-r from-fuchsia-400 to-purple-400 hover:from-fuchsia-300 hover:to-purple-300 text-indigo-950 font-bold text-xs sm:text-sm flex items-center justify-center gap-2 transition shadow-md">
+                                <i class="fa-regular fa-calendar-plus"></i>
+                                <span data-i18n="addCalBtn">Add to Calendar</span>
+                            </button>
+                            <button onclick="triggerThemeBurst('#e879f9', '#818cf8')" class="py-2.5 px-4 rounded-xl bg-fuchsia-500/20 hover:bg-fuchsia-500/30 border border-fuchsia-300 text-fuchsia-200 font-semibold text-xs sm:text-sm transition">
+                                ✨ <span data-i18n="celebrateBtn">Celebrate</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- EVENT 3: SHUBH LAGAN (Sacred Saffron, Vermilion & Gold Theme) -->
+                <div class="group relative rounded-3xl p-1 bg-gradient-to-br from-orange-400 via-amber-500 to-red-500 shadow-2xl transition-all duration-300 hover:-translate-y-1.5">
+                    <div class="h-full rounded-[22px] bg-gradient-to-br from-[#431407] via-[#7c2d12] to-[#450a0a] p-6 sm:p-8 flex flex-col justify-between relative overflow-hidden">
+                        <!-- Sacred Kalash / Sun SVG -->
+                        <div class="absolute -right-6 -top-6 w-36 h-36 text-orange-300/15 group-hover:rotate-12 transition-transform duration-700">
+                            <svg viewBox="0 0 100 100" fill="currentColor">
+                                <circle cx="50" cy="50" r="24"/>
+                                <circle cx="50" cy="50" r="38" fill="none" stroke="currentColor" stroke-width="6" stroke-dasharray="6 6"/>
+                            </svg>
+                        </div>
+
+                        <div>
+                            <div class="flex items-center justify-between gap-2">
+                                <span class="px-3.5 py-1 rounded-full bg-orange-400/20 border border-orange-300 text-orange-200 text-xs font-bold uppercase tracking-wider" data-i18n="ev3Tag">
+                                    🕉️ Sacred Rituals
+                                </span>
+                                <span class="text-xs text-orange-300 font-semibold" data-i18n="ev3Dress">Dress Code: Traditional Ethnic</span>
+                            </div>
+
+                            <h4 class="font-royal text-2xl sm:text-3xl text-orange-200 font-bold mt-4" data-i18n="ev3Title">
+                                Shubh Lagan
+                            </h4>
+                            <p class="text-orange-100/90 text-sm mt-2 leading-relaxed" data-i18n="ev3Desc">
+                                Sacred Vedic chants, auspicious Lagan rituals, and blessings from elders as the two families unite in devotion.
+                            </p>
+
+                            <div class="mt-5 space-y-2.5 bg-black/25 p-4 rounded-2xl border border-orange-400/30">
+                                <div class="flex items-center gap-3 text-orange-100">
+                                    <i class="fa-regular fa-calendar text-orange-400 w-5 text-center"></i>
+                                    <span id="ev3DateText" class="font-semibold text-sm sm:text-base" data-i18n="ev3Date">20 Feb, 2027 (Saturday)</span>
+                                </div>
+                                <div class="flex items-center gap-3 text-orange-100">
+                                    <i class="fa-regular fa-clock text-orange-400 w-5 text-center"></i>
+                                    <span class="font-semibold text-sm sm:text-base" data-i18n="ev3Time">9:00 AM</span>
+                                </div>
+                                <div class="flex items-center gap-3 text-orange-100">
+                                    <i class="fa-solid fa-location-dot text-orange-400 w-5 text-center"></i>
+                                    <span class="text-xs sm:text-sm" data-i18n="ev3Venue">Sacred Mandapam Hall, Wedding Venue</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="mt-6 flex flex-wrap items-center gap-3">
+                            <button onclick="addToCalendar('Shubh Lagan - Akhilesh & Manvi Wedding', '20270220T090000', '20270220T120000', 'Shubh Lagan Ceremony for Akhilesh Weds Manvi')" class="flex-1 py-2.5 px-4 rounded-xl bg-gradient-to-r from-orange-400 to-amber-400 hover:from-orange-300 hover:to-amber-300 text-red-950 font-bold text-xs sm:text-sm flex items-center justify-center gap-2 transition shadow-md">
+                                <i class="fa-regular fa-calendar-plus"></i>
+                                <span data-i18n="addCalBtn">Add to Calendar</span>
+                            </button>
+                            <button onclick="triggerThemeBurst('#fb923c', '#facc15')" class="py-2.5 px-4 rounded-xl bg-orange-500/20 hover:bg-orange-500/30 border border-orange-300 text-orange-200 font-semibold text-xs sm:text-sm transition">
+                                🌺 <span data-i18n="celebrateBtn">Celebrate</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- EVENT 4: VIVAAH (Royal Crimson, Sindoor Red & Metallic Gold Theme) -->
+                <div class="group relative rounded-3xl p-1 gold-bg shadow-2xl transition-all duration-300 hover:-translate-y-1.5">
+                    <div class="h-full rounded-[22px] bg-gradient-to-br from-[#4c0519] via-[#881337] to-[#3b0212] p-6 sm:p-8 flex flex-col justify-between relative overflow-hidden">
+                        <!-- Royal Wedding Garland SVG -->
+                        <div class="absolute -right-6 -top-6 w-36 h-36 text-gold-300/15 group-hover:scale-110 transition-transform duration-700">
+                            <svg viewBox="0 0 100 100" fill="currentColor">
+                                <circle cx="38" cy="50" r="24" fill="none" stroke="currentColor" stroke-width="5" stroke-dasharray="6 4"/>
+                                <circle cx="62" cy="50" r="24" fill="none" stroke="currentColor" stroke-width="5" stroke-dasharray="6 4"/>
+                            </svg>
+                        </div>
+
+                        <div>
+                            <div class="flex items-center justify-between gap-2">
+                                <span class="px-3.5 py-1 rounded-full bg-gold-400/20 border border-gold-300 text-gold-200 text-xs font-bold uppercase tracking-wider" data-i18n="ev4Tag">
+                                    👑 Royal Wedding Ceremony
+                                </span>
+                                <span class="text-xs text-gold-300 font-semibold" data-i18n="ev4Dress">Dress Code: Royal Indian Attire</span>
+                            </div>
+
+                            <h4 class="font-royal text-2xl sm:text-3xl gold-gradient-text font-bold mt-4" data-i18n="ev4Title">
+                                Vivaah (Shubh Vivaah)
+                            </h4>
+                            <p class="text-rose-100/90 text-sm mt-2 leading-relaxed" data-i18n="ev4Desc">
+                                Grand Baraat Swagat, Jaimala, Pheras around the sacred fire, and royal dinner reception celebrating Akhilesh &amp; Manvi.
+                            </p>
+
+                            <div class="mt-5 space-y-2.5 bg-black/25 p-4 rounded-2xl border border-gold-400/40">
+                                <div class="flex items-center gap-3 text-rose-100">
+                                    <i class="fa-regular fa-calendar text-gold-300 w-5 text-center"></i>
+                                    <span id="ev4DateText" class="font-semibold text-sm sm:text-base" data-i18n="ev4Date">20 Feb, 2027 (Saturday)</span>
+                                </div>
+                                <div class="flex items-center gap-3 text-rose-100">
+                                    <i class="fa-regular fa-clock text-gold-300 w-5 text-center"></i>
+                                    <span class="font-semibold text-sm sm:text-base" data-i18n="ev4Time">7:00 PM Onwards</span>
+                                </div>
+                                <div class="flex items-center gap-3 text-rose-100">
+                                    <i class="fa-solid fa-location-dot text-gold-300 w-5 text-center"></i>
+                                    <span class="text-xs sm:text-sm" data-i18n="ev4Venue">The Royal Palace Grounds, Wedding Venue</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="mt-6 flex flex-wrap items-center gap-3">
+                            <button onclick="addToCalendar('Shubh Vivaah - Akhilesh Weds Manvi', '20270220T190000', '20270220T235900', 'Grand Wedding Ceremony of Akhilesh & Manvi')" class="flex-1 py-2.5 px-4 rounded-xl gold-bg hover:brightness-110 text-maroon-950 font-bold text-xs sm:text-sm flex items-center justify-center gap-2 transition shadow-md">
+                                <i class="fa-regular fa-calendar-plus"></i>
+                                <span data-i18n="addCalBtn">Add to Calendar</span>
+                            </button>
+                            <button onclick="triggerBlessingShower()" class="py-2.5 px-4 rounded-xl bg-rose-500/20 hover:bg-rose-500/30 border border-gold-300 text-gold-200 font-semibold text-xs sm:text-sm transition">
+                                🌹 <span data-i18n="celebrateBtn">Celebrate</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- SECTION 4: INTERACTIVE RSVP & BLESSINGS WALL -->
+        <section id="rsvp" class="max-w-5xl mx-auto px-4 mt-20 sm:mt-28 no-print">
+            <div class="text-center max-w-2xl mx-auto mb-10">
+                <span class="text-gold-400 text-xs uppercase tracking-[0.3em]" data-i18n="rsvpSuperTitle">Aashirwad &amp; Nimantran</span>
+                <h3 class="font-royal text-3xl sm:text-5xl gold-gradient-text font-bold mt-1" data-i18n="rsvpMainTitle">
+                    RSVP &amp; Blessings Wall
+                </h3>
+                <p class="text-amber-200/80 text-sm sm:text-base mt-2" data-i18n="rsvpSubtitle">
+                    Confirm your presence and leave a heartfelt blessing for Akhilesh &amp; Manvi!
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-8">
+                <!-- Left Column: Interactive RSVP Form -->
+                <div class="lg:col-span-5 bg-maroon-900/80 border-2 border-gold-400/50 rounded-3xl p-6 sm:p-8 shadow-2xl">
+                    <h4 class="font-royal text-xl text-gold-300 font-bold mb-4 flex items-center gap-2">
+                        <i class="fa-solid fa-feather-pointed"></i>
+                        <span data-i18n="formHeader">Send Your Wishes &amp; RSVP</span>
+                    </h4>
+
+                    <form id="rsvpForm" onsubmit="submitBlessing(event)" class="space-y-4">
+                        <div>
+                            <label class="block text-xs uppercase tracking-wider text-gold-200 mb-1.5" data-i18n="labelName">Your Good Name *</label>
+                            <input type="text" id="guestName" required placeholder="e.g., Sharma Family / राहुल शर्मा" class="w-full px-4 py-2.5 rounded-xl bg-maroon-950/90 border border-gold-400/50 text-white placeholder-amber-200/40 focus:outline-none focus:border-gold-300 text-sm">
+                        </div>
+
+                        <div class="grid grid-cols-2 gap-3">
+                            <div>
+                                <label class="block text-xs uppercase tracking-wider text-gold-200 mb-1.5" data-i18n="labelAttend">Attending?</label>
+                                <select id="guestAttending" class="w-full px-3 py-2.5 rounded-xl bg-maroon-950/90 border border-gold-400/50 text-white focus:outline-none focus:border-gold-300 text-sm">
+                                    <option value="yes" data-i18n="optYes">Joyfully Attending ✨</option>
+                                    <option value="blessings" data-i18n="optRemote">Sending Blessings From Afar 🙏</option>
+                                </select>
+                            </div>
+                            <div>
+                                <label class="block text-xs uppercase tracking-wider text-gold-200 mb-1.5" data-i18n="labelGuests">No. of Guests</label>
+                                <select id="guestCount" class="w-full px-3 py-2.5 rounded-xl bg-maroon-950/90 border border-gold-400/50 text-white focus:outline-none focus:border-gold-300 text-sm">
+                                    <option value="1">1</option>
+                                    <option value="2" selected>2 (Couple)</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4 (Family)</option>
+                                    <option value="5+">5+</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div>
+                            <label class="block text-xs uppercase tracking-wider text-gold-200 mb-1.5" data-i18n="labelEvents">Events Attending</label>
+                            <div class="grid grid-cols-2 gap-2 text-xs text-amber-100">
+                                <label class="flex items-center gap-2 bg-maroon-950/60 p-2 rounded-lg border border-gold-400/20 cursor-pointer">
+                                    <input type="checkbox" checked class="accent-amber-400" value="Haldi">
+                                    <span data-i18n="chkHaldi">Haldi (19 Feb)</span>
+                                </label>
+                                <label class="flex items-center gap-2 bg-maroon-950/60 p-2 rounded-lg border border-gold-400/20 cursor-pointer">
+                                    <input type="checkbox" checked class="accent-amber-400" value="Sangeet">
+                                    <span data-i18n="chkSangeet">Sangeet (19 Feb)</span>
+                                </label>
+                                <label class="flex items-center gap-2 bg-maroon-950/60 p-2 rounded-lg border border-gold-400/20 cursor-pointer">
+                                    <input type="checkbox" checked class="accent-amber-400" value="Lagan">
+                                    <span data-i18n="chkLagan">Shubh Lagan</span>
+                                </label>
+                                <label class="flex items-center gap-2 bg-maroon-950/60 p-2 rounded-lg border border-gold-400/20 cursor-pointer">
+                                    <input type="checkbox" checked class="accent-amber-400" value="Vivaah">
+                                    <span data-i18n="chkVivaah">Vivaah (20 Feb)</span>
+                                </label>
+                            </div>
+                        </div>
+
+                        <div>
+                            <label class="block text-xs uppercase tracking-wider text-gold-200 mb-1.5" data-i18n="labelMessage">Your Blessing / Message for the Couple *</label>
+                            <textarea id="guestWish" rows="3" required placeholder="Wishing Akhilesh & Manvi a lifetime of love and happiness! / नव दम्पति को हार्दिक शुभकामनाएं!" class="w-full px-4 py-2.5 rounded-xl bg-maroon-950/90 border border-gold-400/50 text-white placeholder-amber-200/40 focus:outline-none focus:border-gold-300 text-sm"></textarea>
+                        </div>
+
+                        <button type="submit" class="w-full py-3 rounded-xl gold-bg text-maroon-950 font-bold text-sm uppercase tracking-wider hover:brightness-110 transition shadow-lg flex items-center justify-center gap-2">
+                            <i class="fa-solid fa-heart text-sindoor"></i>
+                            <span data-i18n="submitBtn">Post Blessing &amp; Confirm RSVP</span>
+                        </button>
+                    </form>
+                </div>
+
+                <!-- Right Column: Live Blessings Wall -->
+                <div class="lg:col-span-7 flex flex-col justify-between bg-maroon-900/50 border border-gold-400/40 rounded-3xl p-6 sm:p-8 shadow-xl">
+                    <div>
+                        <div class="flex items-center justify-between border-b border-gold-400/30 pb-3 mb-4">
+                            <h4 class="font-royal text-xl text-gold-300 font-bold" data-i18n="wallHeader">
+                                💐 Family &amp; Friends Blessings
+                            </h4>
+                            <span id="wishesCountBadge" class="px-3 py-0.5 rounded-full bg-gold-400/20 border border-gold-300 text-gold-200 text-xs font-bold">
+                                3 Wishes
+                            </span>
+                        </div>
+
+                        <!-- Scrollable Wishes Feed -->
+                        <div id="blessingsWall" class="space-y-4 max-h-[380px] overflow-y-auto pr-2">
+                            <!-- Populated dynamically via JS -->
+                        </div>
+                    </div>
+
+                    <!-- Share Invitation Bar -->
+                    <div class="mt-6 pt-4 border-t border-gold-400/30 flex flex-wrap items-center justify-between gap-3">
+                        <span class="text-xs text-amber-200/80" data-i18n="sharePrompt">Share this digital invitation card:</span>
+                        <div class="flex items-center gap-2">
+                            <button onclick="copyInviteSummary()" class="px-4 py-2 rounded-xl bg-maroon-800 hover:bg-maroon-700 border border-gold-400/50 text-gold-200 text-xs font-semibold flex items-center gap-1.5 transition">
+                                <i class="fa-regular fa-copy"></i>
+                                <span data-i18n="copyInviteBtn">Copy Invite Text</span>
+                            </button>
+                            <button onclick="openPrintableModal()" class="px-4 py-2 rounded-xl gold-bg text-maroon-950 text-xs font-bold flex items-center gap-1.5 transition">
+                                <i class="fa-solid fa-expand"></i>
+                                <span data-i18n="viewCardBtn">Compact Card View</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- PRINTABLE / COMPACT TRADITIONAL CARD MODAL -->
+    <div id="printableModal" class="fixed inset-0 z-50 hidden items-center justify-center bg-black/80 backdrop-blur-sm p-4 overflow-y-auto">
+        <div class="relative w-full max-w-2xl bg-[#3d020e] border-4 border-gold-400 rounded-3xl p-6 sm:p-10 text-center shadow-2xl my-8">
+            <button onclick="closePrintableModal()" class="no-print absolute top-4 right-4 w-9 h-9 rounded-full bg-maroon-800 border border-gold-400 text-gold-200 hover:bg-gold-400 hover:text-maroon-950 flex items-center justify-center transition">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+
+            <div class="text-gold-300 text-sm font-bold tracking-widest" data-i18n="ganeshaMantra">॥ श्री गणेशाय नमः ॥</div>
+            <h2 class="font-royal text-2xl sm:text-4xl gold-gradient-text font-bold mt-2" data-i18n="modalCardHeader">
+                Shubh Vivaah Nimantran
+            </h2>
+            <p class="text-xs sm:text-sm text-amber-200 mt-2" data-i18n="modalParentsInvite">
+                Shri Radheyshyam Gupta &amp; Smt. Neeta Gupta request the honour of your presence at the wedding of
+            </p>
+
+            <div class="my-5 py-4 px-4 rounded-2xl bg-maroon-950/80 border border-gold-400">
+                <div class="font-royal text-2xl sm:text-3xl text-gold-300 font-bold" data-i18n="groomName">Akhilesh</div>
+                <div class="text-xs text-amber-200" data-i18n="groomParents">S/o Shri Radheyshyam Gupta &amp; Smt. Neeta Gupta</div>
+                <div class="my-2 text-sindoor font-serifElegant italic text-lg font-bold" data-i18n="wedsWord">Weds</div>
+                <div class="font-royal text-2xl sm:text-3xl text-gold-300 font-bold" data-i18n="brideName">Manvi</div>
+                <div class="text-xs text-amber-200" data-i18n="brideParents">D/o Shri Abhishek Bachhan &amp; Smt. Aishwarya Rai</div>
+            </div>
+
+            <div class="grid grid-cols-2 gap-3 text-left text-xs sm:text-sm bg-maroon-900/60 p-4 rounded-2xl border border-gold-400/40">
+                <div>
+                    <strong class="text-yellow-300 block" data-i18n="ev1Title">Haldi in Bloom</strong>
+                    <span class="text-amber-100" data-i18n="modalEv1Time">19 Feb, 2027 • 1:00 PM</span>
+                </div>
+                <div>
+                    <strong class="text-fuchsia-300 block" data-i18n="ev2Title">Sangeet Symphony</strong>
+                    <span class="text-amber-100" data-i18n="modalEv2Time">19 Feb, 2027 • 7:00 PM onwards</span>
+                </div>
+                <div>
+                    <strong class="text-orange-300 block" data-i18n="ev3Title">Shubh Lagan</strong>
+                    <span class="text-amber-100" data-i18n="modalEv3Time">20 Feb, 2027 • 9:00 AM</span>
+                </div>
+                <div>
+                    <strong class="text-gold-300 block" data-i18n="ev4Title">Vivaah</strong>
+                    <span class="text-amber-100" data-i18n="modalEv4Time">20 Feb, 2027 • 7:00 PM onwards</span>
+                </div>
+            </div>
+
+            <div class="mt-6 flex items-center justify-center gap-3 no-print">
+                <button onclick="window.print()" class="px-6 py-2.5 rounded-full gold-bg text-maroon-950 font-bold text-xs sm:text-sm flex items-center gap-2 shadow-lg">
+                    <i class="fa-solid fa-print"></i>
+                    <span data-i18n="printNowBtn">Print / Save as PDF</span>
+                </button>
+                <button onclick="closePrintableModal()" class="px-5 py-2.5 rounded-full bg-maroon-800 border border-gold-400/50 text-gold-200 text-xs sm:text-sm">
+                    <span data-i18n="closeBtn">Close</span>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- CUSTOM TOAST NOTIFICATION -->
+    <div id="toastBanner" class="fixed bottom-5 right-5 z-50 transform translate-y-24 opacity-0 transition-all duration-300 bg-gradient-to-r from-maroon-900 to-maroon-950 border-2 border-gold-400 text-gold-200 px-5 py-3 rounded-2xl shadow-2xl flex items-center gap-3 no-print">
+        <span class="text-xl">🌺</span>
+        <span id="toastText" class="text-xs sm:text-sm font-semibold">Blessings Showered!</span>
+    </div>
+
+    <!-- FOOTER -->
+    <footer class="border-t border-gold-500/30 bg-maroon-950/90 py-8 px-4 text-center text-xs sm:text-sm text-amber-200/70 no-print">
+        <div class="font-royal text-lg gold-gradient-text font-bold mb-1" data-i18n="footerCouple">
+            Akhilesh &amp; Manvi • 20.02.2027
+        </div>
+        <p data-i18n="footerBlessing">॥ मंगलम भगवान विष्णुः, मंगलम गरुड़ध्वजः। मंगलम पुण्डरीकाक्षः, मंगलाय तनो हरिः ॥</p>
+    </footer>
+
+    <!-- COMPLETE BILINGUAL DICTIONARY, ANIMATION & INTERACTIVITY SCRIPT -->
+    <script>
+        /* ==============================================================
+           1. BILINGUAL DICTIONARY (ENGLISH & HINDI DEVANAGARI)
+        ============================================================== */
+        let currentLang = 'en';
+        let currentLaganYear = '2027';
+
+        const translations = {
+            en: {
+                sealInvite: "Royal Wedding Invitation",
+                sealCouple: "Akhilesh <br><span class='text-sm font-serifElegant italic text-amber-200'>&amp;</span><br> Manvi",
+                sealDate: "20 Feb, 2027",
+                tapToOpen: "Tap to Open Card",
+                sealSubtext: "Click the royal seal to open with festive music & flower shower",
+                navTitle: "Akhilesh & Manvi",
+                navDate: "20 Feb, 2027",
+                navCard: "Invitation Card",
+                navEvents: "Events",
+                navRsvp: "RSVP & Wishes",
+                showerBtn: "Shower Blessings",
+                ganeshaMantra: "॥ Shri Ganeshaya Namah ॥",
+                shlokaText: "\"Vakratunda Mahakaya Suryakoti Samaprabha, Nirvighnam Kurume Deva Sarva Karyeshu Sarvada\"",
+                cordialTag: "A Royal Wedding Celebration",
+                groomName: "Akhilesh",
+                groomParents: "S/o Shri Radheyshyam Gupta & Smt. Neeta Gupta",
+                wedsWord: "Weds",
+                brideName: "Manvi",
+                brideParents: "D/o Shri Abhishek Bachhan & Smt. Aishwarya Rai",
+                auspiciousDateLabel: "Auspicious Date of Marriage",
+                weddingDateFull: "Saturday, 20 February, 2027",
+                blessCoupleBtn: "Send Blessings",
+                countdownHeading: "Counting Down To The Royal Union",
+                cdDaysLabel: "Days",
+                cdHoursLabel: "Hours",
+                cdMinsLabel: "Minutes",
+                cdSecsLabel: "Seconds",
+                cardSectionSub: "Nimantran Patrika",
+                cardSectionTitle: "The Royal Wedding Card",
+                cardBlessingTop: "With the divine blessings of Lord Ganesha & our revered elders",
+                cardHostParents: "Shri Radheyshyam Gupta & Smt. Neeta Gupta",
+                cardInviteLine: "cordially invite you and your family to grace the auspicious occasion of the wedding festivities of their beloved son",
+                cardGroomTitle: "Chiranjeevi Akhilesh",
+                cardGroomLineage: "(S/o Shri Radheyshyam Gupta & Smt. Neeta Gupta)",
+                cardWedsBadge: "Shubh Sangam With",
+                cardBrideTitle: "Ayushmati Manvi",
+                cardBrideLineage: "(D/o Shri Abhishek Bachhan & Smt. Aishwarya Rai)",
+                preWedLabel: "Pre-Wedding Festivities",
+                preWedDate: "19 February, 2027",
+                preWedSub: "Haldi in Bloom & Sangeet Symphony",
+                mainWedLabel: "Shubh Lagan & Vivaah",
+                mainWedDate: "20 February, 2027",
+                mainWedSub: "Lagan at 9:00 AM • Vivaah 7:00 PM",
+                rsvpTitleShort: "R.S.V.P. (With Warm Regards)",
+                rsvpFamilyNames: "Gupta & Bachhan Families",
+                complimentsTitle: "With Best Compliments From:",
+                complimentsNames: "All Near & Dear Relatives & Friends",
+                eventsSuperTitle: "Manglik Karyakram",
+                eventsMainTitle: "Wedding Celebrations",
+                eventsSubtitle: "Click on any event card to add to your calendar or celebrate with themed flower bursts!",
+                yearNoteLabel: "Lagan & Vivaah Card Year Display:",
+                ev1Tag: "🌼 Haldi Ceremony",
+                ev1Dress: "Vibe: Marigold & Yellow",
+                ev1Title: "Haldi in Bloom",
+                ev1Desc: "An afternoon of golden turmeric blessings, folk dhol beats, marigold showers, and joyful laughter.",
+                ev1Date: "19 Feb, 2027 (Friday)",
+                ev1Time: "1:00 PM Onwards",
+                ev1Venue: "Royal Courtyard Lawn, Wedding Venue",
+                ev2Tag: "🎶 Musical Sangeet",
+                ev2Dress: "Vibe: Royal Glamour",
+                ev2Title: "Sangeet Symphony",
+                ev2Desc: "A dazzling evening of choreographed family performances, sparkling lights, music, and dancing under the stars.",
+                ev2Date: "19 Feb, 2027 (Friday)",
+                ev2Time: "7:00 PM Onwards",
+                ev2Venue: "Grand Crystal Ballroom, Wedding Venue",
+                ev3Tag: "🕉️ Auspicious Lagan",
+                ev3Dress: "Vibe: Sacred Traditional",
+                ev3Title: "Shubh Lagan",
+                ev3Desc: "Sacred Vedic chants, auspicious Lagan rituals, and blessings from elders as the two families unite in devotion.",
+                ev3Date: `20 Feb, ${currentLaganYear}`,
+                ev3Time: "9:00 AM",
+                ev3Venue: "Sacred Mandapam Hall, Wedding Venue",
+                ev4Tag: "👑 Grand Wedding",
+                ev4Dress: "Vibe: Royal Festive",
+                ev4Title: "Vivaah",
+                ev4Desc: "Grand Baraat Swagat, Jaimala, sacred Pheras, and royal reception celebrating the union of Akhilesh & Manvi.",
+                ev4Date: `20 Feb, ${currentLaganYear}`,
+                ev4Time: "7:00 PM Onwards",
+                ev4Venue: "The Royal Palace Grounds, Wedding Venue",
+                addCalBtn: "Add to Calendar",
+                celebrateBtn: "Celebrate",
+                rsvpSuperTitle: "Aashirwad & Confirmation",
+                rsvpMainTitle: "RSVP & Blessings Wall",
+                rsvpSubtitle: "Confirm your presence and leave a heartfelt blessing for Akhilesh & Manvi!",
+                formHeader: "Send Your Wishes & RSVP",
+                labelName: "Your Good Name *",
+                labelAttend: "Attending?",
+                optYes: "Joyfully Attending ✨",
+                optRemote: "Sending Blessings 🙏",
+                labelGuests: "No. of Guests",
+                labelEvents: "Events Attending",
+                chkHaldi: "Haldi (19 Feb)",
+                chkSangeet: "Sangeet (19 Feb)",
+                chkLagan: "Shubh Lagan",
+                chkVivaah: "Vivaah (20 Feb)",
+                labelMessage: "Your Blessing / Message for the Couple *",
+                submitBtn: "Post Blessing & Confirm RSVP",
+                wallHeader: "💐 Family & Friends Blessings",
+                sharePrompt: "Share this digital invitation card:",
+                copyInviteBtn: "Copy Invite Text",
+                viewCardBtn: "Compact Card View",
+                modalCardHeader: "Shubh Vivaah Nimantran",
+                modalParentsInvite: "Shri Radheyshyam Gupta & Smt. Neeta Gupta cordially invite you to the wedding of",
+                modalEv1Time: "19 Feb, 2027 • 1:00 PM",
+                modalEv2Time: "19 Feb, 2027 • 7:00 PM onwards",
+                modalEv3Time: `20 Feb, ${currentLaganYear} • 9:00 AM`,
+                modalEv4Time: `20 Feb, ${currentLaganYear} • 7:00 PM onwards`,
+                printNowBtn: "Print / Save as PDF",
+                closeBtn: "Close",
+                footerCouple: "Akhilesh & Manvi • 20.02.2027",
+                footerBlessing: "॥ Mangalam Bhagwan Vishnuh, Mangalam Garudadhwajah, Mangalam Pundarikakshah, Mangalaya Tano Harih ॥"
+            },
+            hi: {
+                sealInvite: "शाही विवाह आमंत्रण",
+                sealCouple: "अखिलेश <br><span class='text-sm font-serifElegant text-amber-200'>संग</span><br> मानवी",
+                sealDate: "२० फरवरी, २०२७",
+                tapToOpen: "निमंत्रण पत्र खोलें",
+                sealSubtext: "शहनाई की मधुर धुन और पुष्प वर्षा के साथ कार्ड खोलने के लिए मुहर पर क्लिक करें",
+                navTitle: "अखिलेश संग मानवी",
+                navDate: "२० फरवरी, २०२७",
+                navCard: "निमंत्रण पत्रिका",
+                navEvents: "मांगलिक कार्यक्रम",
+                navRsvp: "आशीर्वाद एवं RSVP",
+                showerBtn: "पुष्प वर्षा करें",
+                ganeshaMantra: "॥ श्री गणेशाय नमः ॥",
+                shlokaText: "“वक्रतुण्ड महाकाय सूर्यकोटि समप्रभ। निर्विघ्नं कुरु मे देव सर्वकार्येषु सर्वदा॥”",
+                cordialTag: "मंगल परिणय उत्सव",
+                groomName: "अखिलेश",
+                groomParents: "सुपुत्र श्री राधेश्याम गुप्ता एवं श्रीमती नीता गुप्ता",
+                wedsWord: "संग",
+                brideName: "मानवी",
+                brideParents: "सुपुत्री श्री अभिषेक बच्चन एवं श्रीमती ऐश्वर्या राय",
+                auspiciousDateLabel: "शुभ विवाह तिथि",
+                weddingDateFull: "शनिवार, २० फरवरी, २०२७",
+                blessCoupleBtn: "शुभाशीष भेजें",
+                countdownHeading: "शुभ विवाह की घड़ी में शेष समय",
+                cdDaysLabel: "दिन",
+                cdHoursLabel: "घंटे",
+                cdMinsLabel: "मिनट",
+                cdSecsLabel: "सेकंड",
+                cardSectionSub: "स्नेहिल निमंत्रण पत्रिका",
+                cardSectionTitle: "शाही विवाह निमंत्रण कार्ड",
+                cardBlessingTop: "विघ्नहर्ता श्री गणेश जी एवं पूज्य बुजुर्गों के असीम आशीर्वाद से",
+                cardHostParents: "श्री राधेश्याम गुप्ता एवं श्रीमती नीता गुप्ता",
+                cardInviteLine: "अपने परम स्नेही सुपुत्र के शुभ विवाह के मांगलिक अवसर पर आपको सपरिवार पधारने एवं नवयुगल को आशीर्वाद देने हेतु सादर आमंत्रित करते हैं",
+                cardGroomTitle: "चिरंजीवी अखिलेश",
+                cardGroomLineage: "(सुपुत्र श्री राधेश्याम गुप्ता एवं श्रीमती नीता गुप्ता)",
+                cardWedsBadge: "शुभ संगम",
+                cardBrideTitle: "आयुष्मती मानवी",
+                cardBrideLineage: "(सुपुत्री श्री अभिषेक बच्चन एवं श्रीमती ऐश्वर्या राय)",
+                preWedLabel: "हल्दी एवं संगीत समारोह",
+                preWedDate: "१९ फरवरी, २०२७",
+                preWedSub: "हल्दी इन ब्लूम एवं संगीत सिम्फनी",
+                mainWedLabel: "शुभ लग्न एवं शुभ विवाह",
+                mainWedDate: "२० फरवरी, २०२७",
+                mainWedSub: "लग्न: प्रातः ९:०० बजे • विवाह: सायं ७:०० बजे से",
+                rsvpTitleShort: "विनीत (दर्शनाभिलाषी)",
+                rsvpFamilyNames: "समस्त गुप्ता एवं बच्चन परिवार",
+                complimentsTitle: "स्नेहाकांक्षी:",
+                complimentsNames: "समस्त इष्टमित्र एवं संबंधीगण",
+                eventsSuperTitle: "मांगलिक कार्यक्रम विवरण",
+                eventsMainTitle: "विवाह के शुभ कार्यक्रम",
+                eventsSubtitle: "किसी भी कार्यक्रम को अपने कैलेंडर में जोड़ें या उत्सव बटन दबाकर फूलों की वर्षा करें!",
+                yearNoteLabel: "लग्न एवं विवाह वर्ष विकल्प:",
+                ev1Tag: "🌼 हल्दी समारोह",
+                ev1Dress: "परिधान: पीला / केसरिया रंग",
+                ev1Title: "हल्दी इन ब्लूम (Haldi in Bloom)",
+                ev1Desc: "हल्दी की शुभ रस्म, ढोल की थाप, गेंदे के फूलों की खुशबू और अपनों की मुस्कान से सजी दोपहर।",
+                ev1Date: "१९ फरवरी, २०२७ (शुक्रवार)",
+                ev1Time: "दोपहर १:०० बजे से",
+                ev1Venue: "रॉयल कोर्टयार्ड लॉन, विवाह स्थल",
+                ev2Tag: "🎶 संगीत संध्या",
+                ev2Dress: "परिधान: इंडो-वेस्टर्न / फेस्टिव",
+                ev2Title: "संगीत सिम्फनी (Sangeet Symphony)",
+                ev2Desc: "मधुर संगीत, पारिवारिक नृत्य प्रस्तुतियों और जगमगाती रोशनी से भरी यादगार शाम।",
+                ev2Date: "१९ फरवरी, २०२७ (शुक्रवार)",
+                ev2Time: "सायं ७:०० बजे से",
+                ev2Venue: "ग्रैंड क्रिस्टल बॉलरूम, विवाह स्थल",
+                ev3Tag: "🕉️ पावन लग्न विधि",
+                ev3Dress: "परिधान: पारंपरिक भारतीय",
+                ev3Title: "शुभ लग्न (Shubh Lagan)",
+                ev3Desc: "वैदिक मंत्रोच्चार एवं पारंपरिक रीति-रिवाजों के साथ पावन शुभ लग्न संस्कार।",
+                ev3Date: `२० फरवरी, ${currentLaganYear === '2027' ? '२०२७' : '२०२६'}`,
+                ev3Time: "प्रातः ९:०० बजे",
+                ev3Venue: "पावन मंडपम हॉल, विवाह स्थल",
+                ev4Tag: "👑 शुभ विवाह समारोह",
+                ev4Dress: "परिधान: शाही पारंपरिक परिधान",
+                ev4Title: "शुभ विवाह (Vivaah)",
+                ev4Desc: "भव्य बारात स्वागत, वरमाला, सप्तपदी के सात फेरे एवं प्रीतिभोज समारोह।",
+                ev4Date: `२० फरवरी, ${currentLaganYear === '2027' ? '२०२७' : '२०२६'}`,
+                ev4Time: "सायं ७:०० बजे से",
+                ev4Venue: "द रॉयल पैलेस ग्राउंड्स, विवाह स्थल",
+                addCalBtn: "कैलेंडर में जोड़ें",
+                celebrateBtn: "उत्सव मनाएं",
+                rsvpSuperTitle: "आशीर्वाद एवं उपस्थिति",
+                rsvpMainTitle: "शुभकामनाएं एवं RSVP",
+                rsvpSubtitle: "अपनी गरिमामयी उपस्थिति दर्ज करें और अखिलेश एवं मानवी के लिए शुभकामना संदेश लिखें!",
+                formHeader: "अपना आशीर्वाद एवं RSVP भेजें",
+                labelName: "आपका शुभ नाम *",
+                labelAttend: "आपकी उपस्थिति?",
+                optYes: "सपरिवार पधार रहे हैं ✨",
+                optRemote: "दूर से शुभ आशीर्वाद 🙏",
+                labelGuests: "सदस्यों की संख्या",
+                labelEvents: "किन कार्यक्रमों में शामिल होंगे",
+                chkHaldi: "हल्दी (१९ फरवरी)",
+                chkSangeet: "संगीत (१९ फरवरी)",
+                chkLagan: "शुभ लग्न",
+                chkVivaah: "विवाह (२० फरवरी)",
+                labelMessage: "वर-वधू के लिए आपका आशीर्वाद / संदेश *",
+                submitBtn: "आशीर्वाद भेजें एवं पुष्टि करें",
+                wallHeader: "💐 परिजनों एवं मित्रों के आशीर्वाद",
+                sharePrompt: "यह डिजिटल निमंत्रण साझा करें:",
+                copyInviteBtn: "निमंत्रण टेक्स्ट कॉपी करें",
+                viewCardBtn: "संक्षिप्त कार्ड देखें",
+                modalCardHeader: "शुभ विवाह निमंत्रण पत्र",
+                modalParentsInvite: "श्री राधेश्याम गुप्ता एवं श्रीमती नीता गुप्ता आपको सुपुत्र के शुभ विवाह में सादर आमंत्रित करते हैं",
+                modalEv1Time: "१९ फरवरी, २०२७ • दोपहर १:०० बजे",
+                modalEv2Time: "१९ फरवरी, २०२७ • सायं ७:०० बजे से",
+                modalEv3Time: `२० फरवरी, ${currentLaganYear === '2027' ? '२०२७' : '२०२६'} • प्रातः ९:०० बजे`,
+                modalEv4Time: `२० फरवरी, ${currentLaganYear === '2027' ? '२०२७' : '२०२६'} • सायं ७:०० बजे से`,
+                printNowBtn: "प्रिंट / PDF सेव करें",
+                closeBtn: "बंद करें",
+                footerCouple: "अखिलेश संग मानवी • २०.०२.२०२७",
+                footerBlessing: "॥ मंगलम भगवान विष्णुः, मंगलम गरुड़ध्वजः। मंगलम पुण्डरीकाक्षः, मंगलाय तनो हरिः ॥"
+            }
+        };
+
+        /* ==============================================================
+           2. LANGUAGE SWITCHER & YEAR TOGGLE LOGIC
+        ============================================================== */
+        function setLanguage(lang) {
+            currentLang = lang;
+            document.documentElement.lang = lang;
+
+            // Update dynamic year fields before applying dictionary
+            translations.en.ev3Date = `20 Feb, ${currentLaganYear}`;
+            translations.en.ev4Date = `20 Feb, ${currentLaganYear}`;
+            translations.en.modalEv3Time = `20 Feb, ${currentLaganYear} • 9:00 AM`;
+            translations.en.modalEv4Time = `20 Feb, ${currentLaganYear} • 7:00 PM onwards`;
+
+            const hiYear = currentLaganYear === '2027' ? '२०२७' : '२०२६';
+            translations.hi.ev3Date = `२० फरवरी, ${hiYear}`;
+            translations.hi.ev4Date = `२० फरवरी, ${hiYear}`;
+            translations.hi.modalEv3Time = `२० फरवरी, ${hiYear} • प्रातः ९:०० बजे`;
+            translations.hi.modalEv4Time = `२० फरवरी, ${hiYear} • सायं ७:०० बजे से`;
+
+            const dict = translations[lang];
+            document.querySelectorAll('[data-i18n]').forEach(el => {
+                const key = el.getAttribute('data-i18n');
+                if (dict[key]) {
+                    if (key === 'sealCouple') {
+                        el.innerHTML = dict[key];
+                    } else {
+                        el.textContent = dict[key];
+                    }
+                }
+            });
+
+            // Toggle Active Button Styles (Navbar & Envelope)
+            const activeClasses = ['gold-bg', 'text-maroon-950'];
+            const inactiveClasses = ['text-gold-200'];
+
+            ['navLangEn', 'envLangEn'].forEach(id => {
+                const btn = document.getElementById(id);
+                if (!btn) return;
+                if (lang === 'en') {
+                    btn.classList.add(...activeClasses);
+                    btn.classList.remove(...inactiveClasses);
+                } else {
+                    btn.classList.remove(...activeClasses);
+                    btn.classList.add(...inactiveClasses);
+                }
+            });
+
+            ['navLangHi', 'envLangHi'].forEach(id => {
+                const btn = document.getElementById(id);
+                if (!btn) return;
+                if (lang === 'hi') {
+                    btn.classList.add(...activeClasses);
+                    btn.classList.remove(...inactiveClasses);
+                } else {
+                    btn.classList.remove(...activeClasses);
+                    btn.classList.add(...inactiveClasses);
+                }
+            });
+
+            renderBlessingsWall();
+            updateCountdown();
+        }
+
+        function setLaganYear(yr) {
+            currentLaganYear = yr;
+            const btn27 = document.getElementById('yr2027Btn');
+            const btn26 = document.getElementById('yr2026Btn');
+
+            if (yr === '2027') {
+                btn27.className = "px-2.5 py-0.5 rounded-full font-bold gold-bg text-maroon-950 transition";
+                btn26.className = "px-2.5 py-0.5 rounded-full font-bold text-gold-300 hover:text-white transition";
+            } else {
+                btn26.className = "px-2.5 py-0.5 rounded-full font-bold gold-bg text-maroon-950 transition";
+                btn27.className = "px-2.5 py-0.5 rounded-full font-bold text-gold-300 hover:text-white transition";
+            }
+            setLanguage(currentLang);
+            showToast(currentLang === 'hi'
+                ? `लग्न एवं विवाह वर्ष ${yr === '2027' ? '२०२७' : '२०२६'} प्रदर्शित किया गया है`
+                : `Shubh Lagan & Vivaah year updated to ${yr}`);
+        }
+
+        /* ==============================================================
+           3. ROYAL ENVELOPE OPENING & SYNTHESIZED INDIAN CHIMES
+        ============================================================== */
+        let isMusicPlaying = false;
+        let chimeLoop = null;
+        let synth = null;
+
+        function openInvitation() {
+            const overlay = document.getElementById('envelopeOverlay');
+            overlay.classList.add('envelope-open');
+            triggerBlessingShower();
+            playAuspiciousChimeBurst();
+
+            setTimeout(() => {
+                overlay.style.display = 'none';
+            }, 1350);
+        }
+
+        function initSynth() {
+            if (!synth && typeof Tone !== 'undefined') {
+                synth = new Tone.PolySynth(Tone.Synth, {
+                    oscillator: { type: "triangle" },
+                    envelope: { attack: 0.03, decay: 0.4, sustain: 0.2, release: 1.4 }
+                }).toDestination();
+                synth.volume.value = -10;
+            }
+        }
+
+        function playAuspiciousChimeBurst() {
+            try {
+                if (typeof Tone === 'undefined') return;
+                Tone.start();
+                initSynth();
+                // Auspicious Indian Raga Yaman / Bhupali inspired ascending notes
+                const notes = ["C5", "D5", "E5", "G5", "A5", "C6"];
+                const now = Tone.now();
+                notes.forEach((n, idx) => {
+                    synth.triggerAttackRelease(n, "8n", now + idx * 0.14);
+                });
+            } catch (e) {
+                // Ignore audio restriction errors
+            }
+        }
+
+        function toggleFestiveMusic() {
+            try {
+                if (typeof Tone === 'undefined') return;
+                Tone.start();
+                initSynth();
+
+                const icon = document.getElementById('musicIcon');
+                const btn = document.getElementById('musicBtn');
+
+                if (!isMusicPlaying) {
+                    const ragaMelody = ["C5", "E5", "G5", "A5", "G5", "E5", "D5", "C5", "E5", "G5", "C6", "A5"];
+                    let step = 0;
+                    chimeLoop = setInterval(() => {
+                        if (synth) {
+                            synth.triggerAttackRelease(ragaMelody[step % ragaMelody.length], "8n");
+                            step++;
+                        }
+                    }, 480);
+                    isMusicPlaying = true;
+                    btn.classList.add('gold-bg', 'text-maroon-950');
+                    icon.className = "fa-solid fa-volume-high animate-pulse";
+                    showToast(currentLang === 'hi' ? "🎵 मंगल धुन चालू की गई" : "🎵 Auspicious Santoor Chimes Playing");
+                } else {
+                    clearInterval(chimeLoop);
+                    isMusicPlaying = false;
+                    btn.classList.remove('gold-bg', 'text-maroon-950');
+                    icon.className = "fa-solid fa-music";
+                    showToast(currentLang === 'hi' ? "धुन बंद की गई" : "Festive Chimes Paused");
+                }
+            } catch (e) {}
+        }
+
+        /* ==============================================================
+           4. MARIGOLD, ROSE PETALS & GOLDEN SPARKLES CANVAS ENGINE
+        ============================================================== */
+        const canvas = document.getElementById('petalCanvas');
+        const ctx = canvas.getContext('2d');
+        let particles = [];
+        const petalColors = ['#ff9900', '#fbbf24', '#e11d48', '#be123c', '#f59e0b', '#fde047'];
+
+        function resizeCanvas() {
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight;
+        }
+        window.addEventListener('resize', resizeCanvas);
+
+        class Petal {
+            constructor(isBurst = false, customColors = null) {
+                this.reset(isBurst, customColors);
+            }
+            reset(isBurst = false, customColors = null) {
+                const palette = customColors || petalColors;
+                this.color = palette[Math.floor(Math.random() * palette.length)];
+                this.size = Math.random() * 8 + 5;
+                this.angle = Math.random() * Math.PI * 2;
+                this.spin = (Math.random() - 0.5) * 0.04;
+                this.isBurst = isBurst;
+
+                if (isBurst) {
+                    this.x = canvas.width / 2 + (Math.random() - 0.5) * 300;
+                    this.y = canvas.height / 2 + (Math.random() - 0.5) * 150;
+                    this.vx = (Math.random() - 0.5) * 9;
+                    this.vy = (Math.random() - 0.8) * 8 - 2;
+                    this.gravity = 0.14;
+                    this.alpha = 1;
+                } else {
+                    this.x = Math.random() * canvas.width;
+                    this.y = Math.random() * -canvas.height;
+                    this.vx = (Math.random() - 0.5) * 1.2;
+                    this.vy = Math.random() * 1.4 + 0.7;
+                    this.gravity = 0;
+                    this.alpha = Math.random() * 0.65 + 0.25;
+                }
+            }
+            update() {
+                this.x += this.vx + Math.sin(this.angle) * 0.4;
+                this.y += this.vy;
+                this.vy += this.gravity;
+                this.angle += this.spin;
+
+                if (this.isBurst) {
+                    this.alpha -= 0.008;
+                } else if (this.y > canvas.height + 20) {
+                    this.reset(false);
+                    this.y = -20;
+                }
+            }
+            draw() {
+                if (this.alpha <= 0) return;
+                ctx.save();
+                ctx.globalAlpha = Math.max(0, this.alpha);
+                ctx.translate(this.x, this.y);
+                ctx.rotate(this.angle);
+                ctx.fillStyle = this.color;
+                ctx.beginPath();
+                // Draw realistic curved marigold/rose petal shape
+                ctx.moveTo(0, 0);
+                ctx.bezierCurveTo(this.size, -this.size, this.size * 1.5, this.size, 0, this.size * 1.4);
+                ctx.bezierCurveTo(-this.size * 1.5, this.size, -this.size, -this.size, 0, 0);
+                ctx.fill();
+                ctx.restore();
+            }
+        }
+
+        function initAmbientPetals() {
+            particles = [];
+            const count = window.innerWidth < 640 ? 28 : 50;
+            for (let i = 0; i < count; i++) {
+                const p = new Petal(false);
+                p.y = Math.random() * canvas.height;
+                particles.push(p);
+            }
+        }
+
+        function triggerBlessingShower() {
+            for (let i = 0; i < 65; i++) {
+                particles.push(new Petal(true));
+            }
+            playAuspiciousChimeBurst();
+            showToast(currentLang === 'hi'
+                ? "🌸 अखिलेश और मानवी पर पुष्प वर्षा एवं आशीर्वाद!"
+                : "🌸 Marigold & Rose Petals Showered for Akhilesh & Manvi!");
+        }
+
+        function triggerThemeBurst(color1, color2) {
+            for (let i = 0; i < 55; i++) {
+                particles.push(new Petal(true, [color1, color2, '#fef08a']));
+            }
+            playAuspiciousChimeBurst();
+        }
+
+        function animatePetals() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            particles = particles.filter(p => !p.isBurst || p.alpha > 0);
+            for (let i = 0; i < particles.length; i++) {
+                particles[i].update();
+                particles[i].draw();
+            }
+            requestAnimationFrame(animatePetals);
+        }
+
+        /* ==============================================================
+           5. LIVE COUNTDOWN TIMER TO 20 FEB, 2027 (7:00 PM IST)
+        ============================================================== */
+        const weddingTarget = new Date("2027-02-20T19:00:00+05:30").getTime();
+
+        function toDevanagariDigits(numStr) {
+            const map = ['०', '१', '२', '३', '४', '५', '६', '७', '८', '९'];
+            return String(numStr).replace(/[0-9]/g, d => map[d]);
+        }
+
+        function updateCountdown() {
+            const now = new Date().getTime();
+            const diff = Math.max(0, weddingTarget - now);
+
+            const days = String(Math.floor(diff / (1000 * 60 * 60 * 24))).padStart(2, '0');
+            const hours = String(Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60))).padStart(2, '0');
+            const mins = String(Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60))).padStart(2, '0');
+            const secs = String(Math.floor((diff % (1000 * 60)) / 1000)).padStart(2, '0');
+
+            document.getElementById('cdDays').textContent = currentLang === 'hi' ? toDevanagariDigits(days) : days;
+            document.getElementById('cdHours').textContent = currentLang === 'hi' ? toDevanagariDigits(hours) : hours;
+            document.getElementById('cdMinutes').textContent = currentLang === 'hi' ? toDevanagariDigits(mins) : mins;
+            document.getElementById('cdSeconds').textContent = currentLang === 'hi' ? toDevanagariDigits(secs) : secs;
+        }
+        setInterval(updateCountdown, 1000);
+
+        /* ==============================================================
+           6. ADD TO CALENDAR (.ICS FILE GENERATOR)
+        ============================================================== */
+        function addToCalendar(title, startStr, endStr, description) {
+            const icsContent = [
+                "BEGIN:VCALENDAR",
+                "VERSION:2.0",
+                "PRODID:-//AkhileshWedsManvi//RoyalWedding//EN",
+                "BEGIN:VEVENT",
+                `SUMMARY:${title}`,
+                `DTSTART:${startStr}`,
+                `DTEND:${endStr}`,
+                `DESCRIPTION:${description}`,
+                "LOCATION:The Royal Wedding Venue",
+                "END:VEVENT",
+                "END:VCALENDAR"
+            ].join("\r\n");
+
+            const blob = new Blob([icsContent], { type: 'text/calendar;charset=utf-8' });
+            const url = URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = `${title.replace(/\s+/g, '_')}.ics`;
+            document.body.appendChild(a);
+            a.click();
+            document.body.removeChild(a);
+            URL.revokeObjectURL(url);
+
+            showToast(currentLang === 'hi'
+                ? "📅 कार्यक्रम आपके कैलेंडर के लिए डाउनलोड हो गया!"
+                : "📅 Event downloaded for your Calendar!");
+        }
+
+        /* ==============================================================
+           7. INTERACTIVE BLESSINGS WALL & RSVP HANDLER
+        ============================================================== */
+        const blessingsList = [
+            {
+                nameEn: "Gupta & Bachhan Elders",
+                nameHi: "गुप्ता एवं बच्चन परिवार के बुजुर्ग",
+                statusEn: "Host Families ✨",
+                statusHi: "स्वागताकांक्षी परिवार ✨",
+                messageEn: "May Lord Ganesha bless Akhilesh and Manvi with eternal love, prosperity, and a joyous married life together!",
+                messageHi: "भगवान श्री गणेश अखिलेश और मानवी को सुख, समृद्धि एवं अखंड सौभाग्य प्रदान करें! शुभ आशीर्वाद।"
+            },
+            {
+                nameEn: "Aarav & Priya Verma",
+                nameHi: "आरव एवं प्रिया वर्मा",
+                statusEn: "Attending (4 Guests) • All Events",
+                statusHi: "सपरिवार उपस्थित (४ सदस्य) • सभी कार्यक्रम",
+                messageEn: "Counting down the days to Haldi in Bloom and Sangeet Symphony! Heartiest congratulations to both families.",
+                messageHi: "हल्दी और संगीत संध्या का बेसब्री से इंतजार है! दोनों परिवारों को ढेर सारी बधाई एवं शुभकामनाएं।"
+            },
+            {
+                nameEn: "Dr. Rajeshwari Mishra",
+                nameHi: "डॉ. राजेश्वरी मिश्रा",
+                statusEn: "Joyfully Attending ✨",
+                statusHi: "सप्रेम उपस्थित ✨",
+                messageEn: "Wishing Chiranjeevi Akhilesh & Ayushmati Manvi a lifetime of togetherness and harmony.",
+                messageHi: "चिरंजीवी अखिलेश एवं आयुष्मती मानवी को दाम्पत्य जीवन की अनंत शुभकामनाएं।"
+            }
+        ];
+
+        function renderBlessingsWall() {
+            const container = document.getElementById('blessingsWall');
+            const badge = document.getElementById('wishesCountBadge');
+            if (!container) return;
+
+            badge.textContent = currentLang === 'hi'
+                ? `${toDevanagariDigits(blessingsList.length)} शुभकामनाएं`
+                : `${blessingsList.length} Wishes`;
+
+            container.innerHTML = blessingsList.map(item => {
+                const name = currentLang === 'hi' ? (item.nameHi || item.nameEn) : item.nameEn;
+                const status = currentLang === 'hi' ? (item.statusHi || item.statusEn) : item.statusEn;
+                const msg = currentLang === 'hi' ? (item.messageHi || item.messageEn) : item.messageEn;
+                return `
+                    <div class="p-4 rounded-2xl bg-maroon-950/75 border border-gold-400/30 shadow-md transition hover:border-gold-400">
+                        <div class="flex items-center justify-between gap-2">
+                            <span class="font-bold text-gold-300 text-sm sm:text-base">${name}</span>
+                            <span class="text-[11px] px-2.5 py-0.5 rounded-full bg-gold-500/15 text-amber-200 border border-gold-400/30">${status}</span>
+                        </div>
+                        <p class="text-amber-100/90 text-xs sm:text-sm mt-2 leading-relaxed italic">“${msg}”</p>
+                    </div>
+                `;
+            }).join('');
+        }
+
+        function submitBlessing(e) {
+            e.preventDefault();
+            const nameInput = document.getElementById('guestName');
+            const attendInput = document.getElementById('guestAttending');
+            const countInput = document.getElementById('guestCount');
+            const wishInput = document.getElementById('guestWish');
+
+            const name = nameInput.value.trim();
+            const wish = wishInput.value.trim();
+            if (!name || !wish) return;
+
+            const isAttending = attendInput.value === 'yes';
+            const guests = countInput.value;
+
+            blessingsList.unshift({
+                nameEn: name,
+                nameHi: name,
+                statusEn: isAttending ? `Attending (${guests} Guests) ✨` : `Warm Blessings 🙏`,
+                statusHi: isAttending ? `उपस्थित (${guests} सदस्य) ✨` : `शुभ आशीर्वाद 🙏`,
+                messageEn: wish,
+                messageHi: wish
+            });
+
+            renderBlessingsWall();
+            triggerBlessingShower();
+            nameInput.value = '';
+            wishInput.value = '';
+
+            showToast(currentLang === 'hi'
+                ? "🙏 धन्यवाद! आपका आशीर्वाद एवं RSVP दर्ज कर लिया गया है।"
+                : "🙏 Thank you! Your RSVP & Blessing have been added to the wall.");
+        }
+
+        /* ==============================================================
+           8. CLIPBOARD SHARE & PRINTABLE MODAL HELPERS
+        ============================================================== */
+        function copyInviteSummary() {
+            const summary = currentLang === 'hi'
+                ? "॥ श्री गणेशाय नमः ॥\nशाही विवाह आमंत्रण: अखिलेश (सुपुत्र श्री राधेश्याम गुप्ता एवं श्रीमती नीता गुप्ता) संग मानवी (सुपुत्री श्री अभिषेक बच्चन एवं श्रीमती ऐश्वर्या राय)\nशुभ विवाह तिथि: २० फरवरी, २०२७\n• हल्दी इन ब्लूम: १९ फरवरी २०२७ (दोपहर १ बजे)\n• संगीत सिम्फनी: १९ फरवरी २०२७ (सायं ७ बजे से)\n• शुभ लग्न: २० फरवरी (प्रातः ९ बजे)\n• शुभ विवाह: २० फरवरी (सायं ७ बजे से)"
+                : "॥ Shri Ganeshaya Namah ॥\nRoyal Wedding Invitation: Akhilesh (S/o Shri Radheyshyam Gupta & Smt. Neeta Gupta) Weds Manvi (D/o Shri Abhishek Bachhan & Smt. Aishwarya Rai)\nDate of Marriage: 20 Feb, 2027\n• Haldi in Bloom: 19 Feb, 2027 at 1:00 PM\n• Sangeet Symphony: 19 Feb, 2027 from 7:00 PM onwards\n• Shubh Lagan: 20 Feb at 9:00 AM\n• Vivaah: 20 Feb, 7:00 PM onwards";
+
+            const tempArea = document.createElement('textarea');
+            tempArea.value = summary;
+            document.body.appendChild(tempArea);
+            tempArea.select();
+            document.execCommand('copy');
+            document.body.removeChild(tempArea);
+
+            showToast(currentLang === 'hi'
+                ? "✅ निमंत्रण संदेश कॉपी हो गया! अब WhatsApp पर साझा करें।"
+                : "✅ Wedding Invitation details copied to clipboard!");
+        }
+
+        function openPrintableModal() {
+            const modal = document.getElementById('printableModal');
+            modal.classList.remove('hidden');
+            modal.classList.add('flex');
+        }
+
+        function closePrintableModal() {
+            const modal = document.getElementById('printableModal');
+            modal.classList.add('hidden');
+            modal.classList.remove('flex');
+        }
+
+        let toastTimer = null;
+        function showToast(msg) {
+            const banner = document.getElementById('toastBanner');
+            const text = document.getElementById('toastText');
+            text.textContent = msg;
+            banner.classList.remove('translate-y-24', 'opacity-0');
+            clearTimeout(toastTimer);
+            toastTimer = setTimeout(() => {
+                banner.classList.add('translate-y-24', 'opacity-0');
+            }, 3400);
+        }
+
+        /* ==============================================================
+           9. INITIALIZE ON WINDOW LOAD
+        ============================================================== */
+        window.onload = function () {
+            resizeCanvas();
+            initAmbientPetals();
+            animatePetals();
+            updateCountdown();
+            renderBlessingsWall();
+        };
+    </script>
+</body>
+</html>
